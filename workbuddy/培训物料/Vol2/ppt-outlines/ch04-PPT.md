@@ -18,7 +18,7 @@
 
 ## Slide 3 — 技能市场是什么
 
-- 要点:Skills 市场已收录过万技能(官方 20+、SkillHub 2 万+、OpenClaw 兼容 1.3-7 万+),分 24 个一级分类。
+- 要点:Skills 市场已收录过万技能(官方 20+、WorkBuddy 技能市场 2 万+、Open远程协作模块 兼容 1.3-7 万+),分 24 个一级分类。
 - 关键事实:WorkBuddy = 模型(引擎)+ Skill(变速箱)。你不需要懂引擎怎么转,只管挂几档。
 - 配图:figures/2.4.1-skill-marketplace.png(主图)
 

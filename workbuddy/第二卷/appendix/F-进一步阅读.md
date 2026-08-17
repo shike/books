@@ -54,27 +54,27 @@
 
 ## F.3 WorkBuddy 官方资源
 
-**1. WorkBuddy 官方文档 docs.workbuddy.com**
+**1. WorkBuddy 官方文档 docs.WorkBuddy 官方公告所示地址**
 内容:产品功能、命令清单、API 接入、版本更新日志。
 为什么读:第二卷所有操作示例的最终权威来源。如果书中截图与最新版本有差异,以文档为准。每个月花 15 分钟翻更新日志,胜过临时翻手册。
 
-**2. WorkBuddy 帮助中心 help.workbuddy.com**
+**2. WorkBuddy 帮助中心 help.WorkBuddy 官方公告所示地址**
 内容:高频问题解答、最佳实践、故障排查。
 为什么读:适合团队"新人 onboarding"——把相关链接直接丢进新人入职清单,能省你 50% 的答疑时间。
 
-**3. WorkBuddy v5.3.12 白皮书**
+**3. WorkBuddy WorkBuddy 最新版本(以官方为准) 白皮书**
 内容:新版本功能详解、性能基准、安全模型、与企业版的集成方式。
 为什么读:在向 IT/合规/采购部门申请 WorkBuddy 许可时,白皮书是必备附件。它用对方能听懂的语言描述了安全等级与部署模式。
 
-**4. WorkBuddy Academy academy.workbuddy.com**
+**4. WorkBuddy Academy academy.WorkBuddy 官方公告所示地址**
 内容:免费视频课程,覆盖桌面端、命令行、Skills 开发、企业管理后台。
 为什么读:组内培训时直接用,比自己讲一遍省力。课程分初/中/高三档,可以作为分级测试的依据。
 
-**5. WorkBuddy 案例库 case.workbuddy.com(参见官网获取最新链接)**
+**5. WorkBuddy 案例库 case.WorkBuddy 官方公告所示地址(参见官网获取最新链接)**
 内容:行业落地案例,涵盖金融、教育、制造、零售四类,每个案例含背景、痛点、方案、收益数据。
 为什么读:做内部立项 PPT 时,案例库里的现成素材能帮你省 80% 调研时间。建议按自己行业筛三到五个重点读。
 
-**6. WorkBuddy API 开发者门户 developers.workbuddy.com**
+**6. WorkBuddy API 开发者门户 developers.WorkBuddy 官方公告所示地址**
 内容:Skills 开发 SDK、Webhook、SSO 集成接口。
 为什么读:第二卷第八章讲到的"自定义 Skill"和"私有部署",都要从这里开始。
 
@@ -85,7 +85,7 @@
 为什么读:第二卷第五章展开过的提示词技术,在这里有学术原貌与英文原版论文索引。中文世界最权威的提示词综合指南之一。
 
 **2. Anthropic 官方《Prompt Engineering》指南 docs.anthropic.com**
-经典:Claude 团队的第一手提示词工程实践,含 9 大模式与大量示例。
+经典:业内的第一手提示词工程实践,含 9 大模式与大量示例。
 为什么读:WorkBuddy 底层模型与 Anthropic 同源,这份指南里的方法学可直接迁移到 WorkBuddy 的提示词编写。读完你会发现,"写好提示词"和"写好代码"一样,有可学习的方法。
 
 **3. 论文《Chain-of-Thought Prompting Elicits Reasoning in Large Language Models》(Wei et al., 2022)**
@@ -166,7 +166,7 @@
 资源:Forrester TEI 报告,标准 ROI 测算模板。
 为什么读:采购 WorkBuddy 时,甲方财务/CIO 通常要求第三方 ROI 报告。Forrester 模板是业界通用方法,学习它的结构,你做的内部测算也会更让财务部门信服。
 
-**3. 内部 ROI 测算 Excel 模板(见本书配套资源 workbuddy.com/roi-template)**
+**3. 内部 ROI 测算 Excel 模板(见本书配套资源 WorkBuddy 官方公告所示地址/roi-template)**
 资源:WorkBuddy 官方提供的中文版 ROI 模板,含人工成本节省、错误率下降、响应速度提升三个维度。
 为什么读:这是本书最实操的配套资源之一,直接填你自己的数字就能出 PPT。配套资源随版本更新,使用前请检查日期。
 

@@ -97,7 +97,7 @@ WorkBuddy 在右侧工具面板提供操作日志,管理者可用于追溯 AI �
 见 工作目录。
 
 **WorkBuddy**
-本书主题:腾讯云 CodeBuddy 团队于 2026 年 3 月发布的桌面端 AI 客户端,运行于 Windows 与 macOS。
+本书主题:国产桌面端 AI 客户端(具体版本、定价、功能边界以你购买本书时 WorkBuddy 官方公告为准,撰写时为 2026 年 8 月),运行于 Windows 与 macOS。
 
 ## X
 

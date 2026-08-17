@@ -56,9 +56,9 @@
 - 关键句:这一栏决定 WorkBuddy "用什么做、按什么规则做、做了什么被记录"
 
 ## Slide 11 — 右栏:模型选择速查
-- 内容:6 个模型一行一个(Claude Sonnet 4.5 / GPT-5 / Gemini 2.5 Pro / Doubao 1.5 Pro / Hunyuan Turbo / DeepSeek V3)
-- 速查:默认 Claude Sonnet 4.5;超长文档 Gemini 2.5 Pro;纯中文 Doubao 1.5 Pro;批量低成本 DeepSeek V3;涉密 Hunyuan Turbo 或本地模型
-- 数据来源:章节 3.2,WorkBuddy 官方 v5.3.12
+- 内容:6 个模型一行一个(其他主流闭源模型 4.5 / 其他主流闭源模型 / Gemini 2.5 Pro / Doubao 1.5 Pro / Hunyuan Turbo / DeepSeek V3)
+- 速查:默认 其他主流闭源模型 4.5;超长文档 Gemini 2.5 Pro;纯中文 Doubao 1.5 Pro;批量低成本 DeepSeek V3;涉密 Hunyuan Turbo 或本地模型
+- 数据来源:章节 3.2,WorkBuddy 官方 WorkBuddy 最新版本(以官方为准)
 
 ## Slide 12 — 右栏:Credits 成本透明
 - 内容:任务级 / 对话级 / 本月累计 三个维度

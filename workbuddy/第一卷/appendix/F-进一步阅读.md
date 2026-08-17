@@ -4,8 +4,7 @@
 
 ## 1. 桌面 AI 与大模型
 
-- WorkBuddy 官方网站:https://codebuddy.cn/work
-- WorkBuddy 官方文档(见官网)
+- WorkBuddy 官方网站与官方文档:以你购买本书时 WorkBuddy 官方公告为准
 - 《这就是 ChatGPT》—— Stephen Wolfram
 - 《语言模型的局限与未来》—— 各家厂商技术博客
 
@@ -35,7 +34,7 @@
 
 ## 6. 推荐博客与社区
 
-- WorkBuddy 官方社区(见官网)
+- WorkBuddy 官方社区:以你购买本书时 WorkBuddy 官方公告为准
 - 机器之心
 - 36Kr AI 频道
 - 即刻 #AI 工具 话题
