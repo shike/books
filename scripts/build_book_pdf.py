@@ -91,10 +91,13 @@ p {
 }
 img {
   max-width: 100%;
+  max-height: 26cm;          /* 略小于 A4 可用页面高度,避免单张图撑爆 */
   height: auto;
+  width: auto;
   display: block;
-  margin: 1.2em auto;
-  page-break-inside: avoid;
+  margin: 0.5em auto;
+  /* page-break-inside: avoid;  ← 删掉,让大图也能跨页或缩放 */
+  object-fit: contain;
 }
 figure {
   margin: 1.5em 0;
