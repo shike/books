@@ -884,6 +884,13 @@ def prepare_html_with_assets(html_str: str, book_dir: Path, vol_subdir: str = No
             html_path = sub / vol_subdir / "book.html"
         else:
             html_path = sub / "book.html"
+        # 关键:单书(无 vol_subdir)时,figures/promotion 也在 sub/ 根下,
+        # 必须把 ../figures/ ../promotion/ 改写为 figures/ promotion/
+        # (单卷情况 vol_subdir=True 时,figures 在 sub/<vol>/,而 HTML 也在 sub/<vol>/,
+        #  md 里的单层 figures/ 直接生效,无需改写)
+        if not vol_subdir:
+            html_str = html_str.replace('../figures/', 'figures/')
+            html_str = html_str.replace('../promotion/', 'promotion/')
         html_path.parent.mkdir(parents=True, exist_ok=True)
         html_path.write_text(html_str, encoding='utf-8')
     return html_path, tmpdir
