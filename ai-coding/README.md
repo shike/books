@@ -78,14 +78,15 @@ ai-coding/
 
 | 件 | 状态 | 位置 | 用途 |
 |---|---|---|---|
-| 主书 Markdown(合并) | ✅ | `dist/main.md` | 网站/GitBook/在线阅读 |
+| 主书 PDF | ✅ | `dist/main.pdf` | 阅读、打印、出版前 review |
 | 主书 DOCX | ✅ | `dist/main.docx` | 出版社投稿、阅读、打印 |
+| 主书 Markdown(合并) | ✅ | `dist/main.md` | 网站/GitBook/在线阅读 |
 | 章节源(分章 md) | ✅ | `chapters/00-chapter.md` ~ `15-chapter.md` | 维护、修改、增量更新 |
 | 配图(53 张 PNG) | ✅ | `figures/` | 内文配图,可重用 |
 | 营销文案(blurb/封底/作者介绍 等) | ✅ | `promotion/` | 出版、自媒体传播 |
 | 配套数字仓库(16 提示词 + 11 案例 + 4 速查表) | ✅ | `assets/` | 独立发布的二级产品 |
 | 12 篇研究资料 | ✅ | `assets/research/` | 写作底稿,二次出版可引 |
-| 工具脚本(合并/转 docx) | ✅ | `scripts/` | 重新构建 dist/ |
+| 工具脚本(合并/转 docx/转 pdf) | ✅ | `scripts/`、`../../scripts/build_book_pdf.py` | 重新构建 dist/ |
 
 ## 🟡 已知缺口(可后续补齐)
 
@@ -100,10 +101,10 @@ ai-coding/
 ## 🚀 快速使用
 
 ### 在线阅读(主书)
-打开 `dist/main.md`(GitHub 会自动渲染)。
+打开 `dist/main.pdf` 或 `dist/main.md`(GitHub 会自动渲染)。
 
 ### 二次印刷 / 投稿
-- 出版社投稿 → `dist/main.docx`
+- 出版社投稿 → `dist/main.docx` 或 `dist/main.pdf`
 - 自行排版 → 用 `chapters/00-chapter.md` ~ `15-chapter.md` 在 InDesign/Word 里合成
 
 ### 配套仓库单独发布
@@ -112,8 +113,12 @@ ai-coding/
 
 ### 重新构建 dist/
 ```bash
-python3 scripts/_merge_final_v2.py     # 合并 chapters/ → dist/main.md
+# 合并 + 转换
+python3 scripts/_merge_final_v2.py     # chapters/ → dist/main.md
 python3 scripts/_md2docx.py            # dist/main.md → dist/main.docx
+
+# 重新生成 PDF(从 chapters/*.md 拼 HTML → Chrome headless)
+python3 ../../scripts/build_book_pdf.py ai-coding
 ```
 
 ---

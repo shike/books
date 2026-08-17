@@ -98,12 +98,13 @@ FDE 的能力建设 + 7 个垂直行业(医疗/金融/制造/政务/教育/法�
 
 | 件 | 状态 | 位置 | 用途 |
 |---|---|---|---|
+| 主书 PDF | ✅ | `dist/main.pdf` | 阅读、打印、出版前 review |
+| HTML 版本(32 个) | ✅ | `dist/html/` | 在线阅读(打开 chapter-XX.html) |
 | 章节源(26 章) | ✅ | `chapters/NN-标题.md` | 维护、修改 |
 | 案例研究(3 个) | ✅ | `appendix/case-studies/` | 配套深度阅读 |
 | 附录 | ✅ | `appendix/00-main.md` | 综合工具/清单 |
 | 封面 SVG(31 张) | ✅ | `figures/` | HTML 渲染、PPT 使用 |
-| HTML 版本(32 个) | ✅ | `dist/html/` | 在线阅读(打开 chapter-XX.html) |
-| 工具脚本 | ✅ | `scripts/` | 重新构建 HTML / 重新生成封面 |
+| 工具脚本 | ✅ | `scripts/`、`../../scripts/build_book_pdf.py` | 重新构建 HTML / 重新生成封面 / 重新生成 PDF |
 
 ## 🟡 已知缺口(可后续补齐)
 
@@ -118,11 +119,17 @@ FDE 的能力建设 + 7 个垂直行业(医疗/金融/制造/政务/教育/法�
 ## 🚀 快速使用
 
 ### 在线阅读
-直接打开 `dist/html/chapter-01.html`(或 `index.html` 如果生成),按章节顺序阅读。
+- PDF:打开 `dist/main.pdf`
+- HTML:打开 `dist/html/chapter-01.html`,按章节顺序阅读
 
 ### 重新构建 HTML
 ```bash
 python3 scripts/build_html.py
+```
+
+### 重新生成 PDF
+```bash
+python3 ../../scripts/build_book_pdf.py fde
 ```
 
 ### 重新生成封面

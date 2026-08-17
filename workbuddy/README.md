@@ -84,6 +84,10 @@ workbuddy/
 
 | 件 | 状态 | 位置 | 用途 |
 |---|---|---|---|
+| **三卷合 PDF**(主书) | ✅ | `dist/workbuddy.pdf` | 完整阅读、整套下载 |
+| **第一卷 PDF** | ✅ | `dist/第一卷.pdf` | 培训交付、按卷阅读 |
+| **第二卷 PDF** | ✅ | `dist/第二卷.pdf` | 培训交付、按卷阅读 |
+| **第三卷 PDF** | ✅ | `dist/第三卷.pdf` | 培训交付、按卷阅读 |
 | 第一卷章节正文(8 章) | ✅ | `第一卷/chapters/01-xxx.md` ~ `08-xxx.md` | 出版前 review 阶段 |
 | 第一卷配图(主图 53 张) | ✅ | `第一卷/figures/`(主图)| 出版、内文配图 |
 | 第一卷附录 + 勘误 | ✅ | `第一卷/appendix/`,`第一卷/errata/` | 出版 |
@@ -107,7 +111,8 @@ workbuddy/
 ## 🚀 快速使用
 
 ### 出版前 review(第一卷)
-按 `第一卷/chapters/01-管理者为什么需要桌面AI.md` ~ `08-从个人到团队.md` 顺序阅读。
+- PDF 阅读:`dist/第一卷.pdf` 或 `dist/workbuddy.pdf`(全套)
+- 章节 md:`第一卷/chapters/01-管理者为什么需要桌面AI.md` ~ `08-从个人到团队.md`
 
 ### 企业培训交付
 直接用 `培训物料/`:
@@ -117,6 +122,17 @@ workbuddy/
 - `Vol1/2/3/module-cards/` — 培训卡片
 - `Vol1/2/3/ppt-outlines/` — PPT 大纲
 - `认证体系.md` — 认证方案
+
+### 重新生成 PDF
+```bash
+# 三卷合(主书)
+python3 ../scripts/build_book_pdf.py workbuddy --all
+
+# 单卷
+python3 ../scripts/build_book_pdf.py workbuddy --vol 第一卷
+python3 ../scripts/build_book_pdf.py workbuddy --vol 第二卷
+python3 ../scripts/build_book_pdf.py workbuddy --vol 第三卷
+```
 
 ### 重新生成某章
 按 `AGENTS.md` 规范,章号两位、标题 6-16 字、配图命名 `<卷号>.<章号>.<图号>-<描述>.png`。
