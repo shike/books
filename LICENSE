@@ -1,0 +1,21 @@
+CC BY-NC-SA 4.0 — 顶层许可证声明
+
+本仓库整体(books/)采用 Creative Commons 署名-非商业-相同方式共享 4.0 国际许可证(CC BY-NC-SA 4.0)。
+
+这意味着:
+- ✅ 你可以自由复制、转载、修改
+- ✅ 你可以以非商业目的使用本仓库内容
+- ⚠️ 必须保留原作者署名
+- ⚠️ 衍生作品必须采用相同许可证
+- ❌ 不得用于商业目的(销售、付费课程、商业培训等)
+
+各子目录可能附加更细的许可声明,详见各书 `assets/LICENSE` 或 README。
+
+完整许可证文本:
+- 中文:https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+- English:https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+---
+
+注:本顶层 LICENSE 仅为聚合声明。具体每本书的实际许可由该书自身决定,
+如某书有更宽松或更严格的许可,以该书内的 LICENSE 为准。

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 25 章｜教育 AI：当使用者和决策者是两群人 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-24.html">← 上一章</a><span class="sep">|</span><a href="chapter-26.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-25.svg" alt="第 25 章｜教育 AI：当使用者和决策者是两群人" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第六篇：行业战场</div>
+<h1>第 25 章｜教育 AI：当使用者和决策者是两群人</h1>
+<h2>一个故事</h2>
+<p>一所初中在 2023 年秋季引入了一套 AI 作文批改系统。校长在开学教师大会上宣布："这是教学改革的里程碑。AI 辅助批改可以让语文老师从繁重的作文批改中解放出来，把精力投入到更有价值的教学研究上。"</p>
+<p>语文教研组长张老师当时没说话。</p>
+<p>系统上线后，语文组 8 个老师每人每周被要求至少用 AI 批改一次作文。三个月后系统数据显示：教师账号周活跃率 12%。</p>
+<p>信息中心主任找张老师了解情况。张老师说了一段话：</p>
+<p>"AI 批改的评语太泛了——'结构清晰、论证有力'、'语言流畅、感情真挚'。这种评语我也可以写，学生也可以自己猜。学生看得出来是不是老师认真改的。我一篇作文花二十分钟写评语，学生知道我在看他、在认真对待他写的东西。AI 三秒钟出的评语，学生扫一眼就关了——'跟没说一样'。"</p>
+<p>"而且 AI 改作文有一个问题：它改不了'人'。我教了三年这个班，我看着一个学生从初一写流水账到初三能写出有细节有情感的记叙文。我写评语的时候是写给'这个学生'的——我知道他上次作文的问题是什么，这次有没有改进。AI 不认识这个学生。"</p>
+<hr>
+<p>FDE 负责人周昱去学校待了两天。他发现：<strong>老师们不是反对 AI。老师们是反对"这个 AI"。</strong> AI 把老师们想做的事（写个性化评语、指出写作逻辑问题、鼓励学生）替代了，但老师们最不想做的事（改错别字、检查病句、标点纠错）——AI 做得不够好。</p>
+<p>更关键的发现：<strong>作文批改在语文老师的全部工作中只占不到 20%。</strong> 老师们最花时间的不是批改——是备课。每周备一节新课要花 4-6 小时——找素材、设计教学环节、做课件、出练习题。批改作文是阶段性工作（每两周一次），备课是每周都有的持续性工作。</p>
+<p>"为什么 AI 不是用在备课上？"周昱问张老师。</p>
+<p>张老师想了想。"备课确实更花时间。但备课比批改更难——批改有标准答案（语法对不对、结构好不好），备课没有标准。"周昱后来给信息中心写了一份建议：把 AI 从批改移到备课。帮老师自动搜索可用的课程素材、基于历年真题自动生成练习题、根据上次教学反馈提示"这个知识点学生通常理解有困难的地方"。先找张老师一个人试点——她在组里最有威信，如果她觉得有用，其他人会跟。</p>
+<hr>
+<h2>教育 AI 的核心矛盾：使用者和决策者是两群人</h2>
+<p>校长要"提升教学效率"和"数字化成果"。老师要"减轻我不想做的工作量"和"不破坏我跟学生之间的连接"。这两组需求有交集，但没有大多数教育科技产品经理以为的那么大。张老师花了二十分钟写的作文评语不是"繁重的工作"——是她和学生之间重要的沟通方式。你替掉了它，不是帮她省时间，是切断了她的教学连接。而真正繁重的工作——改错别字、检查病句——AI 做得还不够好。这个错位是教育 AI 使用率低的根本原因。</p>
+<hr>
+<h2>自适应学习的困局：当 AI 诊断和老师诊断对不上</h2>
+<p>某教育科技公司把自适应学习系统卖给几所中学——根据每个学生的做题记录，自动推荐适合他当前水平的练习题。上线两个月。学生账号活跃率很高，老师后台活跃率几乎为零。</p>
+<p>周昱去调研发现：<strong>老师不看报告，不是因为报告不好——是因为报告里的"薄弱知识点分析"和老师自己感知到的对不上。</strong></p>
+<p>数学老师李老师说的原话："系统说这个学生在'二次函数'上薄弱，但我教了他半年，我知道他的问题不是二次函数——是符号运算基础差。他解二次函数的时候在配方法那一步总是错——不是二次函数的概念不懂，是代数式变形不会。系统看不到这一点，因为系统只看'二次函数相关题目的正确率'。但正确率低不是根因。"</p>
+<p><strong>教育 AI 做诊断的核心困境：AI 的诊断是"统计相关性"——这个知识点的题做不对 → 这个知识点薄弱。老师的诊断是"因果性"——这个知识点的题做不对 → 是因为前置知识没有掌握 → 补前置知识才能解决。两种诊断逻辑在根本上不同。</strong></p>
+<p>周昱的建议不是让老师"相信 AI 的诊断"。是让系统的诊断从"知识点级别的正确率统计"变成"错误类型分析"——不只告诉老师"这个学生在二次函数上薄弱"，而是告诉老师"这个学生在二次函数相关题目中，错误集中在配方法这一步，错误类型是符号运算错误"。这个诊断更接近老师的思维方式，也更容易被老师验证和采纳。</p>
+<p><strong>教育 AI 的诊断系统如果要被老师接受，必须从"统计→判断"升级到"现象→归因"。前者是机器视角，后者是教育者视角。不换视角永远推不动。</strong></p>
+<hr>
+<h2>FDE 方法论在教育上的特殊应用</h2>
+<h3>需求洋葱：教育的第四层在"教学自主权"</h3>
+<p>教育 AI 的需求洋葱：第一层"帮老师批改作文"→ 第二层"减少重复性工作时间投入"→ 第三层校长要"数字化标杆"→ 第四层老师要"保持对自己课堂的控制权"以及"不增加额外负担"。</p>
+<p>在教育行业，"赋能"永远比"替代"更容易被接受。不是技术能力的问题，是教学自主权的问题。AI 提供原料，老师自己做菜——这是赋能。AI 替老师做核心判断——这是威胁。</p>
+<h3>用户采纳：教育行业的"关键人策略"</h3>
+<p>教育行业有一个特殊的社会结构：教师群体中，老教师（教龄长、职称高、教学威信高）是新方法扩散的关键节点。有效路径是：找到组里最有威信的 1-2 个老师 → 让她们先试 → 让她们在教研会上说这个东西有用 → 其他人自然跟。FDE 在教育行业要找到的不是 sponsor（校长）——是 champion（教研组的非正式 leader）。</p>
+<h3>评估：教育 AI 的效果判断周期极长</h3>
+<p>教育 AI 的最终指标——学生成绩是否提升——需要一个学期。FDE 不能等一个学期才知道方案行不行。需要设计短期可观测的代理指标：老师找素材的时间（有 AI vs 无 AI）、老师对 AI 推荐素材的采纳率、老师是否在第二次备课时继续使用。代理指标不是替代最终指标——是在最终指标需要太长时间的情况下，提供可操作的迭代信号。</p>
+<hr>
+<h2>推演：如果 AI 作文批改重新定位</h2>
+<p>如果周昱是那个 AI 作文批改项目的 FDE，她会怎么重新设计？</p>
+<p><strong>第一步：改变 AI 的角色。</strong> 从"AI 批改作文"变成"AI 帮你做批改前的准备工作"——AI 标记错别字和疑似病句（省掉老师最不想做的事）、AI 统计本次作文中全班共同的语言问题（让老师备课有数据依据）、AI 把每个学生的作文和上次作文做对比（"这个学生这次在描写上有没有进步"——老师自己做判断，AI 提供对比）。老师写个性化评语、写作逻辑分析、鼓励——保留为老师专属。</p>
+<p><strong>第二步：先让张老师用。</strong> 不搞全员培训。张老师用三个班。三周后，在语文教研会上分享——不是 AI 公司的人讲，是张老师自己讲。她说"有用"比任何一个销售说一万句都有用。</p>
+<p><strong>第三步：把效果判断从"使用率"改成"老师省了多少时间"。</strong> 追踪张老师在批改作文上花的时间（使用 AI 前 vs 后）。如果每篇作文从 20 分钟降到 15 分钟——AI 帮她做了标记错别字和病句的 5 分钟——省下的 5 分钟她用来写更个性化的评语。这个数据比"使用率 80%"更有说服力。</p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别把教育 AI 卖成"替代老师"。</strong> 老师的核心不是"知识传递"——是"看到每个学生的不同，并据此调整教学"。AI 的角色是"让老师有更多时间做核心工作"，不是替代核心。</p>
+<p><strong>2. 别跳过教研组长。</strong> 校长批预算，教研组长决定用不用。如果教研组长不支持——"校长强推的东西，应付一下就好"。</p>
+<p><strong>3. 别把"使用率"当成功指标。</strong> 老师被迫使用但内心抗拒——"开着系统但不看"。真正要追踪的是"老师觉得省了多少时间"和"有没有因此改变教学决策"。</p>
+<p><strong>4. 别用统计相关性替代因果判断。</strong> AI 告诉老师"这个学生二次函数薄弱"——老师在意的不是正确率低，是为什么低。教育 AI 的诊断必须从"现象"走到"归因"，否则老师永远不会信。</p>
+<hr>
+<h2>检查清单</h2>
+<p>教育 AI 项目：</p>
+<ul class="checklist">
+<li>跟一线老师聊过吗——不是校长，是每天站在教室里的老师？</li>
+<li>AI 的定位是"做老师不想做的事"还是"替老师做她想做的事"？</li>
+<li>找到了教研组里的非正式 champion 吗？</li>
+<li>效果判断的代理指标设计了吗？</li>
+<li>老师的教学自主权被尊重了吗？</li>
+<li>AI 的诊断逻辑接近"归因"还是停在"统计"？</li>
+</ul>
+<hr>
+<p><em>下一章：法律 AI——当"精确"的定义完全不同。</em></p>
+<a class="next-chapter" href="chapter-26.html"><span class="arrow">下一章 →</span><br>第 26 章｜法律 AI：当精确的定义完全不同</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

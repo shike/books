@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深度案例二｜客服 AI：从替换人到帮人的全生命周期 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="case-study-01.html">← 上一章</a><span class="sep">|</span><a href="case-study-03.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/case-study-02.svg" alt="深度案例二｜客服 AI：从替换人到帮人的全生命周期" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">深度案例</div>
+<h1>深度案例二｜客服 AI：从"替换人"到"帮人"的全生命周期</h1>
+<p>本案例是贯穿全书的"案例 A"的完整版。前面各章分散讲述了它的不同阶段，这里把它串联成一个完整的项目生命周期叙事，展示 FDE 方法论如何在一个真实项目中逐层展开。</p>
+<h2>起点：一个"典型"的 AI 需求</h2>
+<p>2019 年秋天，陈柏宇坐在一家中型零售连锁企业的会议室里。对面是 IT 总监老周。老周把 Surface 推到他面前，屏幕上是一份招标文件。</p>
+<p>"我们要上 AI 客服。预算批了，能做吗？"</p>
+<p>陈柏宇没看标书。他问："你们现在客服团队多少人？"</p>
+<p>"四十多个，轮班制，一天接两千通电话。"</p>
+<p>"最让他们头疼的是什么？"</p>
+<p>老周想了想："退换货。流程太长，客户说不清楚，客服查不到物流状态，来回扯皮。"</p>
+<p>"你们有退换货的政策文档吗？"</p>
+<p>"有，但一部分在 OA 里，一部分在客服主管脑子里。"</p>
+<p>"物流数据呢？"</p>
+<p>"在另外一个系统里，不跟我们 CRM 通。"</p>
+<p>陈柏宇合上笔记本。"能让我先在客服中心坐两天吗？"</p>
+<hr>
+<h2>侦察期（第 1-2 周）：需求洋葱的四层皮</h2>
+<p>陈柏宇在客服中心坐了两天。他坐在小周旁边，小周做了四年客服。</p>
+<p>他观察到小周接电话时同步翻一个共享 Excel。1200 多行，七个 sheet，按问题类型、商品品类、快递公司排列。每个条目是可复制粘贴的话术，旁边标注了适用条件。"公司给的标准话术不好用，太长了，客户听不完就挂。我们自己改短的。"这个 Excel 没有任何管理层知道它存在。</p>
+<p>他观察到小周接了一个退换货投诉电话。客户在吼。小周做了五件事：情绪安抚、订单查询、物流状态分析、责任判断（快递责任非商家责任）、理赔通道引导、换货库存确认和时效承诺。挂掉电话后在 Excel 里加了备注："XX 快递理赔电话等待时间变长了，跟客户说 48 小时，不要说 24 小时。"</p>
+<p>陈柏宇在笔记本上写了一句："客服不是回答问题的人。客服是情绪翻译——把愤怒翻译成流程。"</p>
+<p>这两天的坐班让他建立了需求洋葱的前两层：</p>
+<p><strong>第一层表层诉求：</strong> "用 AI 替代部分客服，降低人力成本。"——这是老周说的。</p>
+<p><strong>第二层业务痛点：</strong> 客服中心日均 2000 来电，首次解决率只有 62%。最大痛点是退换货——流程长、信息散、客户情绪大。</p>
+<p>他又花了一周剥第三层和第四层：</p>
+<p><strong>第三层组织动机：</strong> 老周的 KPI 里有"IT 系统故障率降低 20%"和"客户满意度提升"。降本压力在运营总监那边。老周的真实动机是"做一个不出事的项目，同时能拿出来给老板看"。</p>
+<p><strong>第四层个人动机：</strong> 客服团队对"AI 替代"有恐惧——不是公开表达，而是沉默的紧张。老周怕这个项目变成他职业生涯的污点——"如果上了 AI 客服之后投诉率反而上升，责任在我"。</p>
+<p>基于这四层，陈柏宇做了一个关键的重新定位。原始定位是"AI 替代客服，降低人力成本"。这在第三层和第四层会造成巨大阻力。重新定位是"AI 辅助客服更快找到答案，提升服务质量"——客服团队从被替代的威胁变成被赋能的受益者，老周的 KPI 里"客户满意度"有了直接支撑。</p>
+<p><strong>这个重新定位的价值，比后续所有技术决策的价值加起来都大。</strong></p>
+<hr>
+<h2>验证期（第 3-4 周）：三轴打分</h2>
+<p><strong>技术轴：🟢。</strong> 意图分类 + 知识检索 + 回复生成，都是成熟 LLM 范式。</p>
+<p><strong>数据轴：🟡。</strong> 退换货政策散落在 OA 和主管脑子里。物流数据在另外系统需对接。但共享 Excel 提供了第一版知识库素材——这是意外收获。</p>
+<p><strong>组织轴：🟢（调整后）。</strong> 重新定位后，客服团队从抵触转为配合。老周确认 AI 独立部署、不影响主流程稳定性后支持。</p>
+<p>基于三轴结果，陈柏宇做了第二个关键决策：<strong>不 Go 全量 AI 客服。分三步走。</strong> 报告核心结论：60% 以上的来电量可以通过整理现有信息解决，不需要 AI。建议分三步走：Step 1 统一知识库 + 物流对接（2 个月）→ Step 2 规则化高频问答 + App 自助查询（3 个月）→ Step 3 LLM 处理退换货复杂对话（再做评估）。整个过程中不宣传"上了 AI"——宣传"优化了客服体验"。</p>
+<p>老周问："但别的供应商都在跟我讲大模型。"</p>
+<p>"你现在的问题不是缺 AI。是缺一个统一的信息系统。AI 来了也找不到答案——因为答案散落四处。先把答案整理好，AI 才有东西可读。先上知识库能在第一天产生价值。"</p>
+<p>这个判断帮老周省掉了至少 60 万。</p>
+<hr>
+<h2>构建期（第 2-4 个月）：从粗到细</h2>
+<p>陈柏宇的方案第一版不是六步任务链，而是三步：关键词匹配意图分类（非 AI）、ES 知识库检索（非 AI）、人工回复（没 AI 生成）。他先上了这个"几乎没有 AI"的版本，跑了三周。</p>
+<p>三周的数据告诉他：关键词匹配意图分类准确率 78%——物流查询够用，退换货不够。ES 在口语化查询上效果差——"那个退的货咋样了"搜不出"退换货进度"。客服要的不是"一段政策原文"，是"一段可以直接复制粘贴发给客户的话"。</p>
+<p>基于真实数据，方案演进为：意图分类从关键词升级为 LLM few-shot 分类（准确率 78%→93%）、检索从纯关键词改为关键词+语义混合、回复生成从"返回原文"升级为"基于检索结果生成客服话术"（约束：总长 ≤ 100 字、不擅自改写政策条款、不确定时说"我需要确认"）。</p>
+<p><strong>评估体系从第一天就建。</strong> 四个维度：准确性 40% + 简洁性 25% + 可操作性 20% + 语气 15%。每周人工抽评 50 条。评估集从最初 50 条手写 case 增长到 1200 条（80% 来自生产日志真实采样）。</p>
+<hr>
+<h2>上线（第 5 个月）：渐进式交付</h2>
+<table>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>流量</th>
+<th>实际结果</th>
+</tr>
+<tr>
+<td>内测</td>
+<td>上线前2周</td>
+<td>陈柏宇+老周+2客服主管</td>
+<td>—</td>
+</tr>
+<tr>
+<td>影子模式</td>
+<td>上线前1周</td>
+<td>全量但不展示</td>
+<td>准确率 83%，修了两天</td>
+</tr>
+<tr>
+<td>灰度5%</td>
+<td>周一</td>
+<td>早班时段</td>
+<td>转人工率不涨 ✅</td>
+</tr>
+<tr>
+<td>灰度30%</td>
+<td>周三</td>
+<td>全天</td>
+<td>CRM连接池崩了，修复后重过</td>
+</tr>
+<tr>
+<td>全量</td>
+<td>周五</td>
+<td>全天</td>
+<td>✅</td>
+</tr>
+</table>
+<p>影子模式抓住了七个内测漏掉的问题——包括"客户发空白消息时 AI 会崩溃"——全部在用户不知情时修好。灰度 30% 凌晨 CRM 连接池被打满，陈柏宇紧急降级+联系 DBA，01:30 恢复，03:00 全量。第二天客服中心正常使用，没人知道后半夜发生了什么。</p>
+<p>他发给老周的消息："有一个好消息和一个坏消息。坏消息是出问题了——CRM 连接池崩了 40 分钟。好消息是在你明早到办公室之前，我们已经修好了。"</p>
+<hr>
+<h2>运营期（第 6 个月至今）：活的系统需要养</h2>
+<p>上线后三个月，客服主管周会上提了一句："最近 AI 回复好像没以前准了。物流查询老给错快递状态。"</p>
+<p>排查发现快递公司把物流状态字段从"已签收"改成了"已妥投"。准确率从 89% 降到 81%，没触发任何告警——因为监控只看延迟和错误率。</p>
+<p>这个沉默故障催生了两层新监控：检索质量监控（每天自动对比检索到的文档版本号和知识库最新版本号，超 5% 命中过期文档→告警）和业务规则验证（提取可验证事实的关键字段定期和源数据自动化比对）。从发现漂移到修复，原来需要几周，现在通常在 24 小时内。</p>
+<hr>
+<h2>成果与关键决策回顾</h2>
+<p>项目上线半年：日均来电从 2000 降到 1300（不是 AI 替代了人，是客户在 App 里能查到物流和积分了）、首次解决率从 62% 提到 74%、平均通话时长从 8 分半降到 6 分 10 秒、客户满意度从 3.6 提到 4.1（5 分制）、AI 退换货模块处理了约 40% 的退换货来电（其中 85% 不需要人工介入）。</p>
+<p>七个关键决策：不在 PoC 之前跳进技术选型（第一周坐班不是写代码）、重新定义项目定位（组织轴从红变绿）、先做知识库再做 AI、方案从粗到细（初版几乎没有 AI 跑了三周真实数据）、评估体系从第一天就建、渐进式上线（五阶段每阶段有通过标准）、持续运营（主动寻找退化证据）。</p>
+<p>老周后来说："我以为你卖的是技术。后来发现你卖的是'不做什么'的判断。"</p>
+<hr>
+<h2>讨论题</h2>
+<ol>
+<li>陈柏宇在前两周投入大量时间在客服中心坐班。如果他跳过这两周直接出方案——按"标准 AI 客服最佳实践"搭一套 RAG + LLM——后果会是什么？具体到哪些问题会被漏掉？</li>
+<li>"从粗到细"的策略是否在所有项目中都适用？如果 deadline 非常紧（竞品已上线，六周内必须交付第一版），你会放弃这个策略吗？如果会，放弃哪一部分？</li>
+<li>影子模式在这个案例中发挥了关键作用。但很多 AI 项目不具备"在真实流量中运行但不展示给用户"的条件。在什么场景下影子模式不可行？替代方案是什么？</li>
+<li>老周说"你卖的是不做什么的判断"——在你自己的项目中，你有没有过类似的时刻——建议客户"不做"某件事，而这个建议后来被证明是对的？</li>
+</ol>
+<a class="next-chapter" href="case-study-03.html"><span class="arrow">下一章 →</span><br>深度案例三｜销售 AI 助手：当技术不是最难的部分</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

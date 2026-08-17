@@ -1,0 +1,16 @@
+# ===== 旧版平铺文件(已并入子目录) =====
+# 章节(已并入 chapters/)
+chapter-*.md
+# case study(已并入 appendix/case-studies/)
+case-study-*.md
+# 附录(已并入 appendix/)
+appendix.md
+# 工具脚本(已并入 scripts/)
+build_html.py
+generate_covers.py
+# html 产物(已并入 dist/html/)
+/html/
+# 备份
+README.original.md.bak
+# 系统文件
+.DS_Store

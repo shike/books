@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 章｜能不用 AI 就不用 AI — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-03.html">← 上一章</a><span class="sep">|</span><a href="chapter-05.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-04.svg" alt="第 4 章｜能不用 AI 就不用 AI" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第一篇：认知</div>
+<h1>第 4 章｜能不用 AI 就不用 AI</h1>
+<h2>一个故事</h2>
+<p>2018 年，一家电商公司决定用 AI 做商品自动分类。</p>
+<p>背景：2000 万 SKU，每个要挂到四级类目树（服饰 > 女装 > 连衣裙 > 碎花连衣裙）。类目树 5000+ 叶子节点。运营团队 30 人手动分类，新人培训就要两周。</p>
+<p>"这明显是 AI 问题，"算法负责人说。"NLP 文本分类——用商品标题和描述预测类目。"</p>
+<p>团队用 BERT fine-tune。花了一个多月，精调后 Top-1 准确率 87%。</p>
+<p>内部评审。所有人都觉得不错。30 人团队的效率提升会很显著。</p>
+<p>然后一个实习生做了一件事。不是被安排的任务——是他自己好奇。</p>
+<p>他统计了过去一年运营手动分类的记录，发现了一个规律：2000 万商品中，Top 200 的类目覆盖了 92% 的商品。不是均匀分布——是极度集中的长尾。</p>
+<p>然后他写了一个几百行的 Python 脚本。规则引擎：品牌词映射 + 类目关键词匹配 + 已分类商品的相似标题直接复用。没有模型。没有训练。没有 GPU。</p>
+<p>他跑了一遍。准确率 91%。</p>
+<p>算法团队沉默了。</p>
+<p>不是模型不好。是问题不需要模型。一个类目高度集中的长尾分布——规则覆盖头部的效果超过了可接受的工程标准。</p>
+<p>那个 BERT 模型后来没有上线。它成了一个技术验证——证明"这条路技术上走得通，但没有必要"。</p>
+<hr>
+<p>这个故事里算法团队做错了什么？没有。他们用最专业的方式解决了被交给他们的问题。</p>
+<p>问题出在更上游：<strong>没有人问一句"这个真的需要 AI 吗？"</strong></p>
+<p>所有人都默认了"分类 → NLP"。这是 AI 行业的有害默认假设。</p>
+<hr>
+<h2>一个有害的默认假设</h2>
+<p>遇到问题 → 用 AI。</p>
+<p>这个默认假设在 2025 年是错的。因为现在 AI 太强了，强到让人觉得所有问题都是 AI 问题——手里有把瑞士军刀，看什么都是螺丝。</p>
+<p>FDE 的第一反应是反向的：<strong>遇到问题 → 先试不用 AI。</strong></p>
+<p>不是说永远不用。是说"不用 AI"是默认选项，"用 AI"是需要论证的特殊选项。</p>
+<p>因为 AI 有代价。每一个 AI 组件都带来非确定性——同样的输入不一定同样的输出。沉默失败——错误不报错，只是一点点偏。维护成本——模型会过期、Prompt 要调、数据分布会漂移。调试难度——你在跟概率分布对话，不是在跟代码对话。成本——不只是 API 账单，是标注、评估、排查的全周期成本。</p>
+<p>这些代价在 PoC 阶段几乎看不见。生产环境每条都兑现。</p>
+<p><strong>如果你三条规则能解决 80%，那就用规则解决 80%。剩下 20% 再用 AI。你的系统最终更可靠、可调试、便宜。</strong></p>
+<hr>
+<h2>五个问题：AI 适格性检查</h2>
+<p>拿到一个需求之后，FDE 要问五个问题。回答完，大约一半的需求不会走向 AI。</p>
+<h3>第一问：有明确的输入和输出吗？</h3>
+<p>AI 最擅长的是"映射"——输入 A，输出 B。但如果连输入和输出都定义不清楚，AI 帮不上忙。</p>
+<p>"帮我们的销售团队做得更好"——这不是 AI 问题。这是"问题还没被定义"。</p>
+<p>"帮我们的客服更快地找到退换货政策"——这是。输入是客户的退换货问询，输出是适用的政策条款。</p>
+<p>如果一个需求的输入和输出你没法用三句话描述清楚，先别想技术方案。先去把需求搞明白。</p>
+<h3>第二问：有足够的评估数据吗？</h3>
+<p>这个问题对传统 ML 模型的约束更大——分类器需要几百甚至几千条标注。但 LLM 时代这个问题变轻了——few-shot、零样本推理让数据需求下降了。</p>
+<p>但它没有消失。</p>
+<p>LLM 在零样本情况下能做很多事，但你的评估集呢？你不知道它在你的数据上表现如何，除非你有一个标注过的测试集去测。</p>
+<p>评估集仍然是必需的。而在某些垂直领域——医疗、法律、金融——没有高质量标注数据，你根本没法评估。</p>
+<h3>第三问：有可度量的成功标准吗？</h3>
+<p>"让答案更准"不是可度量的标准。</p>
+<p>"意图分类准确率 ≥ 85%，衡量方式：人工抽查 200 条/周"——这是可度量的。</p>
+<p>如果一个项目没法定义成功标准，那它就算"成功了"也没人知道。而且一定会有人事后说你"没成功"。</p>
+<h3>第四问：错误容忍度是多少？</h3>
+<p>AI 会犯错。接受这个事实。</p>
+<p>关键问题是：这个场景能容忍多少错？以及错误的代价是什么？</p>
+<ul>
+<li>电影推荐错了 → 用户耸耸肩。容忍度高。</li>
+<li>医疗诊断辅助错了 → 可能误诊。容忍度极低。</li>
+<li>AI 客服说错了退换货政策 → 客户投诉，人工介入，成本可控。容忍度中等。</li>
+</ul>
+<p>容错度决定了你能不能用 AI、用多深的 AI、要不要加人工审核节点。</p>
+<p>有些场景——比如自动生成对外的法律文本、自动开药方——错误容忍度接近零。这些场景 FDE 应该主动建议"不要全自动"。不是 AI 不够好，是代价太高。</p>
+<h3>第五问：用户准备好接受非确定性了吗？</h3>
+<p>用户习惯了确定性系统。点一个按钮，结果每次一样。</p>
+<p>AI 系统不是这样的。同一个问题，两次回答可能不同——措辞不同、详略不同、有时正确有时微妙地偏差。</p>
+<p>有些用户能接受。有些不能。如果用户群的期待是"每次结果一模一样"，而你的方案做不到——这个方案不管技术多好，都会遭遇用户抵制。</p>
+<hr>
+<p>这五个问题筛完，大约一半的"AI 项目"不需要 AI。</p>
+<hr>
+<h2>规则先行</h2>
+<p>FDE 的信条：</p>
+<blockquote>
+<p>规则能覆盖用规则。规则不够用检索。检索不够用 LLM。LLM 不够用微调。微调不够再考虑训练。</p>
+</blockquote>
+<p>从左到右：成本递增、复杂度递增、维护负担递增。</p>
+<h3>为什么规则是首选</h3>
+<p>规则的优势：</p>
+<ul>
+<li>确定性强。同样的输入永远同样的输出。</li>
+<li>调试快。出问题了看日志就知道哪条规则被触发了、哪条没触发。</li>
+<li>改起来容易。改一行规则不用重训模型。</li>
+<li>零推理成本。没有 API 调用、没有 GPU 消耗。</li>
+</ul>
+<p>规则的劣势：</p>
+<ul>
+<li>覆盖不了开放域。规则处理不了"意思差不多但措辞完全不一样"的输入。</li>
+<li>维护成本随规则数量增长。500 条规则还行，5000 条就变成一锅粥。</li>
+</ul>
+<p>什么时候该从规则升级到 AI？规则数量超过了你愿意维护的阈值，同时规则的覆盖率出现了明显的天花板。</p>
+<h3>检索是第二选择</h3>
+<p>很多时候用户要的不是"生成"而是"找到"。找对了，展示原文就够了。</p>
+<p>案例 A 的物流查询——客户输入快递单号，系统返回最新物流状态。不需要 AI 生成一句话"您的包裹在 X 月 X 日到达了 XX 中转站"。把物流轨迹表直接展示出来更清晰、更可靠、零成本。</p>
+<p>有些人觉得"让 AI 润色一下"是更好的用户体验。实际上不是。用户查物流的时候要的是准确——时间、地点、状态。每一层 AI 加工都是增加错误概率。</p>
+<hr>
+<h2>这个信条的反直觉之处</h2>
+<p>"能不用 AI 就不用 AI"——从一个做 AI 的人嘴里说出来，听起来像自我否定。</p>
+<p>不是的。</p>
+<p>恰恰相反。正因为做 AI，才知道 AI 的边界在哪。才不会被 demo 效果迷惑。才知道上线之后哪些地方会裂开。</p>
+<p><strong>最懂 AI 的人，最知道什么时候别用 AI。</strong></p>
+<p>这个信条对 FDE 的商业影响也是正向的。一个客户发现你主动建议"这个地方不需要 AI，规则就够了"——他们信任你的概率是上升的，不是下降的。因为他们意识到你不是来卖技术的。你是来解决问题的。</p>
+<p>在一个所有人都在吹 AI 的行业里，一个敢说"别用"的人，是稀有资产。</p>
+<hr>
+<h2>过度 AI 化的三个真实代价</h2>
+<h3>代价一：系统变慢</h3>
+<p>每加一层 AI = 加一层延迟。LLM API 调用动辄 1-3 秒。如果你用 LLM 处理一个本可以用规则在 0.01 秒完成的任务，你付出了 100-300 倍的延迟成本。用户感知的是"系统变慢了"。</p>
+<h3>代价二：系统变贵</h3>
+<p>API 调用每次都在烧钱。规则引擎零边际成本。一个日均 10 万次调用的系统，如果用 LLM 处理所有请求，月成本可能是规则方案的几百倍。这笔钱不是在预算表里的一次性投入——是每个月都在烧。</p>
+<h3>代价三：系统变脆</h3>
+<p>非确定性组件越多，排查越难。一个纯规则系统出了错——你看日志就知道哪条规则触发了、为什么错。一个 LLM 系统出了错——你需要排查 Prompt、模型版本、温度参数、上下文内容、检索结果。变量多了不止一个量级。</p>
+<p><strong>反向能力：把一个"大 AI"拆成多个"小 AI + 规则"——这是成熟 FDE 的标志。</strong></p>
+<hr>
+<h2>案例推演：两个案例中的"不用 AI"决策</h2>
+<h3>案例 A：物流查询</h3>
+<p>客服中心日均来电 2000，其中大约 500 通是物流查询——"我的快递到哪了？"</p>
+<p>陈柏宇的方案：</p>
+<p>Step 1：对接物流系统 API，App 端展示实时物流轨迹。预期：物流来电减少 40%。</p>
+<p>Step 2：电话 IVR 语音查询——客户来电输入快递单号，系统自动播报最新物流状态。不需要人工客服。不需要 AI。一个电话按键 + TTS 播报。</p>
+<p>Step 3：剩余无法通过前两步解决的复杂物流问题（比如丢件、破损），转人工。</p>
+<p>整个物流查询场景，没有用到一行 AI 代码。</p>
+<p>效果：上线后物流相关来电从日均 500 降到 180。省下来的不只是 AI 的 API 费用——是省掉了"搭建、测试、维护一个 AI 物流查询模块"的全部工程成本。</p>
+<h3>案例 B：销售 CRM 数据清洗</h3>
+<p>林小棠在 CRM 数据质量扫描之后，发现许多销售记录的"下次跟进日期"字段是空的。</p>
+<p>有人提议用 AI 分析沟通记录、预测合适的跟进时间。</p>
+<p>林小棠否决了。"缺数据的根本原因是 CRM 的表单设计——'下次跟进日期'是一个选填字段，放在页面最下面。把默认跟进日期改成'一周后'、把字段改成必填、放到录入页第一屏。"</p>
+<p>改了三个前端配置。空值率从 62% 降到了 14%。</p>
+<p><strong>不是所有问题都需要技术方案。有些问题需要的是改个表单。</strong></p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别一上来就选技术方案。</strong></p>
+<p>先把问题和约束搞清楚。问题是什么？能不能不用 AI？如果能，用哪种"非 AI 方案"？如果不能，为什么不能？不是因为"AI 很酷"，是具体的技术原因。</p>
+<p><strong>2. 别把规则的维护成本想得太高。</strong></p>
+<p>"规则不好维护"是模型党最常见的论点。但你维护过一个生产中的模型吗？数据漂移、Prompt 调优、评估集更新、API 版本变更——模型的维护成本被严重低估了。</p>
+<p><strong>3. 别在不需要解释的决策上用 AI。</strong></p>
+<p>有些决策不需要解释——垃圾邮件过滤、电影推荐、搜索结果排序。用户不关心"为什么这个邮件被过滤了"。AI 在这些地方很好。</p>
+<p>有些决策必须能解释——贷款审批被拒、医疗诊断结果、保险理赔结论。在这些场景用黑盒 AI，等于给自己埋雷。要么用可解释的规则，要么用 AI + 人工审核。</p>
+<hr>
+<h2>检查清单</h2>
+<p>启动方案设计之前：</p>
+<ul class="checklist">
+<li>五个 AI 适格性问题全部回答了吗？</li>
+<li>有人评估过"不用 AI 的方案"吗？不是走过场，是认真做了。</li>
+<li>如果只用规则+检索，能做到什么程度？</li>
+<li>这个场景的错误容忍度是多少？代价是谁承担？</li>
+<li>AI 带来的额外成本——不只是钱——列清楚了吗？非确定性、调试难度、维护负担？</li>
+<li>如果用 AI，是"需要"还是"想要"？诚实回答。</li>
+</ul>
+<hr>
+<p><em>第二篇：侦察——搞清楚问题再动手。</em></p>
+<a class="next-chapter" href="chapter-05.html"><span class="arrow">下一章 →</span><br>第 5 章｜用户说的不是需求</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

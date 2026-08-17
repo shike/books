@@ -1,0 +1,19 @@
+# ===== 旧版平铺文件(已并入子目录) =====
+# 章节源(已并入 chapters/)
+ai_coding_book_sec*.md
+# 配图(已并入 figures/)
+ai_coding_book_sec*.png
+sec*.png
+# 工具脚本(已并入 scripts/)
+_md2docx.py
+_merge_final_v2.py
+# 主书产物(已并入 dist/)
+ai_coding_book_final.*
+# 旧版 assets 目录(已并入 assets/)
+/ai_coding_book_assets/
+# 旧版 research 目录(已并入 assets/research/)
+/research/
+# 备份
+README.original.md.bak
+# 系统文件
+.DS_Store

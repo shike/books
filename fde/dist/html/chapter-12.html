@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 12 章｜Agent：让 AI 可靠，不是让 AI 炫 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-11.html">← 上一章</a><span class="sep">|</span><a href="chapter-13.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-12.svg" alt="第 12 章｜Agent：让 AI 可靠，不是让 AI 炫" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第三篇：构建</div>
+<h1>第 12 章｜Agent：让 AI 可靠，不是让 AI 炫</h1>
+<h2>一个故事</h2>
+<p>一家 SaaS 公司 2024 年初把帮助文档做成 AI Agent。用户不用翻文档——直接问"怎么把数据导出到 Salesforce？"Agent 自动搜索文档、理解数据模型、生成步骤、甚至调用 API 帮用户执行。</p>
+<p>CTO 全员会 demo 时，Agent 流畅完成所有步骤。全场鼓掌。</p>
+<p>上线两周后，用户问："帮我把上个月的销售报表导出到 Salesforce。"</p>
+<p>Agent 做了以下事：理解意图（导出报表到 Salesforce）、搜索文档（找到"导出数据"和"Salesforce 集成"两篇）、调用 API（获取销售数据）、映射字段（试图把销售字段映射到 Salesforce 字段）、执行导出（调 Salesforce API）。</p>
+<p>第四步出错。Agent 把"已取消的订单"也导出了——文档里没写"导出应排除哪些状态"。这个信息不存在于任何文档——是销售团队的常识。</p>
+<p>Salesforce 里被灌了几百条无效数据。销售 VP 暴怒。项目暂停。</p>
+<p>CTO 复盘说了一句："Agent 应该在第四步停下来，说'我不确定哪些数据该被排除，请确认'。"</p>
+<p>Agent 没停。因为没人设计"什么时候停"。</p>
+<hr>
+<p>Agent 的可靠性不由智能程度决定。由你设计的"什么时候该停、什么时候该问、什么时候该降级"决定。</p>
+<h2>Agent 的本质</h2>
+<p>去掉花哨包装，Agent 做三件事：理解目标 → 决定下一步做什么 → 执行这一步，观察结果 → 回到第二步。循环直到目标达成或停止条件触发。</p>
+<p>Agent 的"智能"不在于推理链多复杂。在于你设计的停止条件和失败处理有多好。<strong>Agent 工程质量 = 异常处理的设计质量。</strong></p>
+<hr>
+<h2>可靠性乘法法则</h2>
+<div class="img-placeholder">[此处配图：Agent 可靠性乘法法则]</div>
+<p>每步独立成功率相乘。</p>
+<p>每步 90%：3 步链 = 72.9%。5 步链 = 59.0%。10 步链 = 34.9%。</p>
+<p>五步后已一半概率失败。每步 90% 还是<strong>乐观估计</strong>。真实生产中：工具调用可能失败（API 超时、参数格式错）、推理可能走偏（选错工具或参数）、环境可能变化（中间步骤改变系统状态、后续步骤基于过时假设）。</p>
+<p>FDE 设计 Agent 第一反应不是"能加多少步"。是"最少需要多少步"。每多一步，能说清楚"这一步带来的价值能覆盖它增加的总失败概率吗？"</p>
+<hr>
+<h2>Agent 结构本质是控制流设计</h2>
+<p>各种 Agent 名字——ReAct、Plan-Execute、Multi-Agent——听起来像不同物种。工程层面区别只有一个：<strong>控制流。</strong></p>
+<p><strong>ReAct（推理-行动循环）：</strong> 每步推理→行动→观察→回到推理。适合步骤数不固定、需根据中间结果动态调整路径。风险：可能在循环里打转。必须设最大步数。</p>
+<p><strong>Plan-Execute（先规划再执行）：</strong> 首步生成完整执行计划，后续顺序执行。适合步骤可预估、路径清晰、不需频繁调整。风险：首步计划有缺陷后续全偏。必须每步验证假设。</p>
+<p><strong>Multi-Agent（多 Agent 协作）：</strong> 多个 Agent 各自承担子任务，信息通过消息或共享上下文汇总。适合任务可自然拆分为独立子任务。风险：协调成本高、信息传递失真、一个 Agent 失败影响整链。</p>
+<p>三个结构不互斥。成熟 FDE Agent 方案通常是混合：外层 Plan-Execute 定整体流程（路径清晰），内层每步 ReAct 动态调整（处理不确定性），关键节点引入第二 Agent 验证（防单点失败）。</p>
+<hr>
+<h2>人机协作黄金分割线</h2>
+<div class="img-placeholder">[此处配图：人机协作黄金分割线——什么全自动、什么要审批、什么永远人做]</div>
+<p>FDE 设计 Agent 最重要的决策，也是业界谈得最少的。</p>
+<p>分割线位置取决于三个因素：<strong>错误代价。</strong> 越高线越右（人做更多）。<strong>可逆性。</strong> 导出错了可重来——可逆。退款能追回但代价大——半可逆。删库了能恢复吗——不可逆。不可逆操作必须人确认。<strong>AI 置信度。</strong> 有置信度可设阈值——高置信自动执行，低置信转人工。但注意：AI 置信度 ≠ 准确率。模型可以 98% 置信度给出错误答案。<strong>置信度和准确率的校准</strong>是 Agent 工程中重要但易被跳过的工作。</p>
+<p>实践参考：信息查询 → AI 自主。内容生成草稿 → AI 自主。内容发布 → AI 建议+人确认。数据修改 → AI 建议+人确认。退款/支付 → 永远人做。合同签署 → 永远人做。权限变更 → 永远人做。</p>
+<p>不是绝对标准。不同场景线划在不同位置。核心原则：<strong>线划好了，Agent 行为边界才清晰。没线，Agent 要么过于保守什么都不敢做，要么过于激进什么都替人做了。</strong></p>
+<hr>
+<h2>Agent 什么时候不该用</h2>
+<p>很多场景被包装成"需要 Agent"——实际只需<strong>一个带分支的流程。</strong></p>
+<p>案例 A 退换货：Agent 式 = 客户描述问题 → Agent 理解意图 → Agent 决定查哪些信息 → Agent 判断责任方 → Agent 生成回复。流程式 = 客户描述问题 → 意图分类器 → 如果是物流查询走物流查询流程 → 如果是退换货走退换货判断流程 → 按预定义规则生成回复。</p>
+<p>流程式没有 Agent。有一个分类器 + 两个规则引擎。和 Agent 式处理同一件事。</p>
+<p>流程式优势：每步可预测、可单独测试、失败不级联。意图分类器分错了，只是流程入口错了——不影响后续步骤逻辑。Agent 第一步推理偏了后面全偏。</p>
+<p><strong>Agent 应用在"需要根据中间结果动态调整策略"的场景。如果场景规则化、流程化、步骤可预知——不需要 Agent。</strong></p>
+<hr>
+<h2>Agent 测试困境</h2>
+<p>函数：输入 A，输出 B。可枚举等价类、边界值、异常。</p>
+<p>Agent：输入 A，可能通过路径 1、2、3……到达结果。路径空间组合爆炸。没法穷举。</p>
+<p>FDE 三层测试策略：</p>
+<p><strong>场景测试。</strong> 设计 50-100 个典型用户场景覆盖高频路径。每个场景定义"期望的行为序列"——不是期望的最终结果。测试每步响应是否合理。</p>
+<p><strong>边界探索。</strong> 构造"让 Agent 容易走偏"的输入——模糊指令、矛盾指令、超出能力、恶意指令。目的不是完美处理——是看清楚在什么情况下会怎样失败。知道失败模式才能设计停止条件和兜底。</p>
+<p><strong>生产影子监控。</strong> 上线后每步操作记录到日志。看决策轨迹——被反复执行的步骤（循环迹象）、被人工拦截的操作、花费时间远超预期的步骤。轨迹数据是改进 Agent 最重要的输入——比任何离线测试都有价值。</p>
+<hr>
+<h2>案例推演</h2>
+<h3>案例 A：Agent vs 流程</h3>
+<p>陈柏宇最初考虑用 Agent 处理退换货全流程。画了步骤数 × 每步失败概率的表：6 步各 90-99% → 整体约 63%。三成以上对话会在某环节出错。</p>
+<p>用流程式方案重画：4 步（2 AI + 2 非 AI）→ 整体约 80%。差距来自：步骤少了（4 vs 6），非 AI 比例高了（非 AI 近 100% 成功率）。</p>
+<p>选了流程式。退换货流程几乎没有"需根据中间结果灵活调整策略"的部分。责任判断确定的（物流状态+时间窗口→责任方），政策检索确定的（检索→返回），回复生成确定的（信息+约束→回复）。</p>
+<p>"这不是一个需要 Agent 的问题。"</p>
+<h3>案例 B：客户调研 Agent</h3>
+<p>林小棠的销售助手有一个功能确实需要 Agent——客户调研。"帮我调研这个潜在客户，他们最近在做什么、痛点可能是什么、哪些产品能帮到他们。"确实需要：先搜索公开信息（新闻、财报、招聘）、从信息中提取关键信号、交叉比对典型痛点、匹配产品线、生成报告。路径不定，每步发现决定下步方向。</p>
+<p>林小棠设计的关键不是推理能力——是停止条件：最多搜索 10 次（防无限循环）、最多 5 个信息源（防过载）、信息来源矛盾时标注"信息矛盾"不选一个、报告中每项判断标注来源 URL、某步超 30 秒输出"部分完成"不卡住。</p>
+<p><strong>停止条件让花哨能力落到了可靠性地板上。</strong></p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别把一切都做成 Agent。</strong> 能用流程用流程，能用检索用检索。Agent 是最后选项。</p>
+<p><strong>2. 别被 demo 迷惑。</strong> 连续五步一气呵成很漂亮。没看到的是录 demo 前试了十次成功两次。</p>
+<p><strong>3. 别只测 happy path。</strong> 最重要的测试是"它会在哪里失败、怎么失败"。需要的不是"能做得更好"，是"在最坏情况下不做不可逆的错事"。</p>
+<p><strong>4. 别等上线后才想停止条件。</strong> 设计阶段定义：最大步数、超时阈值、降级行为、人工介入触发条件。停止条件是方案设计的一部分不是运维补丁。</p>
+<hr>
+<h2>检查清单</h2>
+<ul class="checklist">
+<li>真的需要 Agent 吗？流程式能做吗？</li>
+<li>步骤链多长？每步独立成功率估算过吗？整体成功率算过吗？</li>
+<li>停止条件定义了吗？</li>
+<li>人机分割线划了吗？</li>
+<li>有没有不可逆操作？加了人工确认吗？</li>
+<li>边界探索测过了吗？</li>
+<li>操作日志完整吗？出问题能回放决策轨迹吗？</li>
+<li>连续失败三次，系统做什么？</li>
+</ul>
+<hr>
+<p><em>下一章：评估集就是产品规格书。</em></p>
+<a class="next-chapter" href="chapter-13.html"><span class="arrow">下一章 →</span><br>第 13 章｜评估集就是产品规格书</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《FDE：AI 的胜负不在模型》— 目录</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<div class="index-header">
+<img src="covers/main-cover.svg" alt="FDE：AI 的胜负不在模型" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+<p class="subtitle">前线部署工程师的落地方法论</p>
+<p class="author">全书 26 章 + 3 篇深度案例 + 附录</p>
+</div>
+<div class="part-section">
+<div class="part-title">第一篇：认知</div>
+<ol>
+<li><a href="chapter-01.html"><span class="ch-num">第1章</span>第 1 章｜FDE 不是部署工程师</a></li>
+<li><a href="chapter-02.html"><span class="ch-num">第2章</span>第 2 章｜PoC 地狱</a></li>
+<li><a href="chapter-03.html"><span class="ch-num">第3章</span>第 3 章｜够好就行</a></li>
+<li><a href="chapter-04.html"><span class="ch-num">第4章</span>第 4 章｜能不用 AI 就不用 AI</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">第二篇：侦察</div>
+<ol>
+<li><a href="chapter-05.html"><span class="ch-num">第5章</span>第 5 章｜用户说的不是需求</a></li>
+<li><a href="chapter-06.html"><span class="ch-num">第6章</span>第 6 章｜把问题翻译成 AI 问题</a></li>
+<li><a href="chapter-07.html"><span class="ch-num">第7章</span>第 7 章｜三轴验证</a></li>
+<li><a href="chapter-08.html"><span class="ch-num">第8章</span>第 8 章｜期望管理</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">第三篇：构建</div>
+<ol>
+<li><a href="chapter-09.html"><span class="ch-num">第9章</span>第 9 章｜模型只是零件</a></li>
+<li><a href="chapter-10.html"><span class="ch-num">第10章</span>第 10 章｜Prompt 是需求规格书</a></li>
+<li><a href="chapter-11.html"><span class="ch-num">第11章</span>第 11 章｜RAG：信息的组织比检索更重要</a></li>
+<li><a href="chapter-12.html"><span class="ch-num">第12章</span>第 12 章｜Agent：让 AI 可靠，不是让 AI 炫</a></li>
+<li><a href="chapter-13.html"><span class="ch-num">第13章</span>第 13 章｜评估集就是产品规格书</a></li>
+<li><a href="chapter-14.html"><span class="ch-num">第14章</span>第 14 章｜成本、延迟、质量：只能挑两个</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">第四篇：上线之后</div>
+<ol>
+<li><a href="chapter-15.html"><span class="ch-num">第15章</span>第 15 章｜上线是开始，不是结束</a></li>
+<li><a href="chapter-16.html"><span class="ch-num">第16章</span>第 16 章｜活的系统需要养</a></li>
+<li><a href="chapter-17.html"><span class="ch-num">第17章</span>第 17 章｜AI 系统的故障是沉默的</a></li>
+<li><a href="chapter-18.html"><span class="ch-num">第18章</span>第 18 章｜复盘：别再写下次注意</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">第五篇：路径</div>
+<ol>
+<li><a href="chapter-19.html"><span class="ch-num">第19章</span>第 19 章｜FDE 是打出来的</a></li>
+<li><a href="chapter-20.html"><span class="ch-num">第20章</span>第 20 章｜FDE 不是终点</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">第六篇：行业战场</div>
+<ol>
+<li><a href="chapter-21.html"><span class="ch-num">第21章</span>第 21 章｜医疗 AI：当错误不可接受</a></li>
+<li><a href="chapter-22.html"><span class="ch-num">第22章</span>第 22 章｜金融 AI：当可解释性是硬约束</a></li>
+<li><a href="chapter-23.html"><span class="ch-num">第23章</span>第 23 章｜制造 AI：当物理世界不配合</a></li>
+<li><a href="chapter-24.html"><span class="ch-num">第24章</span>第 24 章｜政务 AI：当决策链比技术链长十倍</a></li>
+<li><a href="chapter-25.html"><span class="ch-num">第25章</span>第 25 章｜教育 AI：当使用者和决策者是两群人</a></li>
+<li><a href="chapter-26.html"><span class="ch-num">第26章</span>第 26 章｜法律 AI：当精确的定义完全不同</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">深度案例</div>
+<ol>
+<li><a href="case-study-01.html"><span class="ch-num">案例｜</span>深度案例一｜医疗影像 AI：一个价值 600 万的失败</a></li>
+<li><a href="case-study-02.html"><span class="ch-num">案例｜</span>深度案例二｜客服 AI：从替换人到帮人的全生命周期</a></li>
+<li><a href="case-study-03.html"><span class="ch-num">案例｜</span>深度案例三｜销售 AI 助手：当技术不是最难的部分</a></li>
+</ol>
+</div>
+<div class="part-section">
+<div class="part-title">附录</div>
+<ol>
+<li><a href="appendix.html"><span class="ch-num">附录</span>附录</a></li>
+</ol>
+</div>
+
+<div class="book-footer" style="margin-top:60px;">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+<p style="margin-top:.5em;">全书的 HTML 版本。点击任意章节开始阅读。</p>
+</div>
+</body>
+</html>

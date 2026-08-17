@@ -1,0 +1,35 @@
+# ===== 顶层 .gitignore =====
+# 各子目录有自己的 .gitignore 处理平铺冗余
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 生成
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 临时文件
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# 各书原 README 备份(重写时保留作参考,不入版本)
+**/README.original.md.bak
+
+# 大型二进制(可选,实际看各书需求)
+# *.docx
+# *.pdf
+# *.epub

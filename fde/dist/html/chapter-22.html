@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 22 章｜金融 AI：当可解释性是硬约束 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-21.html">← 上一章</a><span class="sep">|</span><a href="chapter-23.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-22.svg" alt="第 22 章｜金融 AI：当可解释性是硬约束" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第六篇：行业战场</div>
+<h1>第 22 章｜金融 AI：当可解释性是硬约束</h1>
+<h2>一个故事</h2>
+<p>2022 年，一家城商行上线了 AI 信贷审批系统。</p>
+<p>在这之前，小微企业经营贷的审批是这样的：客户经理上门尽调 → 写调查报告 → 提交风控部门 → 人工审核财务报表、征信报告、纳税记录 → 给出审批意见。一笔贷款从申请到批复，平均 3-5 个工作日。</p>
+<p>AI 系统把流程压缩到了 30 分钟。客户在 App 上提交申请、授权数据抓取（征信、税务、流水），AI 自动跑风控模型，给出审批建议。高信用自动批，低信用自动拒，中信用转人工复核。</p>
+<p>上线前三个月，数据很漂亮：审批时效从 5 天降到了半天，人工审核工作量下降了 60%。行长在季度会上说"这是数字化转型的标杆"。</p>
+<p>第六个月，银保监局进驻检查。</p>
+<p>检查官随机抽取了 50 笔 AI 自动拒绝的贷款申请，问了风控部门一个问题："每一笔拒绝的理由是什么？"</p>
+<p>技术团队的初步回答是："系统的综合评分低于阈值。"</p>
+<p>"什么叫综合评分？是哪些指标、权重怎么设定、为什么这些权重？"</p>
+<p>技术团队翻出了模型文档。文档里写了特征列表和权重，但是特征的重要性排名是通过 XGBoost 的 feature importance 自动生成的——"贷款期限"排第一、"纳税评级"排第二、"行业类型"排第三。"为什么贷款期限是最重要的特征？"——没有人能说清楚。</p>
+<p>检查官又问："有没有拒绝的案例中，申请人的纳税评级是 A 级、征信良好、但被拒了？"</p>
+<p>查了一下：有。47 笔。</p>
+<p>"这些人的拒绝理由是什么？"</p>
+<p>"综合评分低于阈值。"</p>
+<p>"具体原因？"</p>
+<p>沉默。</p>
+<hr>
+<p>这个问题在互联网行业不构成问题——"算法推荐的，用户不喜欢就划走"。但在金融行业，这是一个致命问题。因为<strong>一个人的贷款申请被拒绝，直接影响他的生活和经营</strong>。法律要求这个拒绝决定是可解释、可申诉的。</p>
+<p>监管开出的整改意见："信贷审批系统的自动拒绝决策，必须具备可解释的拒绝理由，能够在客户申诉时提供明确的指标依据。审批模型的决策逻辑需要可追溯。"项目被暂停，AI 自动拒绝功能下线，退回人工审批。</p>
+<hr>
+<h2>金融 AI 的核心矛盾：你说不清楚为什么，就不能用</h2>
+<p>金融 AI 做的是"决策"——批不批贷款、定不定保费、给不给理赔。这些决策影响具体的财务结果。被拒绝的人有权利知道"为什么"。监管有责任确保"不是歧视"。</p>
+<p><strong>金融行业的约束不是"AI 不准"。是"AI 不准的时候不能说'模型说的'"。</strong></p>
+<hr>
+<h2>一个更隐蔽的反例：当偏见藏在地域特征里</h2>
+<p>2023 年，一家保险公司的小微企业雇主责任险 AI 核保模型在内部审计中被发现了一个问题。</p>
+<p>模型对注册地在某几个特定区域的企业的拒保率显著偏高——高出均值 2.3 倍。排查发现，模型的训练数据中，这几个地区的企业历史赔付率确实更高——因为这些地区集中了某些高风险制造业。</p>
+<p>但进一步排查发现了一个更麻烦的问题：赔付率高不是因为"地域"，是因为"行业"。但因为训练数据中这几个地区的制造业集中度极高，模型学到了"地域 ≈ 高风险"——直接把地域当成风险指标。结果：同样的制造业企业，如果注册地在 A 区，保费比注册地在 B 区的同类型企业高了 30%。</p>
+<p>这在技术上叫"代理变量偏见"——模型用一个和敏感属性（种族、社会阶层、地域）高度相关的特征来间接做歧视性判断。模型没有显式地"歧视 B 区"，但它的判断结果在统计上和歧视没有区别。</p>
+<p><strong>如果你不做切片分析——把不同地域、不同行业、不同企业规模的通过率和保费做个交叉对比——你永远不会发现这个问题。模型精度可能很高，但它的公平性是烂的。而在金融行业，监管更在意的是公平性，不是精度。</strong></p>
+<hr>
+<h2>FDE 方法论在金融的特殊应用</h2>
+<h3>三轴验证：组织轴的复杂性</h3>
+<p>金融行业的组织轴比大多数行业复杂——不是因为人多，是因为监管角色内嵌在组织里。你会同时面对业务部门（想要更快更准）、风控部门（想要不出风险事故）、合规部门（想要每一个决策可解释可追溯）、IT 部门（想要系统稳定）。这四个人不是一个老板——分别向不同副行长汇报。而且外面还有银保监、人民银行、可能的审计。合规部门在项目里的真实动机不是"让项目成功"——是"项目如果出事，合规部门不能被追责"。</p>
+<p>FDE 在金融行业的利益相关者地图上，合规部门的位置往往比业务部门更重要。因为合规部门有一票否决权。<strong>有效策略：项目第一周把合规部门的人拉进评审会。早期介入的合规是盟友，晚期介入的合规是拦路虎。</strong></p>
+<h3>够好就行：金融的"够好"包含了可解释性</h3>
+<p>在金融行业，一个精度 87% 但每个决策可追溯、可解释、可申诉的方案，好过一个精度 94% 但是黑盒的方案。因为监管不看你精度——监管看你"出了事能不能说清楚"。</p>
+<p>以信贷审批为例。AI 给出的拒绝建议必须附带"拒绝理由清单"：征信查询次数 8 次（阈值 ≤ 6 次）、所属行业风险评级为高、纳税记录缺失 3 个月。拒绝理由不是事后生成的——是审批流程中每个特征的阈值判断被记录下来，当综合评分低于阈值时，触发拒绝的具体指标被自动提取。客户申诉时，银行能调出具体指标级原因——而不是"模型说的"。</p>
+<h3>评估：公平性审计</h3>
+<p>金融 AI 的评估还要加一个维度：公平性。"这套审批系统对不同年龄段、不同地域、不同性别的申请人，审批通过率是否有显著差异？"公平性审计不是一次性的。每季度一次。切片分析、差异排查、歧视性特征清理——变成制度化动作。</p>
+<h3>反馈闭环：金融的反馈周期极长</h3>
+<p>互联网 AI 反馈是即时的——推一条内容，下一秒知道点没点。金融 AI 反馈是滞后的——批一笔贷款，一年到三年才知道"好贷款"还是"坏贷款"。FDE 在金融行业要做的周期性动作：每个季度重新审视"好客户"的定义是否仍然成立。如果经济下行期，过去"按期还款"的客户出现大面积逾期——模型的训练标签需要重新定义。</p>
+<hr>
+<h2>推演：保险理赔 AI 的从黑盒到白盒</h2>
+<p>一家保险公司做了 AI 理赔审核系统。小额医疗理赔自动审核——客户上传发票和病历，AI 判断是否属于保险责任范围。以前人工审核一单平均 15 分钟，AI 30 秒。上线后理赔部人力需求下降 40%。</p>
+<p>第三个月，监管抽查发现 AI 拒绝了 12% 的理赔申请，但拒绝理由里 30% 只写了"不符合理赔条件"——没有具体说明哪一条不符合。</p>
+<p>FDE 接手整改，做了三件事。</p>
+<p><strong>第一，把 AI 的拒绝逻辑从黑盒变成白盒。</strong> 原来模型是一个端到端分类器——输入发票和病历，输出"通过/拒绝"。改成分步推理——发票真实性校验 → 保险责任匹配 → 额度校验。每一步独立运行，独立输出结果。拒绝时标注第几步拒绝、什么原因。</p>
+<p><strong>第二，把拒绝理由从"不符合理赔条件"变成用户看得懂的表述。</strong> "您本次申请的门诊费用中，包含滋补保健类药品（阿胶），该类药品不在您的保单'门诊医疗责任'的保障范围内。其他符合保障范围的费用共计 385 元已理赔，请查收。"</p>
+<p><strong>第三，增加了申诉入口。</strong> 每条拒绝通知最后都有一句"如果您对本次理赔结论有疑议，可点击申诉，理赔专员会在 24 小时内人工复核"。申诉量从每月 200+ 降到不到 50——不是因为拒绝率降低，是因为拒绝理由清楚了。</p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别在金融行业用"模型说的"当理由。</strong> 如果你的 AI 做出了影响客户财务利益的决策，你必须能解释为什么。解释不是在事后编——是在方案设计时就内嵌。</p>
+<p><strong>2. 别让合规部门最后才知道项目内容。</strong> 合规部门是金融 AI 项目最关键的干系人之一。第一周就把他们拉进来。让他们在方案阶段就告诉你"这个点可能会被监管问"。</p>
+<p><strong>3. 别只做一次公平性审计。</strong> 公平性审计不是上线前的 checkbox。是每季度一次的制度化动作。</p>
+<p><strong>4. 别低估金融行业的反馈周期。</strong> 今天的 AI 审批决策，后果要到一两年后才显现。模型用的是两年前的标签。方案设计中必须体现为"定期重新审视标签定义"。</p>
+<p><strong>5. 别忽略代理变量偏见。</strong> 模型通过"看起来无辜"的特征来做歧视性判断——地域、手机型号、操作系统语言。切片分析覆盖的维度要足够宽，才能发现这些隐藏的歧视路径。</p>
+<hr>
+<h2>检查清单</h2>
+<p>金融 AI 项目：</p>
+<ul class="checklist">
+<li>合规部门参与方案设计了吗——不是被动审批，是主动参与？</li>
+<li>每一个 AI 决策路径都有对应的可解释性设计吗？</li>
+<li>拒绝/降额/加费类决策有没有附带具体到指标级别的理由清单？</li>
+<li>公平性审计做了吗？定期制度化了吗？</li>
+<li>代理变量偏见筛查做了吗——模型有没有通过看似中性的特征做歧视性判断？</li>
+<li>"好客户"标签的定义多久重新审视一次？</li>
+<li>数据不出内网的约束确认了吗？</li>
+</ul>
+<hr>
+<p><em>下一章：制造 AI——当物理世界不配合。</em></p>
+<a class="next-chapter" href="chapter-23.html"><span class="arrow">下一章 →</span><br>第 23 章｜制造 AI：当物理世界不配合</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

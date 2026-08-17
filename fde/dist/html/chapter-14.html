@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 14 章｜成本、延迟、质量：只能挑两个 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-13.html">← 上一章</a><span class="sep">|</span><a href="chapter-15.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-14.svg" alt="第 14 章｜成本、延迟、质量：只能挑两个" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第三篇：构建</div>
+<h1>第 14 章｜成本、延迟、质量：只能挑两个</h1>
+<h2>一个故事</h2>
+<p>林小棠销售邮件 AI 上线一个月，CTO 提了优化需求："能不能把生成速度提一下？销售说点了要等三四秒。最好一秒内出来。"</p>
+<p>林小棠看数据：平均延迟 3.2 秒，P95 5.8 秒。拆开：LLM API 1.8 秒（56%）、客户画像查询 0.9 秒、RAG 检索 0.3 秒、其他 0.2 秒。</p>
+<p>"加速两条路：换更快模型——GPT-4o mini 代替 GPT-4o，延迟一秒内。但盲测显示可发送率从 67% 降到 51%。或 GPU 自部署——vLLM 部署微调开源模型，延迟一秒内质量保持。但月成本涨 4000 美元。"</p>
+<p>CTO："51% 可发送率不行，销售开始用了质量下降他们会不用的。"</p>
+<p>"我建议先不做延迟优化。3.2 秒平均延迟——销售写邮件要 12 分钟，3 秒等待在 12 分钟工作流里不是瓶颈。等使用量和预算基数上来，GPU 成本能被摊薄再做。"</p>
+<p>CTO 同意。</p>
+<hr>
+<p>林小棠没试图突破物理极限。清晰展示三条路径——降延迟但降质量、降延迟保质量但加成本、保持现状。让决策者选。</p>
+<h2>AI 三元悖论</h2>
+<div class="img-placeholder">[此处配图：三元悖论——成本、延迟、质量的三角，只能选两角]</div>
+<ul>
+<li><strong>低成本 + 高质量</strong> = 高延迟（用便宜模型多次推理反复验证）</li>
+<li><strong>低延迟 + 高质量</strong> = 高成本（GPU 集群、专用推理服务）</li>
+<li><strong>低成本 + 低延迟</strong> = 低质量（小模型、省计算）</li>
+</ul>
+<p>选两角，第三角自动确定。大多数场景 FDE 选"低成本 + 高质量"接受延迟。规模化阶段切换到"低延迟 + 高质量"接受成本。</p>
+<p>但决策前提：<strong>知道当前三角位置，有明确切换条件。</strong> 最差状况——没意识到在做三元权衡，以为三个都能好。</p>
+<hr>
+<h2>真正的成本不是 API 账单</h2>
+<h3>显性成本（每月有账单的）</h3>
+<p>API 调用费（按 token 或按调用次数）、GPU/服务器租赁或折旧、向量数据库/日志存储/监控工具等基础设施、第三方服务（邮件发送 API、OCR 服务等）。</p>
+<h3>半隐性成本（不是月账单但需要人力的）</h3>
+<p>数据标注（每次标注任务的外包成本或内部人力）、评估集维护（每月花在更新评估集上的人力）、Prompt 迭代和测试（每次模型升级或业务变更时的人力投入）、人工抽评（每周人工评估时间）。</p>
+<h3>全隐性成本（你感受得到但不好量化的）</h3>
+<p>非确定性带来的用户信任磨损（一次输出错误，用户对整个系统的信任下降）、排查成本（AI 出问题时的排查时间远高于传统软件）、组织摩擦（AI 系统引入的不确定性导致的内部争议和沟通成本）、未来维护债（今天写了复杂 Prompt，三个月后模型升级，Prompt 要重写）。</p>
+<p>FDE 在算账的时候，至少算到半隐性。全隐性成本至少要在方案文档里提到——不是为了吓人，是为了让决策者知道"AI 不是即插即用"。</p>
+<h3>一个真实的成本计算对比</h3>
+<p>假设一个 AI 客服系统，日均处理 2000 次对话：</p>
+<p><strong>方案一：全量 LLM（API 调用）</strong></p>
+<ul>
+<li>显性成本：API 费用约 3000 元/月</li>
+<li>半隐性成本：Prompt 调优每月约 20 小时 × 时薪 = 4000 元；评估集维护每月 10 小时 = 2000 元</li>
+<li>实际月成本：约 9000 元</li>
+</ul>
+<p><strong>方案二：规则 + LLM 混合（60% 规则，40% LLM）</strong></p>
+<ul>
+<li>显性成本：API 费用约 1200 元/月</li>
+<li>半隐性成本：规则维护每月约 15 小时 = 3000 元；Prompt 调优每月 8 小时 = 1600 元；评估集维护不变 = 2000 元</li>
+<li>实际月成本：约 7800 元</li>
+</ul>
+<p>全量 LLM 方案看起来"更智能"，但月成本高了 1200 元，同时带来了更高的非确定性风险和排查复杂度。规则 + LLM 混合在显性成本上更低，且确定性问题的零失败率是无价的——不体现在账单上。</p>
+<p><strong>FDE 算账的思维不是只看 API 账单那个数。是看"这个方案在 12 个月的全周期成本是多少"。</strong></p>
+<hr>
+<h2>延迟不是越低越好</h2>
+<p>不是所有的延迟降低用户都感知得到。</p>
+<p><strong>感知阈值</strong>：</p>
+<ul>
+<li>< 200ms：感觉是即时响应</li>
+<li>200ms - 1s：感觉有点延迟，但不会影响操作流畅度</li>
+<li>1s - 3s：能感觉到等待，可以接受</li>
+<li>3s - 10s：等待开始让人烦躁</li>
+<li>\> 10s：大部分人以为系统坏了</li>
+</ul>
+<p>在这个框架里看林小棠的案例：3.2 秒在"可以接受"的边缘。不是最优，但也不是痛点。把优化资源投到更重要的问题上，比把延迟从 3.2 秒压到 1 秒更有价值。</p>
+<p><strong>什么样的场景延迟是致命的？</strong></p>
+<ul>
+<li>实时对话（客户在电话那头等着，每多一秒沉默都是体验下降）</li>
+<li>交互式 UI（用户输入 → AI 建议 → 用户修改 → AI 重新建议——每一轮延迟都累加）</li>
+<li>批量处理但用户在看进度条（感知延迟 = 实际延迟 + 焦虑）</li>
+</ul>
+<p><strong>什么样的场景延迟不重要？</strong></p>
+<ul>
+<li>异步任务（提交后等通知，不盯着屏幕）</li>
+<li>批量处理无人值守（夜间跑批）</li>
+<li>在更大的工作流中 AI 只是一小步（发邮件花 12 分钟，AI 生成花 3 秒）</li>
+</ul>
+<p>FDE 不做"所有延迟都要优化"的承诺。做的：区分哪里延迟是痛点、哪里是可接受。</p>
+<hr>
+<h2>隐私是架构约束，不是加个脱敏</h2>
+<p>数据隐私在 AI 系统里不是一个"功能"，是一个架构约束。</p>
+<p>如果客户要求数据不能离开他们的 VPC——你的整个方案架构要变。不能用外部 API，必须自部署或使用本地推理。RAG 的向量库要部署在客户环境内。所有数据流——从输入到推理到输出——不能经过任何外部网络。</p>
+<p>这不是"加一层加密"就能解决的。加密解决的是传输安全和存储安全，解决不了"数据去了一个外部服务器"的合规问题。</p>
+<p>FDE 在隐私上的判断框架：</p>
+<p><strong>数据分类。</strong> 什么数据是敏感数据？PII（姓名、电话、邮箱）、业务数据（订单、合同）、系统数据（日志、指标）。</p>
+<p><strong>数据流地图。</strong> 画一张图，标注敏感数据在整个系统中的流动路径。每一步：数据在谁手里、经过什么网络、存在什么地方。</p>
+<p><strong>最小化暴露。</strong> 每一个外部调用——API、向量库、日志服务——问自己：这个调用真的需要传输敏感数据吗？能不能在本地做预处理，只发送匿名化结果？</p>
+<p>案例 A 的客服系统：客户的姓名、电话、订单号属于 PII。陈柏宇的方案里，LLM 的 Prompt 中的订单数据只包含"已处理"的字段——订单状态、物流事件、责任判断结果。客户的姓名和电话号码不进入 LLM Prompt。客服系统在传给 LLM 之前已经完成了订单查询和匿名化。LLM 收到的输入是"订单号 X，快递状态：已签收，签收时间 X"，不包含任何可以直接追溯到个人的信息。</p>
+<hr>
+<h2>案例推演：两个案例中的三元权衡</h2>
+<h3>案例 A：客服系统</h3>
+<p>初期选择：低成本 + 高质量，接受延迟。API 调用，不搞 GPU。</p>
+<p>随着日活增长：延迟开始成为问题。因为客服在电话中等待 AI 生成回复——2.5 秒的延迟在电话场景中很突兀。陈柏宇做了两件事：</p>
+<ol>
+<li>对延迟做了分流——意图分类类（需要快，因为影响流程入口）换成了更快的模型；回复生成（需要质量）保持原模型但加了流式输出——模型边生成边显示，感知延迟显著降低。</li>
+<li>设了一个阈值——当 API 调用成本超过 GPU 部署成本的交叉点时，做切换。</li>
+</ol>
+<h3>案例 B：销售邮件系统</h3>
+<p>林小棠对 CTO 的"一秒内"要求的回应不是"做不到"，是"做到了代价是什么"。</p>
+<p>她展示了三个选项：</p>
+<ul>
+<li>换小模型：延迟降到 0.8 秒，可发送率降到 51%</li>
+<li>GPU 部署：延迟降到 0.9 秒，质量保持，月成本涨 4000 美元</li>
+<li>保持现状：延迟 3.2 秒，质量保持，成本不变</li>
+</ul>
+<p>CTO 选了保持现状。</p>
+<p><strong>这就是 FDE 的角色：不是实现每一个优化需求，是帮决策者理解每一个优化需求的代价。</strong></p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别试图同时优化三角的三个角。</strong></p>
+<p>选两角。根据项目阶段和用户反馈，知道当前该牺牲哪个。</p>
+<p><strong>2. 别只算 API 账单。</strong></p>
+<p>至少算到半隐性成本。如果你的成本模型只有 API 调用费，你的预算一定会超。</p>
+<p><strong>3. 别在不需要的地方优化延迟。</strong></p>
+<p>先搞清楚用户感知到的延迟是什么、感知不到的是什么。优化感知不到的延迟，是浪费工程资源。</p>
+<p><strong>4. 别把隐私需求留到最后处理。</strong></p>
+<p>隐私影响架构。如果你的方案一开始假设"数据可以外传"，后来发现不能——你可能的要从 API 切到自部署，代价巨大。第一周就确认隐私约束。</p>
+<hr>
+<h2>检查清单</h2>
+<p>成本和约束评估：</p>
+<ul class="checklist">
+<li>当前方案在三元悖论的哪个位置？选的是哪两角、牺牲了哪一角？</li>
+<li>全成本算过了吗——显性、半隐性、全隐性？</li>
+<li>延迟的实际感知阈值是多少？用户真的觉得慢吗？</li>
+<li>隐私约束确认了吗——数据能不能出内网？如果不能，方案要改什么？</li>
+<li>如果要切换三角位置（比如从"低成本+高质量"切到"低延迟+高质量"），触发条件是什么？</li>
+</ul>
+<hr>
+<p><em>第四篇：上线之后——让方案活下来。</em></p>
+<a class="next-chapter" href="chapter-15.html"><span class="arrow">下一章 →</span><br>第 15 章｜上线是开始，不是结束</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 13 章｜评估集就是产品规格书 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="chapter-12.html">← 上一章</a><span class="sep">|</span><a href="chapter-14.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/chapter-13.svg" alt="第 13 章｜评估集就是产品规格书" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">第三篇：构建</div>
+<h1>第 13 章｜评估集就是产品规格书</h1>
+<h2>一个故事</h2>
+<p>陈柏宇客服系统上线第二个月，团队做了一次"Prompt 优化"——把回复生成 Prompt 中"简洁回答"改成"提供详细回答"。逻辑：短回复虽快但有时缺关键信息。给更多信息客户更满意。</p>
+<p>离线跑：BLEU 涨 0.8，ROUGE-L 涨 1.1。正向。</p>
+<p>上线。三天后客服主管反馈："AI 回复越来越啰嗦了。以前四五行现在一整段。客户不看。能改回去吗？"</p>
+<p>陈柏宇看日志。平均回复长度从 80 字涨到 140 字。BLEU 涨了，ROUGE 涨了。<strong>用户更不满意了。</strong></p>
+<p>问题不在模型不在 Prompt。在评估集。他的评估集衡量"回复和参考答案有多像"——不衡量"用户觉得好不好用"。评估集是一面镜子。镜子歪了，看到的一切都歪。</p>
+<hr>
+<p>这个错误太普遍。团队优化了一个能测量的指标——误以为在优化用户价值。</p>
+<h2>评估集 = AI 系统的需求文档</h2>
+<p>传统软件需求文档是 PRD——定义系统应该做什么。</p>
+<p>AI 系统也应该有 PRD。但 AI 系统的 PRD 不能只靠文字——"生成一段好的客服回复"太模糊。五个工程师读完会在脑子里生成五个不同版本的"好"。</p>
+<p><strong>AI 系统的真正需求文档是评估集。</strong> 用具体输入-输出对定义"好"。不是描述什么叫好——是给出例子"这就是好"、"这就是不好"。</p>
+<p>一份评估集包含：测试用例（输入 + 期望输出 + 评判维度）、标注标准（什么是正确/错误/部分正确）、边缘 case（容易翻车的类型）、反例（明确不该产生的输出）。</p>
+<p><strong>评估集质量决定 AI 项目质量。烂评估集比没评估集更危险——虚假信心支撑着错误决策。</strong></p>
+<hr>
+<h2>好评估集的三条硬标准</h2>
+<h3>来源是真实数据</h3>
+<p>不要自己编 case。你会不自觉地编"模型擅长处理"的输入。你的想象力受限于认知。真实用户表达远超你想象：打错字、省略主语、用方言、情绪化、逻辑跳跃。</p>
+<p>案例 A：陈柏宇第一版评估集自己编了 50 条——准确率 94%。上线后真实客户问题准确率 78%。差距来自客户表达方式的多样性——他用标准中文编，生产环境中客户发来的包含口误、拼音输入错误、行业黑话、省略句式。</p>
+<p><strong>从生产日志里抽。</strong> 每天随机抽 20 条真实输入，人工标注，加入评估集。</p>
+<h3>覆盖多层评判维度</h3>
+<p>AI 系统的输出可以同时"准确"但"没用"。</p>
+<p>陈柏宇客服回复评估维度：准确性（政策/流程引用是否正确）40%、简洁性（是否在 100 字内给出核心信息）25%、可操作性（客户看完知道下一步做什么）20%、语气（是否安抚情绪、无套话）15%。</p>
+<p>权重不是拍脑袋——是看了 200 条客服对话记录后总结的。</p>
+<p>一个回复可能在准确性满分（政策完全对）但可操作性零分——客户不知道下一步做什么。另一个可能语气满分但准确性扣分——安抚了情绪但给了错误信息。多维评判让你知道优化方向、牺牲什么维度、值不值得。</p>
+<h3>持续更新</h3>
+<p>评估集是活的。业务规则变 → 更新。新失败模式出现 → 加入。用户行为变（开始用语音输入口语化程度上升）→ 补充语音转写文本。</p>
+<p>死评估集比没评估集更危险——给你过时的、虚假的准确率。</p>
+<p>FDE 评估集节奏：每周从生产日志随机采 20 条标注加入。业务变更当天更新受影响用例。每月重新审视评估集分布和生产分布是否一致。</p>
+<hr>
+<h2>离线评估的死穴</h2>
+<p>离线评估告诉你的唯一一件事：模型在测试集上的表现。</p>
+<p>不等于用户觉得好不好用。不等于模型在真实数据分布上好不好。不等于上线后会不会变差。</p>
+<p>离线评估测不到"你的评估集没覆盖的维度"。没有"回复太长"维度——永远不会告诉你"回复太长了"。全是标准中文——永远不会告诉你"语音转写文本模型差很多"。</p>
+<p><strong>离线评估的作用是防止变差。在线评估的作用是发现变好。</strong> 离线告诉你改了 Prompt 后已知测试用例有没有退化。在线告诉你真实用户行为有没有改善——回复率、满意度、转人工率。两个信号必须同时看。只离线 = 蒙眼开车。只在线 = 不知道原因只知道结果。</p>
+<hr>
+<h2>LLM-as-Judge 的正确用法和致命陷阱</h2>
+<p>用 LLM 评估 LLM——现在大部分团队这么做。人工太慢太贵，LLM-as-Judge 几秒出分数。好用。也容易自欺欺人。</p>
+<h3>位置偏差</h3>
+<p>LLM-as-Judge 比较两个回复时系统性偏好排在第一个的回复。对策：每次比较做两遍交换位置。两遍不一致 → 作废或用人工。</p>
+<h3>长度偏差</h3>
+<p>系统性偏好更长的输出——"更详细""更有帮助"——即使一半废话。对策：评判标准明确写"长度不是优势，简洁是优势"。或比较前先控制长度差异。</p>
+<h3>风格偏好</h3>
+<p>LLM-as-Judge 有自己偏好风格且会波动——不同模型、不同版本、不同温度。对策：不让 LLM-as-Judge 评判风格维度——主观性太强。只评判客观维度——事实准确性、格式符合度、约束遵守否。风格评判交人工抽样。</p>
+<h3>自评偏差</h3>
+<p>用同样模型评估自己的输出是最危险的——倾向给自己打高分。对策：<strong>永远用不同模型评估。</strong> GPT 输出用 Claude 评，Claude 输出用 Gemini 评。至少不同家族。</p>
+<hr>
+<p>LLM-as-Judge 的主要价值不是替代人工。是<strong>在人工评估间隔中提供快速反馈。</strong> 人工每周一次 200 条。LLM-as-Judge 每天一次 1000 条。任务不是给出精确分数——是给出排名——这批改动比上批好还是差。精确分数留人工。</p>
+<hr>
+<h2>评估是每天的事</h2>
+<p>不是项目结束时的验收测试。从第一个 Prompt 写出来就开始，持续到下线那天。</p>
+<p>FDE 评估节奏：<strong>每次改 Prompt</strong>→ 评估集跑一遍确认无已知 case 退化。<strong>每天</strong>→ LLM-as-Judge 在最新生产样本打分对比昨天。<strong>每周</strong>→ 人工抽评 50-100 条更新评估集。<strong>每月</strong>→ 全维度评估报告——看趋势、找新失败模式。</p>
+<p>评估产出不是"准确率多少"。是"这周比上周好在哪、差在哪、下周修什么"。</p>
+<hr>
+<h2>案例推演</h2>
+<h3>案例 A：评估体系演进</h3>
+<p>第一版：陈柏宇手写 50 条测试用例 + 人工评估。</p>
+<p>第一月后：扩展到 300 条——200 条来自生产日志随机采样。</p>
+<p>第二月后：引入 LLM-as-Judge（Claude 评 GPT 输出），每天自动跑。发现 LLM-as-Judge 评分和人工差距变大——第十周人工 3.8，LLM-as-Judge 4.6。排查发现长度偏好——LLM-as-Judge 喜欢更长回复，人工喜欢短。调 Judge Prompt 加"简洁优于冗长"约束，差距缩小。</p>
+<p>第六月：评估集 1200 条，四个维度各自独立测试集。每次 Prompt 变动五分钟看四维雷达图——准确性、简洁性、可操作性、语气的方向幅度。</p>
+<h3>案例 B：风格匹配度评估</h3>
+<p>林小棠邮件质量评估有独特维度：风格匹配度——AI 邮件是否"像这个销售本人写的"。没法用 LLM-as-Judge——LLM 不了解每个销售的风格。</p>
+<p>设计简单方式：每月 20 封 AI 邮件混在销售自己写的邮件中，让销售盲评"哪些是你写的？"销售分不出来 = 风格匹配过关。盲测结果直接决定风格匹配模块迭代方向。</p>
+<hr>
+<h2>别这么干</h2>
+<p><strong>1. 别只用一个分数。</strong> "准确率 94%"把四五个维度压缩成一点。不知道那 6% 错误分布在哪、该修什么。</p>
+<p><strong>2. 别自己编评估集。</strong> 真实用户输入不是你想象的那样。从生产日志采样。</p>
+<p><strong>3. 别相信 LLM-as-Judge 的绝对分数。</strong> 相信排名（A > B?），不信绝对分数（A 是 4.6 分）。绝对分数需人工抽评校准。</p>
+<p><strong>4. 别等出问题才评估。</strong> 评估是每天的事。出了问题评估是验尸。平时评估是体检。</p>
+<hr>
+<h2>检查清单</h2>
+<ul class="checklist">
+<li>评估集多少条？来源真实数据还是自己编的？</li>
+<li>评判维度是多个还是只有一个综合分数？权重怎么定的？</li>
+<li>LLM-as-Judge 用了吗？位置偏差、长度偏差、自评偏差校准了吗？</li>
+<li>离线评估和在线评估都有吗？差距大吗？</li>
+<li>评估集多久更新？有固定节奏吗？</li>
+<li>人工评估还在做吗——至少每周一次？</li>
+</ul>
+<hr>
+<p><em>下一章：成本、延迟、质量——只能挑两个。</em></p>
+<a class="next-chapter" href="chapter-14.html"><span class="arrow">下一章 →</span><br>第 14 章｜成本、延迟、质量：只能挑两个</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>

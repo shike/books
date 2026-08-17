@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深度案例三｜销售 AI 助手：当技术不是最难的部分 — 《FDE：AI 的胜负不在模型》</title>
+<style>
+
+:root {
+    --bg: #fdfcf9;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --accent: #c44f4f;
+    --border: #e0ddd6;
+    --code-bg: #f4f2ed;
+    --highlight: #fff8e7;
+    --max-width: 720px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+article {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* Typography */
+h1 { font-size: 2em; font-weight: 900; margin: 0 0 .3em; letter-spacing: -.02em; line-height: 1.25; }
+h2 { font-size: 1.4em; font-weight: 700; margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+h3 { font-size: 1.1em; font-weight: 700; margin: 1.8em 0 .5em; }
+
+p { margin: 0 0 1.2em; }
+
+strong { font-weight: 700; color: #1a1a1a; }
+
+blockquote {
+    margin: 1.6em 0;
+    padding: .8em 1.2em;
+    border-left: 3px solid var(--accent);
+    background: var(--highlight);
+    font-style: normal;
+    color: #5a4a3a;
+    border-radius: 0 4px 4px 0;
+}
+blockquote p { margin: .4em 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: .92em;
+}
+th, td {
+    padding: .6em .8em;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+th { background: #f7f5f0; font-weight: 700; }
+
+/* Code */
+code {
+    background: var(--code-bg);
+    padding: .15em .35em;
+    border-radius: 3px;
+    font-size: .92em;
+    font-family: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+
+/* Lists */
+ul, ol { margin: .8em 0 1.2em 1.5em; }
+li { margin: .3em 0; }
+
+/* Navigation */
+nav.book-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,252,249,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+    font-size: .88em;
+}
+nav.book-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color .15s;
+}
+nav.book-nav a:hover { color: var(--accent); }
+nav.book-nav .sep { color: var(--border); }
+
+/* Chapter title area */
+.chapter-meta {
+    color: var(--text-light);
+    font-size: .85em;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: .3em;
+}
+
+/* Checklist */
+ul.checklist { list-style: none; margin-left: 0; }
+ul.checklist li { padding: .2em 0; }
+ul.checklist li::before { content: "☐ "; color: var(--accent); }
+
+/* Highlight box */
+.highlight-box {
+    background: var(--highlight);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+}
+
+/* Image placeholder */
+.img-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 2em;
+    text-align: center;
+    color: var(--text-light);
+    margin: 1.5em 0;
+    font-size: .9em;
+    background: #fafaf7;
+}
+
+/* Next chapter link */
+.next-chapter {
+    display: block;
+    margin-top: 4em;
+    padding: 1.5em;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text);
+    transition: background .2s;
+}
+.next-chapter:hover { background: var(--highlight); }
+.next-chapter .arrow { color: var(--accent); }
+
+/* Footer */
+.book-footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: .82em;
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 1px solid var(--border);
+}
+
+/* ====== INDEX PAGE ====== */
+.index-header {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.index-header h1 {
+    font-size: 2.6em;
+    margin-bottom: .3em;
+}
+.index-header .subtitle {
+    font-size: 1.15em;
+    color: var(--text-light);
+    margin-bottom: .5em;
+}
+.index-header .author {
+    font-size: .95em;
+    color: var(--text-light);
+}
+
+.part-section {
+    max-width: var(--max-width);
+    margin: 0 auto 40px;
+    padding: 0 24px;
+}
+.part-title {
+    font-size: .85em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+.part-section ol {
+    list-style: none;
+    margin: 0;
+}
+.part-section ol li {
+    margin: 0;
+    padding: 0;
+}
+.part-section ol li a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 4px;
+    transition: background .12s;
+}
+.part-section ol li a:hover { background: #f5f3ee; }
+.part-section ol li a .ch-num {
+    display: inline-block;
+    width: 2.2em;
+    color: var(--text-light);
+    font-size: .85em;
+}
+
+.case-section {
+    max-width: var(--max-width);
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+
+@media (max-width: 600px) {
+    article { padding: 60px 16px 80px; }
+    h1 { font-size: 1.6em; }
+    body { font-size: 16px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="book-nav"><a href="index.html">目录</a><span class="sep">|</span><a href="case-study-02.html">← 上一章</a><span class="sep">|</span><a href="appendix.html">下一章 →</a></nav>
+<article>
+<div class="chapter-cover">
+  <img src="covers/case-study-03.svg" alt="深度案例三｜销售 AI 助手：当技术不是最难的部分" style="width:100%;max-width:800px;display:block;margin:0 auto 2em;border-radius:6px;" />
+</div>
+<div class="chapter-meta">深度案例</div>
+<h1>深度案例三｜销售 AI 助手：当技术不是最难的部分</h1>
+<p>本案例是贯穿全书的"案例 B"的完整版。它的核心冲突不是技术，是组织。林小棠在一个技术能力完全足够、但信任基础为零的土壤上，怎么一步一步把 AI 方案种下去。</p>
+<h2>背景</h2>
+<p>一家 B2B SaaS 公司，200 人，销售团队 40 人。产品是面向中型企业的 ERP 模块，客单价 8-50 万，销售周期 2-6 个月。销售模式是顾问式销售——需要深入了解客户业务、定制方案、多轮沟通。</p>
+<p>CTO 李哲在一个 AI 大会上看了几个 demo 后，决定公司也要"用 AI 赋能销售"。他找了林小棠——一个在圈内口碑不错的独立 FDE——来做这个项目。</p>
+<p>"目标很明确：给每个销售配一个 AI 助手。自动生成个性化邮件、做客户调研、提醒跟进时机。"</p>
+<p>林小棠问的第一个问题不是技术问题："销售团队知道你要做这个吗？"</p>
+<p>"我在全员会上提过一次。大家觉得听起来不错。"</p>
+<p>"'听起来不错'和'我会用'是两件事。"</p>
+<hr>
+<h2>侦察期：谁在抵抗，为什么</h2>
+<p>林小棠第一周做了一件事：约 VP of Sales 张磊喝咖啡。</p>
+<p>张磊是一个做了十五年销售的人，从一线销售做到管 40 人的 VP。他手下的 top sales 是他亲自带出来的，用了三年时间。</p>
+<p>咖啡桌上林小棠没有推销任何一个方案。她只是问了一个问题。</p>
+<p>"你现在最头疼的团队管理问题是什么？"</p>
+<p>张磊说的第一句话是："新人出不了单，老人在吃老本。CRM 里数据基本是垃圾——销售觉得填 CRM 是给我交作业，填的都是'已联系'三个字。"</p>
+<p>林小棠从这句话里提取了三个信号：新人培训缺体系（销售团队的知识传承靠"老人带"，人走了经验就没了）、老人缺激励（吃老本意味着老客户够养活但增量不够）、CRM 数据不可用（不是没有，是"已联系"这种数据对 AI 毫无价值）。</p>
+<p>在这杯咖啡快结束的时候，林小棠捕捉到了第四层信息——张磊说了一句话："我的人我带出来的，AI 要是能替代他们，那我这十几年白干了。"</p>
+<p>这句话是防御。CTO 李哲想用 AI 赋能销售，但 VP of Sales 把 AI 视为对自己价值的否定。</p>
+<p><strong>FDE 要做的不只是理解需求——要理解每个人在恐惧什么。</strong></p>
+<hr>
+<h2>调整期：不做 AI，先修数据</h2>
+<p>林小棠回到李哲的办公室。</p>
+<p>"张磊最大的痛点不是缺 AI，是 CRM 数据不能用。我建议先不推 AI 功能，先做 CRM 数据质量扫描。"</p>
+<p>李哲不太满意。"我能理解数据重要。但董事长那边等着看 AI 的进展。如果三个月没产出，我不好交代。"</p>
+<p>"三个月的产出可以是'CRM 数据从 52% 空值率降到 14%'。这个产出虽然不 AI，但张磊会在董事长面前支持你——因为这是他团队最痛的点。你带着 VP of Sales 的背书去汇报，比带着一个谁都没用过的 AI demo 有分量得多。"</p>
+<p>李哲同意了。</p>
+<p>林小棠用一个周末做了一套自动化的 CRM 数据质量扫描脚本，跑出了详细报告：37% 的客户记录超过三个月未更新；52% 的沟通记录是空的或只有 5 个字以内；18% 的联系人已经离职但记录还在；6% 的公司名重复——同一家被不同销售用不同名称录入。</p>
+<p>她把报告同时发给李哲和张磊。邮件标题是："这是你们的 CRM 数据目前的真实状况。"</p>
+<p>张磊看完后给她打电话："你这份报告，我三年想做没做成。IT 部门一直说'在规划中'。"</p>
+<p>"这三年的规划就是三个人的工作。一个周末够了。但如果不把基础修好，AI 助手上线就是'garbage in, garbage out'。"</p>
+<p>张磊在那一刻从"消极抵抗"变成了"积极推动"。不是因为突然喜欢 AI——是因为他看到了一个外部顾问在解决他真正在意的问题。<strong>林小棠不再是一个"来推 AI 的人"。她是一个"来帮他看清问题的人"。</strong></p>
+<hr>
+<h2>最小可行 AI：一个不写代码的实验</h2>
+<p>CRM 数据治理启动后的第二周，林小棠做了一个实验。</p>
+<p>她从销售团队找了五个人——不同资历、不同风格、不同业绩等级。让每个人提供最近写的 10 封已发送的客户邮件（共 50 封）。然后用 ChatGPT 手动生成了一套"如果 AI 写这封邮件会写成什么样"的对照版。</p>
+<p>她把 100 封邮件（50 封真人 + 50 封 AI）混在一起，让五个人做盲评——评判标准不是"好不好"，是"你愿意把这封邮件发给客户吗？"</p>
+<p>结果：AI 版邮件可发送率（不需要大改就可以发送）是 45%。销售评价分布很宽——从"还行这封不错"到"这什么玩意"。AI 邮件的典型问题是"太像模板"——措辞正确但没有个人风格。</p>
+<p>但这个实验还有一个更有价值的发现。林小棠把 50 封真人邮件做了一个风格聚类，发现销售团队实际上只有三种邮件风格：关系型、数据型、简洁型。不同风格对应的客户类型、客单价、回复率有显著差异。</p>
+<p><strong>核心发现：AI 邮件生成的核心不是"能写"，是"写得像这个人"。风格匹配 > 生成能力。</strong></p>
+<p>这个实验花了两天。没写一行产品代码，回答了两个最关键的问题：AI 邮件能否帮销售省时间？（45% 可发送率，方向可以走但不能 100% 替代人工）；最重要的优化方向是什么？（不是提升生成质量，是风格匹配）。</p>
+<p>如果先花两个月搭完整系统再做实验——同样的发现，成本差 30 倍。</p>
+<hr>
+<h2>构建策略：模块化 + 可选</h2>
+<p>基于侦察和实验，林小棠确定了构建原则：</p>
+<p><strong>不跟 CRM 绑定。</strong> 独立 App 端入口。销售可以选用或不用。选择权在销售。</p>
+<p><strong>拆成独立模块。</strong> 客户画像提取（抽取）、跟进建议（排序）、邮件生成（生成）、反馈采集（抽取）。每个模块独立使用。<strong>模块化不只是工程选择——是用户采纳策略。降低使用门槛。</strong></p>
+<p><strong>Prompt 里的风格约束。</strong> 从三个销售风格的历史邮件中提取特征——句式长度、称呼方式、说服逻辑、签名风格。每个销售的风格参数变成 Prompt 里的一段约束。</p>
+<hr>
+<h2>上线：不是推，是拉</h2>
+<p>林小棠没有做"全量上线"。她用了邀请制。先邀请 5 个销售——不同资历（2 新人、2 中等、1 top）、不同风格、不同态度（有主动感兴趣的，也有观望的）。</p>
+<p>两周后，5 人变成了 12 人。不是因为管理层强制推广——是因为那 5 人在团队群说了"这东西挺有用的"。<strong>自发传播的可信度比自上而下推广高一个量级。</strong></p>
+<p>三个月后，40 人销售团队中有 28 人至少每周用一次。12 人不用。林小棠的应对：不用的人不强制。但每个月分享一次"本月最佳案例"——某个销售用 AI 搞定了什么客户、省了多少时间。案例传播比功能宣传更有说服力。</p>
+<hr>
+<h2>运营：防止沉默故障和过度依赖</h2>
+<p>半年后，林小棠注意到邮件的"修改率"从最初的 30% 降到了 8%。她随机抽了 50 封"未修改就发送"的 AI 邮件人工检查——12% 有小错误（产品型号写错、价格不对、客户公司名拼错）。销售没有发现——在点发送之前扫一眼就过了，没真正读。这是<strong>过度依赖。</strong></p>
+<p>林小棠在产品里加了一个设计：AI 生成邮件发送前，高亮显示所有"事实性信息"——产品名称、价格、日期、客户公司名。并在高亮区域上方加了一行提示："请确认高亮信息的准确性——AI 有时会犯错。"修改率回升到 14%。不是 AI 变差了——是人又开始读了。</p>
+<p><strong>用户不会自己提高注意力。你必须设计系统让用户保持注意力。</strong></p>
+<hr>
+<h2>复盘：最值得记住的三件事</h2>
+<p><strong>一、最大的阻力不在技术，在信任。</strong> VP of Sales 张磊的抵抗不是反 AI，是保护自己的价值。林小棠没有"说服"他——她用 CRM 数据扫描证明了自己站在他的立场。"先解决你真正在意的问题"——胜过一百次 AI 功能 demo。</p>
+<p><strong>二、最小可行 AI 不需要写代码。</strong> 盲评实验花了两天——用 ChatGPT 手动生成 + 人工整理 + 邀请销售盲评。在零工程投入的前提下回答了最核心的问题：AI 邮件能否帮销售省时间？核心发现（风格匹配才是关键）在零工程投入时就拿到了。</p>
+<p><strong>三、用户采纳是设计出来的。</strong> 邀请制、模块化、独立 App、可选使用、案例传播——这些不是"推广策略"，是 FDE 在第一天就嵌入方案设计的用户采纳机制。从用户出发倒推——先搞清楚"什么情况下销售会用新工具"，然后把方案设计成符合那个情况。</p>
+<hr>
+<h2>讨论题</h2>
+<ol>
+<li>如果李哲（CTO）坚持"三个月内必须有 AI demo"，林小棠应该妥协吗？妥协的话做什么样的 demo——不浪费工程资源，又能满足向上汇报需求？</li>
+<li>林小棠发现了 CRM 数据不可用。如果数据治理需要半年以上，她的策略还能成立吗？替代策略是什么？</li>
+<li>销售团队的"邀请制"和"案例传播"在什么类型的组织中不适用？如果是一个强制使用系统、不可自主选择的场景（比如客服中心），用户采纳策略要怎么调整？</li>
+<li>AI 邮件的"过度依赖"——销售不再检查就点发送——在林小棠的产品修复后仍然可能再次出现。如果你是长期运营这个产品的 FDE，你会设计什么机制来持续对抗这个风险？</li>
+</ol>
+<a class="next-chapter" href="appendix.html"><span class="arrow">下一章 →</span><br>附录</a>
+<div class="book-footer">
+<p>《FDE：AI 的胜负不在模型》© 2026</p>
+</div>
+</article>
+</body>
+</html>
