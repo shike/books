@@ -30,6 +30,7 @@ import argparse
 from pathlib import Path
 
 import markdown
+import pypdf
 
 # ====== 常量 ======
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -42,7 +43,9 @@ CSS = """
   size: A4;
   margin: 2.2cm 1.8cm 2.5cm 1.8cm;
   @bottom-center {
-    content: counter(page) " / " counter(pages);
+    /* 只显示当前页码,不显示分母(counter(pages) 在 Chrome print-to-pdf 下
+       不可靠,分段或特殊分页符会让分母值与实际 PDF 总页数不一致) */
+    content: counter(page);
     font-family: "STHeiti", "PingFang SC", "Hiragino Sans GB", sans-serif;
     font-size: 9pt;
     color: #888;
@@ -236,6 +239,10 @@ sup {
   flex-direction: column;
   justify-content: center;
   page-break-inside: avoid;
+  /* 完整 CJK 字体回退链:必须包含一个含 CJK 全字符的字体,否则 Chrome 会 fallback 到 CJK 偏旁部首区 */
+  font-family: "STHeiti", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+  /* 关键:不要在 CJK 上加 letter-spacing,会触发 Chrome 把它当 char-by-char 渲染,某些 CJK 字回退到 ⿱⿰⿲ 部首区 */
+  letter-spacing: 0;
 }
 .cover-text-page .cover-title {
   font-size: 38pt;
@@ -269,7 +276,34 @@ sup {
   margin-top: 3em;
   font-size: 12pt;
   color: rgba(255,255,255,0.6);
-  letter-spacing: 2px;
+  /* 注意:不能用 letter-spacing — 会在 CJK 上触发部首回退 */
+  word-spacing: 0.2em;
+}
+.cover-text-page--vol .cover-vol-tag {
+  font-size: 11pt;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3em;  /* 全是单字,letter-spacing 安全 */
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+.cover-text-page--vol .cover-vol-name {
+  font-size: 42pt;
+  font-weight: 900;
+  margin: 0.4em 0 0.1em 0;
+  color: #4a90e2;
+}
+.cover-text-page--vol .cover-vol-name-sub {
+  font-size: 22pt;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 1.5em 0;
+  letter-spacing: 0.2em;
+}
+.cover-text-page .cover-volumes .vol-tag {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 0.7em;
+  color: rgba(255,255,255,0.45);
 }
 .front-matter {
   page-break-before: always;
@@ -470,24 +504,45 @@ def build_front_matter(book_name: str, book_dir: Path, vol_subdir: str = None, a
             if "toc" in fm:
                 vol_tocs.append((vol_subdir, fm["toc"]))
 
-    # 1. 封面页:用 SVG 图(workbuddy 三卷合除外,改用 HTML 文字封面以避免 Chrome 卡住)
+    # 1. 封面页:
+    #    - 普通书:用 promotion/cover.{svg,png} 作为图片封面
+    #    - workbuddy 全部(单卷/合):统一改用 HTML 文字封面(避开 SVG 文本 fallback 触发 CJK 部首字 bug,
+    #      也避免单张 SVG 占太多内存导致 Chrome 后面正文图丢失)
     cover = promo_files.get("cover")
-    if cover and not (book_name == "workbuddy" and all_vols):
-        rel = f"../promotion/{cover.name}"
-        parts.append(f'<div class="cover-page"><img src="{rel}" alt="封面" /></div>')
-    elif cover and book_name == "workbuddy" and all_vols:
-        # workbuddy 三卷合:用 HTML 文字封面代替 SVG(避免 Chrome 加载 SVG 卡住)
-        # 从 README 拿书名/副标题
-        parts.append(f'''<div class="cover-text-page">
+    if book_name == "workbuddy":
+        # workbuddy 单卷/合:HTML 文字封面
+        # 三元组:(中文卷号, 副标, 焦点标签)
+        wb_vol_meta = {
+            "第一卷": ("第一卷", "上手", "个人"),
+            "第二卷": ("第二卷", "协作", "团队"),
+            "第三卷": ("第三卷", "重塑", "组织"),
+        }
+        if all_vols:
+            vol_lines = "\n".join(
+                f'  <div class="vol">{meta[0]} · {meta[1]}<span class="vol-tag">{meta[2]}</span></div>'
+                for meta in wb_vol_meta.values()
+            )
+            parts.append(f'''<div class="cover-text-page">
 <h1 class="cover-title">{book_title}</h1>
 <h2 class="cover-subtitle">{subtitle}</h2>
 <div class="cover-volumes">
-  <div class="vol">第一卷 · 上手</div>
-  <div class="vol">第二卷 · 协作</div>
-  <div class="vol">第三卷 · 重塑</div>
+{vol_lines}
 </div>
 <div class="cover-author">施可(Shi Ke) · 著</div>
 </div>''')
+        elif vol_subdir and vol_subdir in wb_vol_meta:
+            vol_cn, vol_sub, vol_tag = wb_vol_meta[vol_subdir]
+            parts.append(f'''<div class="cover-text-page cover-text-page--vol">
+<h1 class="cover-title">{book_title}</h1>
+<h2 class="cover-subtitle">{subtitle}</h2>
+<div class="cover-vol-tag">{vol_tag}</div>
+<div class="cover-vol-name">{vol_cn}</div>
+<div class="cover-vol-name-sub">{vol_sub}</div>
+<div class="cover-author">施可(Shi Ke) · 著</div>
+</div>''')
+    elif cover:
+        rel = f"../promotion/{cover.name}"
+        parts.append(f'<div class="cover-page"><img src="{rel}" alt="封面" /></div>')
 
     md_engine = markdown.Markdown(
         extensions=['fenced_code', 'tables', 'sane_lists', 'toc', 'attr_list'],
@@ -553,8 +608,16 @@ def build_front_matter(book_name: str, book_dir: Path, vol_subdir: str = None, a
     return "\n".join(parts)
 
 
-def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols: bool = False) -> tuple:
-    """返回 (html_str, title, subtitle)"""
+def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols: bool = False,
+               chapter_files_override: list = None, appendix_files_override: list = None,
+               include_front_matter: bool = True) -> tuple:
+    """返回 (html_str, title, subtitle)
+
+    chapter_files_override / appendix_files_override:
+        分段渲染时,允许外部传入已选定的章节/附录子集;默认 None 表示用 collect_* 自动收集
+    include_front_matter:
+        分段渲染时,只让第一段带 front matter(其余段 include=False 避免重复封面/版权)
+    """
     # 读 README 拿标题(简短)
     readme = book_dir / "README.md"
     if not readme.exists():
@@ -571,28 +634,36 @@ def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols:
             subtitle = line.strip().lstrip("> ").strip()
             break
 
-    # 收集章节 + 附录
-    chapter_files = collect_chapters(book_dir, vol_subdir, all_vols)
-    appendix_files = collect_appendix(book_dir, vol_subdir, all_vols)
+    # 收集章节 + 附录(可被 override 覆盖)
+    chapter_files = chapter_files_override if chapter_files_override is not None \
+        else collect_chapters(book_dir, vol_subdir, all_vols)
+    appendix_files = appendix_files_override if appendix_files_override is not None \
+        else collect_appendix(book_dir, vol_subdir, all_vols)
 
     # 拼出版前置
-    front_matter = build_front_matter(book_name, book_dir, vol_subdir, all_vols, book_title, subtitle)
+    front_matter = build_front_matter(book_name, book_dir, vol_subdir, all_vols, book_title, subtitle) \
+        if include_front_matter else ""
 
-    # 计数
-    promo_files = find_promotion_files(book_dir)
-    vol_fm_count = 0
-    if book_name == "workbuddy":
-        vols = ['第一卷', '第二卷', '第三卷'] if all_vols else ([vol_subdir] if vol_subdir else [])
-        for vol in vols:
-            vfm = find_vol_front_matter(book_dir / vol)
-            vol_fm_count += len(vfm)
+    # 计数(仅当没 override 时显示真实总数)
+    if chapter_files_override is None:
+        promo_files = find_promotion_files(book_dir)
+        vol_fm_count = 0
+        if book_name == "workbuddy":
+            vols = ['第一卷', '第二卷', '第三卷'] if all_vols else ([vol_subdir] if vol_subdir else [])
+            for vol in vols:
+                vfm = find_vol_front_matter(book_dir / vol)
+                vol_fm_count += len(vfm)
 
-    print(f"  📚 书名: {book_title}")
-    print(f"  📝 副标题: {subtitle}")
-    print(f"  📂 章节: {len(chapter_files)} 个")
-    if appendix_files:
-        print(f"  📎 附录: {len(appendix_files)} 个")
-    print(f"  📄 出版前置: {len(promo_files) + vol_fm_count} 个模块(封面/版权/序/推荐序/作者介绍/简介/致谢)")
+        print(f"  📚 书名: {book_title}")
+        print(f"  📝 副标题: {subtitle}")
+        print(f"  📂 章节: {len(chapter_files)} 个")
+        if appendix_files:
+            print(f"  📎 附录: {len(appendix_files)} 个")
+        print(f"  📄 出版前置: {len(promo_files) + vol_fm_count} 个模块(封面/版权/序/推荐序/作者介绍/简介/致谢)")
+    else:
+        print(f"  📚 书名: {book_title}  |  分段: {len(chapter_files)} 章"
+              f"{' + ' + str(len(appendix_files)) + ' 附录' if appendix_files else ''}"
+              f"{' | 含 front matter' if include_front_matter else ''}")
 
     # 拼 HTML
     md_engine = markdown.Markdown(
@@ -622,6 +693,14 @@ def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols:
     body = "\n".join(body_parts)
 
     # 完整 HTML
+    # book-title 仅在第一段(含 front_matter)时显示
+    book_title_block = (
+        f'<div class="book-title">\n  <span class="main">{book_title}</span>\n'
+        f'  <span class="sub">{subtitle}</span>\n'
+        f'  <span class="author">施可(Shi Ke) · shike@dropleap.cn</span>\n</div>\n'
+        if include_front_matter else ""
+    )
+
     full_html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -635,11 +714,7 @@ def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols:
 
 {front_matter}
 
-<div class="book-title">
-  <span class="main">{book_title}</span>
-  <span class="sub">{subtitle}</span>
-  <span class="author">施可(Shi Ke) · shike@dropleap.cn</span>
-</div>
+{book_title_block}
 
 {body}
 
@@ -649,24 +724,57 @@ def build_html(book_name: str, book_dir: Path, vol_subdir: str = None, all_vols:
     return full_html, book_title, subtitle
 
 
-def chrome_headless_pdf(html_path: Path, pdf_path: Path):
-    """调用 Chrome headless 打印 PDF。"""
+def resize_pngs_in_dir(dir_path: Path, max_dim: int = 1400, jpeg_quality: int = 80):
+    """把目录下所有 PNG/JPG 用 macOS sips resize 到长边 ≤ max_dim。
+    (改原文件;调用方应该传 tmpdir,不要传 src 仓库)
+
+    收益:4000x3000 PNG 1-4MB → 1400x1050 PNG 100-400KB,PDF 体积随之降 5-10 倍
+    """
+    if not dir_path.exists():
+        return 0
+    n = 0
+    # sips: -Z max_dim 把长边缩到 max_dim,保持比例
+    # 并行跑 4 个进程(用 & + wait)
+    pngs = list(dir_path.rglob("*.png")) + list(dir_path.rglob("*.jpg")) + list(dir_path.rglob("*.jpeg"))
+    for p in pngs:
+        try:
+            subprocess.run(
+                ["sips", "-Z", str(max_dim), str(p)],
+                capture_output=True, timeout=30,
+            )
+            n += 1
+        except Exception:
+            pass
+    return n
+
+
+def chrome_headless_pdf(html_path: Path, pdf_path: Path, wait_ms: int = 15000):
+    """调用 Chrome headless 打印 PDF。
+
+    wait_ms: 虚拟时间预算(毫秒),等所有 <img> 加载完成再打印。
+        默认 15000ms = 15s。workbuddy 类大图册需要更高值。
+    """
     if not Path(CHROME).exists():
         raise SystemExit(f"❌ 找不到 Chrome: {CHROME}")
     cmd = [
         CHROME,
-        "--headless",
+        "--headless=new",  # 新版 headless,内存与渲染管线更稳
         "--disable-gpu",
         "--no-sandbox",
         "--disable-dev-shm-usage",
         "--font-render-hinting=none",  # 中文渲染更稳
+        "--hide-scrollbars",
+        f"--virtual-time-budget={wait_ms}",  # 等所有图加载完再打印(核心修复)
+        "--run-all-compositor-stages-before-draw",  # 强制所有图层合成完
         f"--print-to-pdf={pdf_path}",
+        # 关键:Chrome 151+ 这两个 flag 才能彻底关掉 footer + header(测试验证)
+        # 不要加 --header-template/--footer-template,那会反而打开 Chrome 默认 footer
+        "--no-pdf-header-footer",
         "--print-to-pdf-no-header",
-        "--no-pdf-header-footer",  # 自己控制 footer
         f"file://{html_path}",
     ]
-    print(f"  🖨  Chrome headless 打印 → {pdf_path.name}")
-    res = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+    print(f"  🖨  Chrome headless 打印 → {pdf_path.name} (wait {wait_ms}ms)")
+    res = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
     if not pdf_path.exists():
         print(f"  ❌ Chrome stderr: {res.stderr[:1000]}")
         raise SystemExit("PDF 生成失败")
@@ -769,12 +877,14 @@ def prepare_html_with_assets(html_str: str, book_dir: Path, vol_subdir: str = No
         html_str = html_str.replace('../promotion/', 'promotion/')
         html_path.write_text(html_str, encoding='utf-8')
     else:
-        # 单卷或单书:HTML 放在 sub/<vol>/chapters/book.html,figures/promotion 在 sub/<vol>/
-        # 这样 ../figures/ 和 ../promotion/ 仍然有效
+        # 单卷或单书:HTML 放在 sub/<vol>/book.html(与 figures/promotion 同级),
+        # 这样 md 里的 figures/xxx.png 单层相对路径直接生效,不用 ../figures/
+        # (旧版放在 chapters/ 子目录会让 figures/ 解析到 chapters/figures/,图全 404)
         if vol_subdir:
-            html_path = sub / vol_subdir / "chapters" / "book.html"
+            html_path = sub / vol_subdir / "book.html"
         else:
-            html_path = sub / "chapters" / "book.html"
+            html_path = sub / "book.html"
+        html_path.parent.mkdir(parents=True, exist_ok=True)
         html_path.write_text(html_str, encoding='utf-8')
     return html_path, tmpdir
 
@@ -784,6 +894,15 @@ def main():
     ap.add_argument("book", help="书名(ai-coding / fde / workbuddy)")
     ap.add_argument("--vol", help="workbuddy 单独出某卷(第一卷/第二卷/第三卷)")
     ap.add_argument("--all", action="store_true", help="workbuddy 跨三卷合一个 PDF")
+    ap.add_argument("--chunks", type=int, default=None,
+                    help="分段渲染数(workbuddy 大图册拆 2-3 段降低 Chrome 内存压力);"
+                         "默认 workbuddy=2,其他=1")
+    ap.add_argument("--wait", type=int, default=15000,
+                    help="Chrome 虚拟时间预算 ms,等所有 <img> 加载完再打印(默认 15000)")
+    ap.add_argument("--max-dim", type=int, default=1400,
+                    help="图 resize 后长边最大像素(默认 1400);设 0 不 resize")
+    ap.add_argument("--no-merge", action="store_true",
+                    help="不合并分段,只输出段 PDF(调试用)")
     args = ap.parse_args()
 
     if args.vol and args.all:
@@ -806,25 +925,95 @@ def main():
         out_label = "全本"
     dist_dir.mkdir(exist_ok=True)
 
-    print(f"\n📖 构建 {args.book} ({out_label}) → PDF")
+    # 默认分段数
+    if args.chunks is None:
+        args.chunks = 2 if args.book == "workbuddy" else 1
+
+    print(f"\n📖 构建 {args.book} ({out_label}) → PDF (chunks={args.chunks}, wait={args.wait}ms)")
     print("=" * 60)
 
-    # 1. 拼 HTML
-    html_str, title, subtitle = build_html(args.book, book_dir, args.vol, args.all)
+    # 1. 收集全部章节 + 附录
+    all_chapters = collect_chapters(book_dir, args.vol, args.all)
+    all_appendix = collect_appendix(book_dir, args.vol, args.all)
 
-    # 2. 准备 HTML(复制 figures 到正确位置)
-    html_path, tmpdir = prepare_html_with_assets(
-        html_str, book_dir, args.vol, args.book, args.all
-    )
-    print(f"  📄 HTML 临时文件: {html_path} ({html_path.stat().st_size/1024:.0f} KB)")
+    # 2. 切分 chapters 为 N 段(appendix 放最后一段)
+    if args.chunks <= 1 or len(all_chapters) <= 4:
+        # 不分段
+        chunks = [(all_chapters, all_appendix)]
+    else:
+        # 均分 chapters,appendix 归入最后段
+        n = args.chunks
+        k, m = divmod(len(all_chapters), n)
+        chunks = []
+        start = 0
+        for i in range(n):
+            end = start + k + (1 if i < m else 0)
+            chunk_chs = all_chapters[start:end]
+            chunk_app = all_appendix if i == n - 1 else []
+            chunks.append((chunk_chs, chunk_app))
+            start = end
+        print(f"  ✂  分段: {[(len(c[0]), len(c[1])) for c in chunks]}")
 
+    # 3. 每段:build HTML → chrome → 临时 PDF
+    tmpdir_root = Path(tempfile.mkdtemp(prefix=f"book_chunks_{args.book}_"))
+    tmp_pdfs = []
     try:
-        # 3. Chrome 转 PDF
-        chrome_headless_pdf(html_path, out_pdf)
+        for i, (chs, aps) in enumerate(chunks):
+            include_fm = (i == 0)  # 只第一段带 front matter
+            print(f"\n--- 段 {i+1}/{len(chunks)} ---")
+            html_str, title, subtitle = build_html(
+                args.book, book_dir, args.vol, args.all,
+                chapter_files_override=chs,
+                appendix_files_override=aps,
+                include_front_matter=include_fm,
+            )
+            html_path, tmpdir = prepare_html_with_assets(
+                html_str, book_dir, args.vol, args.book, args.all
+            )
+            print(f"  📄 HTML 临时: {html_path} ({html_path.stat().st_size/1024:.0f} KB)")
+
+            # resize 临时 figures(把原图缩到长边 ≤ max-dim,降低 PDF 体积)
+            if args.max_dim > 0:
+                figs_tmp = html_path.parent / "figures" if not args.all else (html_path.parent / "figures")
+                if figs_tmp.exists():
+                    print(f"  🔧  resize figures → 长边 ≤ {args.max_dim}px")
+                    n_resized = resize_pngs_in_dir(figs_tmp, max_dim=args.max_dim)
+                    print(f"      已 resize: {n_resized} 张")
+
+            tmp_pdf = tmpdir_root / f"chunk_{i:02d}.pdf"
+            chrome_headless_pdf(html_path, tmp_pdf, wait_ms=args.wait)
+            tmp_pdfs.append(tmp_pdf)
+
+            # 清理本段 tmpdir(HTML 临时)
+            try:
+                shutil.rmtree(tmpdir)
+            except OSError:
+                pass
+
+        # 4. 合并所有段 PDF(即使单段也走 writer,统一重设 page label)
+        print(f"\n--- 写入 {out_pdf.name} ({len(tmp_pdfs)} 段) ---")
+        writer = pypdf.PdfWriter()
+        for tp in tmp_pdfs:
+            writer.append(str(tp))
+        # 关键修复:重设 /PageLabels 为连续 1-N。
+        # 否则 Chrome 给每段都生成 1-N 独立 label,合并后段 2 显示 1-157 跟段 1 的 1-88 重叠
+        total = len(writer.pages)
+        if total > 0:
+            writer.set_page_label(0, total - 1, style="/D", prefix="", start=1)
+        with open(out_pdf, "wb") as f:
+            writer.write(f)
+        size_mb = out_pdf.stat().st_size / 1024 / 1024
+        pages = len(pypdf.PdfReader(out_pdf).pages)
+        print(f"  ✓ 合并完成: {pages} 页 / {size_mb:.2f} MB")
     finally:
-        # 清理临时目录
+        # 清理所有段 PDF + tmpdir_root
+        for tp in tmp_pdfs:
+            try:
+                tp.unlink()
+            except OSError:
+                pass
         try:
-            shutil.rmtree(tmpdir)
+            shutil.rmtree(tmpdir_root)
         except OSError:
             pass
 
