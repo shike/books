@@ -64,7 +64,7 @@
 
 - 目录结构:prompt.md(150 行) + config.yaml + examples/ + README.md
 - 三段式:角色定义 / 输入规范 / 输出模板
-- 用量:每周 1 次,每次 0.3-0.5 Credits
+- 用量:每周 1 次,每次 0.3-0.5 积分
 - 改造点举例:在角色定义加"你特别重视复盘"——改一行提示词
 - 配图:figures/2.4.5-skill-detail.png(Skill 详情页)
 
@@ -80,7 +80,7 @@
 ## Slide 11 — 案例 3:客户画像 Skill(`customer_profile_synthesizer`)
 
 - 12 维度:基本信息、决策链、采购流程、痛点、近期动态、关系强度、竞争态势、预算、风险偏好、决策风格、跟进策略、长期价值
-- 用量:新客户 1-2 Credits/份,老客户更新 0.5-1 Credits/份
+- 用量:新客户 1-2 积分/份,老客户更新 0.5-1 积分/份
 - 改造点:行业专属维度另存为 `customer_profile_<行业>_v1`,不覆盖原版
 - 伦理提示:Skill 输出是"讨论起点",不是"决策终点"
 - 配图:figures/2.4.5-skill-detail.png

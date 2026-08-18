@@ -5,7 +5,7 @@
 ## A
 
 **API Key**
-应用程序编程接口密钥,用于访问大模型服务的凭证。在 WorkBuddy 中,自购 API Key 可让任务走用户自己的模型,不消耗平台 Credits。
+应用程序编程接口密钥,用于访问大模型服务的凭证。在 WorkBuddy 中,自购 API Key 可让任务走用户自己的模型,不消耗平台 积分。
 
 **自动化(Automation)**
 WorkBuddy 中的功能,允许设置触发条件(如定时、文件变化),让 WorkBuddy 自动执行任务。
@@ -20,8 +20,8 @@ WorkBuddy 中的功能,允许设置触发条件(如定时、文件变化),让 Wo
 **Claw**
 WorkBuddy 的远程控制功能,通过企业微信向 WorkBuddy 发送任务(详细见第二卷第 2 章)。
 
-**Credits(积分)**
-WorkBuddy 的资源计量单位。完成任务消耗 Credits,通过注册、签到、付费或自购 API Key 获取。
+**积分(积分)**
+WorkBuddy 的资源计量单位。完成任务消耗 积分,通过注册、签到、付费或自购 API Key 获取。
 
 **插件 / Skill**
 见 Skill。
@@ -56,13 +56,13 @@ WorkBuddy 可访问的本地文件夹。建议建立独立目录(非系统盘)�
 
 ## K
 
-**Credits 套餐**
-付费方案:Pro 版 99 元/月含 50,000 Credits,Ultra 版 299 元/月含 200,000 Credits。
+**积分 套餐**
+付费方案:Pro 版 99 元/月含 50,000 积分,Ultra 版 299 元/月含 200,000 积分。
 
 ## M
 
 **Model / 模型**
-WorkBuddy 底层调用的大语言模型。不同模型档位的 Credits 消耗不同。
+WorkBuddy 底层调用的大语言模型。不同模型档位的 积分 消耗不同。
 
 ## P
 
@@ -70,7 +70,7 @@ WorkBuddy 底层调用的大语言模型。不同模型档位的 Credits 消耗�
 管理者视角的提示词写法:目标 / 约束 / 输出三件套。详见第 5 章。
 
 **Pro 版 / Ultra 版**
-见 Credits 套餐。
+见 积分 套餐。
 
 **Prompt**
 见 提示词。
@@ -112,7 +112,7 @@ WorkBuddy 在右侧工具面板提供操作日志,管理者可用于追溯 AI �
 ## Z
 
 **自购 API Key**
-用户自行购买大模型 API Key,接入 WorkBuddy 后,任务走自购模型,不消耗平台 Credits。
+用户自行购买大模型 API Key,接入 WorkBuddy 后,任务走自购模型,不消耗平台 积分。
 
 **自动化**
 见 自动化(Automation)。

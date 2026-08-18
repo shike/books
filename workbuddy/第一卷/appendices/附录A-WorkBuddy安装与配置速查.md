@@ -73,9 +73,9 @@ Linux 端的安装包格式较多,WorkBuddy 官方提供 `.deb`(Debian / Ubuntu 
 - **企业微信**:团队使用,自动绑定企业组织,可启用 Claw 远程控制;
 - **手机号**:兜底方案,适合海外用户或不想与微信绑定的个人。
 
-企业 IT 管理员如需通过邮箱 + 密码或 SSO(单点登录,SAML 2.0)批量开通账户,可联系 WorkBuddy 团队启用企业版登录通道。个人用户在"忘记微信"或"未装企业微信"时,手机号登录是可靠的兜底。注册成功后,账户会自动获得 5,000 Credits(WorkBuddy 积分制资源计量单位)的新人赠额。
+企业 IT 管理员如需通过邮箱 + 密码或 SSO(单点登录,SAML 2.0)批量开通账户,可联系 WorkBuddy 团队启用企业版登录通道。个人用户在"忘记微信"或"未装企业微信"时,手机号登录是可靠的兜底。注册成功后,账户会自动获得 5,000 积分(WorkBuddy 积分制资源计量单位)的新人赠额。
 
-如果你是通过企业管理员邀请加入团队,会在邮箱中收到一封带激活链接的邮件,点击后会自动跳转到登录页并填入企业域名,完成 SSO 验证后即可进入工作台。企业账户的初始 Credits 由管理员分配,个人注册的免费账户也可以后续升级为标准版或旗舰版。
+如果你是通过企业管理员邀请加入团队,会在邮箱中收到一封带激活链接的邮件,点击后会自动跳转到登录页并填入企业域名,完成 SSO 验证后即可进入工作台。企业账户的初始 积分 由管理员分配,个人注册的免费账户也可以后续升级为标准版或旗舰版。
 
 ## A.7 升级更新与降级
 
@@ -129,7 +129,7 @@ Windows 端:在 PowerShell 中执行 `workbuddy --version` 查看版本;`workbud
 
 macOS / Linux 端:`workbuddy --version` 查看版本;`workbuddy --workspace=/path/to/folder` 指定工作目录启动;`workbuddy --proxy=http://127.0.0.1:7890` 走 HTTP 代理启动;`workbuddy --log-level=debug` 输出调试日志;`workbuddy --disable-skill=skill-id` 临时禁用某个 Skill 排查问题;`workbuddy --export-skills ./backup` 导出所有自建 Skill;`workbuddy --import-skills ./backup` 导入 Skill;`workbuddy --uninstall` 调用系统卸载流程。
 
-跨平台 GUI 操作:在"帮助 → 快捷键速查"中可以查看当前所有快捷键;在"设置 → 关于"中可以查看 OpenSSL、Electron、Node.js 等底层组件版本;在"设置 → 账户"中可以查看当前 Credits 余额、订阅状态、历史消费。
+跨平台 GUI 操作:在"帮助 → 快捷键速查"中可以查看当前所有快捷键;在"设置 → 关于"中可以查看 OpenSSL、Electron、Node.js 等底层组件版本;在"设置 → 账户"中可以查看当前 积分 余额、订阅状态、历史消费。
 
 ## 小结
 
