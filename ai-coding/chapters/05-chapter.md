@@ -364,7 +364,7 @@ CFO 看完说"OK,我之前不知道是这个口径,以后就按这个。"——�
 1. **[数据报告] 飞书多维表格 OpenAPI 官方文档** — tenant_access_token 鉴权、app_token/table_id 读记录接口、page_size/page_token/has_more 分页机制 | 第 5 章
 2. **[数据报告] AFFiNCO Firecrawl Pricing 2026** — Firecrawl Hobby $16/月含 5,000 credits、1 页 1 credit、stealth 5 倍价的计费口径 | 第 5 章
 3. **[数据报告] Espressio.ai Firecrawl 2026 实战指南** — 5 竞品 × 15 页 × 30 天 = 2,250 credits/月,Hobby $16 覆盖抓取层 + 小模型 diff 整管道 <$17/月 | 第 5 章
-4. **[文章] nwtidc 15 人 SaaS 公司 OpenClaw+飞书周报全自动流程实战** — 周四 23:59 读多维表→周五 9:00 投资人摘要→飞书文档给 CEO 的端到端时间线 | 第 5 章
+4. **[文章] nwtidc 15 人 SaaS 公司 该框架+飞书周报全自动流程实战** — 周四 23:59 读多维表→周五 9:00 投资人摘要→飞书文档给 CEO 的端到端时间线 | 第 5 章
 5. **[文章] CSDN 合法爬虫四底线 法律边界(国家数据局+最高检 2026-05 口径)** — 登录后越权拉数据仍可构成刑法 285 条非法获取计算机信息系统数据罪 | 第 5 章
 
 ## 5.7 完整提示词:经营周报的自动化管道

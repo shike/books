@@ -33,8 +33,8 @@
 | Kimi Code | IDE | 月之暗面编程 IDE,Apache-2.0 开源 | 第 1 章 |
 | MiniMax Code | IDE | MiniMax 编程 IDE,Agent Team 多智能体,可接入微信/飞书/Telegram | 第 1 章 |
 | GitHub Copilot | IDE | AI 代码补全,GitClear 报告研究对象之一 | 第 13 章 |
-| OpenClaw | IDE / Agent | 38.4 万 stars 的开源 Agent 接入框架,Gateway–Node–Host 三层架构 | 第 6 章 |
-| Kimi Claw Beta | IDE / Agent | 月之暗面提供的 OpenClaw 云托管产品,2026-02-16 上线 | 第 6 章 |
+| 该框架 | IDE / Agent | 38.4 万 stars 的开源 Agent 接入框架,Gateway–Node–Host 三层架构 | 第 6 章 |
+| 月之暗面云托管版 | IDE / Agent | 月之暗面提供的 该框架 云托管产品,2026-02-16 上线 | 第 6 章 |
 | OpenSpec(Fission-AI) | 脚手架 | 轻量 SDD 工具,/opsx 命令驱动 proposal/specs/design/tasks 四件套 | 第 15 章 |
 | superpowers(obra) | 脚手架 | 14 个 Markdown skill + 加载器,强制 TDD/调试/评审工作流,25 万+ stars | 第 15 章 |
 | github/spec-kit | 脚手架 | GitHub 官方 SDD 工具包,刚性阶段门的重流水线 | 第 15 章 |
