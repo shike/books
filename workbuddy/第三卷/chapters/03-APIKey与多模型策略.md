@@ -497,6 +497,24 @@ WorkBuddy 企业版的审计日志支持这些监控(具体功能以官方文档
 
 ---
 
+
+
+## 3.10 本章配图
+
+本章共 6 张配图,按章节内容顺序排列,展示关键概念与流程:
+
+![1-api-flow](figures/3.3.1-api-flow.png)
+
+![2-cost-comparison](figures/3.3.2-cost-comparison.png)
+
+![3-multi-model](figures/3.3.3-multi-model.png)
+
+![4-model-config](figures/3.3.4-model-config.png)
+
+![5-vendor-agnostic](figures/3.3.5-vendor-agnostic.png)
+
+![6-cost-perf-balance](figures/3.3.6-cost-perf-balance.png)
+
 ## 3.11 小结
 
 本章讲了五个核心判断:

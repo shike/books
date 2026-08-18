@@ -560,6 +560,26 @@ CFO 通常会问三类问题。
 
 ---
 
+
+
+## 5.13 本章配图
+
+本章共 7 张配图,按章节内容顺序排列,展示关键概念与流程:
+
+![1-roi-five-dim](figures/3.5.1-roi-five-dim.png)
+
+![2-time-saving](figures/3.5.2-time-saving.png)
+
+![3-data-collection](figures/3.5.3-data-collection.png)
+
+![4-midcase](figures/3.5.4-midcase.png)
+
+![5-bigcase](figures/3.5.5-bigcase.png)
+
+![6-cfo-pitch](figures/3.5.6-cfo-pitch.png)
+
+![7-report-template](figures/3.5.7-report-template.png)
+
 ## 5.14 小结
 
 本章讲了五个核心判断:

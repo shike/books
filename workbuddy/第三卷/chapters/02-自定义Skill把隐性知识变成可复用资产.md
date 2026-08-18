@@ -749,6 +749,26 @@ Skill 鼓励共享,但要明确归属:
 
 ---
 
+
+
+## 2.12 本章配图
+
+本章共 7 张配图,按章节内容顺序排列,展示关键概念与流程:
+
+![1-skill-structure](figures/3.2.1-skill-structure.png)
+
+![2-dev-flow](figures/3.2.2-dev-flow.png)
+
+![3-contract-skill](figures/3.2.3-contract-skill.png)
+
+![4-customer-skill](figures/3.2.4-customer-skill.png)
+
+![5-debug-flow](figures/3.2.5-debug-flow.png)
+
+![6-version-control](figures/3.2.6-version-control.png)
+
+![7-publish](figures/3.2.7-publish.png)
+
 ## 2.13 小结
 
 本章讲了五个核心判断:
