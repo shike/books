@@ -270,7 +270,7 @@ sudo xattr -dr com.apple.quarantine /Applications/WorkBuddy.app
 **现象**:登录后,顶部显示"试用版 7 天",部分功能(比如多模型路由)不可用。
 
 **解决**:
-- 试用版能用 80% 功能。完整功能需要订阅 Pro 版(99 元/月,见第 7 章)
+- 试用版能用 80% 功能。完整功能需要订阅 Pro 版(具体价格以 WorkBuddy 官方公告为准,见第 7 章)
 - 或者联系 WorkBuddy 客服申请延长试用
 
 ---
