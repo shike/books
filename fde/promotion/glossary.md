@@ -11,17 +11,19 @@
 
 **AI(人工智能)**:一个经过大规模数据训练、能够按指令生成文字与代码的程序。本书中"AI"一词默认指代大语言模型(LLM)。
 
-## C
-
-**Credits / 积分**:WorkBuddy 的计费单位,1 积分约等于一次中等复杂任务的调用成本。具体单价以 WorkBuddy 官方公告为准。
+**AI 落地**:把 AI 模型从实验室推到生产环境,产出可衡量业务价值的过程。
 
 ## D
 
-**DICOM**:医疗影像的国际标准格式,不同厂商的 DICOM 实现有微妙差异(见 fde 第 2 章 PoC 地狱)。
+**DICOM**:医疗影像的国际标准格式,不同厂商的 DICOM 实现有微妙差异(见第 21 章 医疗 AI)。
+
+**多模型路由(Multi-Model Routing)**:根据任务类型自动选择最合适的 AI 模型(成本/质量/速度/隐私四维度),见第 13 章评估集。
 
 ## F
 
-**FDE(Forward Deployed Engineer)**:前线部署工程师,把 AI 模型从实验室推进到生产环境的人。
+**FDE(Forward Deployed Engineer)**:前线部署工程师,把 AI 模型从实验室推进到生产环境的人。详见第 1 章。
+
+**Few-Shot**:在 Prompt 中给出几个示例,让 AI 模仿。**Zero-Shot** = 不给示例,**One-Shot** = 给 1 个,**Few-Shot** = 给 2-5 个。
 
 ## L
 
@@ -33,19 +35,25 @@
 
 ## P
 
-**PoC(概念验证)**:Proof of Concept,验证技术可行性的早期阶段。fde 反复强调"PoC 验证的东西和上线需要的东西,不是同一件事"。
+**PACS(影像存档系统)**:医院用于存储和检索医学影像的系统,见第 21 章。
+
+**PoC(概念验证)**:Proof of Concept,验证技术可行性的早期阶段。本书反复强调"PoC 验证的东西和上线需要的东西,不是同一件事"。
 
 **Prompt(提示词)**:用户给 AI 的输入文本,通常包含任务描述、约束、输出格式要求。
 
 ## R
 
-**RAG(检索增强生成)**:Retrieval-Augmented Generation,AI 在回答前先检索相关文档,提升回答准确性。
+**RAG(检索增强生成)**:Retrieval-Augmented Generation,AI 在回答前先检索相关文档,提升回答准确性。详见第 11 章。
 
-**ROI(投资回报率)**:Return on Investment,衡量投入产出比的核心指标。
+**RAG 检索 vs 信息组织**:RAG 的核心不在"检索",而在"信息组织"。本书第 11 章详细分析。
+
+**ROI(投资回报率)**:Return on Investment,衡量投入产出比的核心指标。AI 项目 ROI 计算见第 14 章。
 
 ## S
 
-**Skill(技能)**:WorkBuddy 中的可复用工具单元,包含触发条件、执行逻辑、输出规范三部分。
+**Skill(技能)**:可复用的工具单元,包含触发条件、执行逻辑、输出规范三部分。
+
+**Supervisor(主 Agent)**:Multi-Agent 架构中,负责调度其他 Agent 的"管理者"角色。
 
 ## T
 
@@ -55,4 +63,4 @@
 
 ## W
 
-**WorkBuddy**:本书主角——桌面 AI 客户端。具体产品功能、版本、价格以 WorkBuddy 官方公告为准,撰写时为 2026 年 8 月。
+**WorkBuddy**:桌面 AI 客户端,见 WorkBuddy 三部曲。具体产品功能、版本、价格以 WorkBuddy 官方公告为准,撰写时为 2026 年 8 月。

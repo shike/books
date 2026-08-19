@@ -20,10 +20,10 @@ WorkBuddy 三部曲不写"AI 是什么",只写"怎么让 AI 替你干活"。三�
 
 ## 短版(微博/抖音,60 字)
 
-60+ 真实操作场景 + 1 套方法论。一本不讲"AI 是什么"、只讲"怎么让 AI 替你干活"的方法论书。学会派活,比学会 AI 更重要。
+60+ 真实操作场景,管理者必备的"派活"指南。学会派活,比学会 AI 更重要。
 
 ## 英文版(海外版,约 150 字)
 
-Most AI books talk about which model is best. *WorkBuddy: From Individual to Organization* starts there. It does not teach AI concepts; it teaches the practitioner how to make AI work on real projects, real customers, real outcomes.
+Most AI books focus on the model. *WorkBuddy: From Individual to Organization* focuses on what happens after — who dispatches the work, in what flow, with what tools. It does not teach AI concepts; it teaches the manager how to make AI work for the team and the organization.
 
-Across 24 live case post-mortems, the book argues that the true unit of AI work is the manager who can dispatch work, not the model, not the model. The book ships 60+ operation templates, 6 toolboxes, and 1 training certification system.
+Across 24 chapters and 60+ real operation scenarios, the book argues that the true unit of AI-era productivity is the manager who can dispatch work. The book ships 60+ operation templates, 6 toolboxes, and 1 training certification system.
