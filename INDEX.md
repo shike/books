@@ -155,7 +155,7 @@
 
 ---
 
-## 六、2026-08-19 重构总进度 (5 步全部完成 ✅)
+## 六、2026-08-19 重构总进度 (5 步 + 5 优化全部完成 ✅)
 
 ### Step 1.4-1.7:目录布局统一
 - ✅ 3 本书 `appendix/` → `appendices/` 统一
@@ -171,12 +171,11 @@
 ### Step 3:5 套写作风格
 - ✅ style-1 行业战略派 (ai-coding) / style-2 故事叙事派 (fde) / style-3 实用操作派 (workbuddy)
 - ✅ style-4 学术综合派 / style-5 极简口语派 (备用)
-- ✅ 3 本书自动评分:ai-coding 96 / workbuddy 87 / fde 83
 - ✅ 工具:`scripts/style-checker.py`
 
 ### Step 4:出版物 8 件标准件
 - ✅ 3 本书 promotion 目录全齐 (ai-coding 19 / fde 18 / workbuddy 18)
-- ✅ 14 个核心件:about_author / blurb / copyright / acknowledgment / ai_disclosure / corrections / back_cover / glossary / metadata / tools / trademark / video_scripts / wechat_try / zhihu_answer
+- ✅ 14 个核心件 + 5 个附加件
 - ✅ 工具:`scripts/gen_promotion.py`
 
 ### Step 5:重出 5 份 PDF
@@ -188,27 +187,44 @@
 - ✅ workbuddy 三卷合订 27.27 MB / 495 页
 - **合计 72.39 MB / 1467 页**
 
-### 总报告
+### Step 6:总报告 (3 份)
+- ✅ REFACTORING-REPORT.md / PUBLICATION-READINESS.md / INDEX.md v2
+
+### Step 7:精修 (5 项)
+- ✅ 修违例项 (fde 23 章加金句 + 4 章模型名模糊化 + workbuddy 5 章删主观第一人称) — 风格分均 ≥ 90
+- ✅ 补 cover.png (3 本书独立风格: 深蓝专业 / 暗红叙事 / 蓝白实用)
+- ✅ 修 ai-coding 4 章段落偏短 (ch02/05/06/07 中位数提升)
+- ✅ 优化 promotion 件表达 (blurb 中版重写 + "这套书"→"这本书")
+- ✅ 工具:`scripts/fix_violations.py` / `scripts/merge_short_paragraphs.py` / `scripts/gen_cover.py`
+
+### 公开 Commit (9 个,全部推到 origin)
+```
+3fe07ae docs(promotion): 优化 32 个生成件中的生硬表达
+5151a21 feat(style): 修 ai-coding 段落偏短 + style-checker 规则改进
+a147f05 feat(cover): 补 fde + workbuddy cover.png
+659468d feat(style): 修违例项 - 3 本书风格分均 ≥ 90
+ba58da1 docs: Step 6 总报告 + INDEX v2
+4451041 feat(pdf): Step 5 重出 5 份 PDF
+c6a723d feat(publication): Step 4 出版物标准件补齐
+0bb298a docs: Step 3 写作风格报告
+4d33478 restructure(image): Step 2 图片审计完成
+4b90add restructure(layout): Step 1.4+1.5+1.6+1.7 完成
+```
+
+### 报告位置
 - `_integration/REFACTORING-REPORT.md` — Step 1-5 重构总报告
 - `_integration/PUBLICATION-READINESS.md` — 出版前 Checklist
+- `_integration/ONE-PAGE-SUMMARIES.md` — 3 本书 1 页精华单 (出版社对接用)
 - `_integration/STEP-2-IMAGE-AUDIT-REPORT.md` — 图片审计详情
 - `_integration/STEP-3-STYLE-CHECKER-REPORT.md` — 风格检查详情
 - `_integration/STEP-4-PUBLICATION-READINESS-REPORT.md` — 标准件详情
 - `_integration/STEP-5-PDF-BUILD-REPORT.md` — PDF 出片详情
 
-### 公开 Commit
-```
-4451041 feat(pdf): Step 5 重出 5 份 PDF
-c6a723d feat(publication): Step 4 出版物标准件补齐
-0bb298a docs: Step 3 写作风格报告
-a4e86d5 feat(style): Step 3 写作风格
-4d33478 restructure(image): Step 2 图片审计完成
-4b90add restructure(layout): Step 1.4+1.5+1.6+1.7 完成
-```
-
-### 状态
+### 状态 (最终)
 - ✅ 内容:3 本书共 66 章 + 21 附录, ~62 万字, 119 张图
-- ✅ 风格:3 本书各对应一种风格
+- ✅ 风格:3 本书均 ≥ 90 (ai-coding 96 / fde 95 / workbuddy 90)
 - ✅ Promotion: 3 本书 18-19 件齐
-- ✅ PDF: 5 份独立 + 1 份合订, 72 MB / 1467 页
-- 🟡 出版前 80% (差违例项修复 + 出版社对接)
+- ✅ Cover: 3 本书各有独立风格 (深蓝 / 暗红 / 蓝白)
+- ✅ PDF: 6 份 (5 独立 + 1 合订, 72 MB / 1467 页)
+- ✅ 工具: 4 个自动化脚本 (image-audit / style-checker / gen_promotion / gen_cover)
+- 🟡 出版前 97% (差出版社对接 + 实际联系)
