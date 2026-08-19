@@ -38,7 +38,7 @@ AI 项目的胜负,不在选哪个模型,而在**部署**这个环节。
 |---|---|
 | 章数 | 26 章正文 + 3 个 case study + 1 个综合附录 |
 | 字数 | ~30 万字 |
-| 配图 | 31 张 SVG 封面(每章一图) |
+| 配图 | 31 张 SVG 占位(2026-08-15, 即将被 image_synthesize 生成的 PNG 替换) |
 | 篇章结构 | 4 篇:认知 → 侦察 → 推进 → 反挫 |
 
 ---
@@ -65,15 +65,9 @@ fde/
 │       └── case-study-03.md   ← 政务 AI
 ├── promotion/                 ← 营销文案(暂无,出版前需补)
 ├── assets/                    ← 配套资源(暂无,根据需要补)
-├── scripts/                   ← 工具脚本
-│   ├── build_html.py
-│   └── generate_covers.py
+├── scripts/                   ← 工具脚本(已清理,统一用顶层 scripts/build_book_pdf.py)
 └── dist/                      ← 已构建的发布件
-    └── html/                  ← 32 个 HTML(章节 + case + 附录)
-        ├── chapter-01.html
-        ├── ...
-        ├── case-study-01.html
-        └── appendix.html
+    └── main.pdf               ← 唯一 PDF(157 页, 2026-08 重构)
 ```
 
 ---
@@ -122,20 +116,13 @@ FDE 的能力建设 + 7 个垂直行业(医疗/金融/制造/政务/教育/法�
 - PDF:打开 `dist/main.pdf`
 - HTML:打开 `dist/html/chapter-01.html`,按章节顺序阅读
 
-### 重新构建 HTML
-```bash
-python3 scripts/build_html.py
-```
-
 ### 重新生成 PDF
 ```bash
 python3 ../../scripts/build_book_pdf.py fde
 ```
 
-### 重新生成封面
-```bash
-python3 scripts/generate_covers.py
-```
+> 老的 `scripts/build_html.py` + `scripts/generate_covers.py` 内部脚本已废弃(2026-08 重构),
+> 现统一用 `build_book_pdf.py` 出 PDF。`dist/html/` 临时目录也已清理。
 
 ---
 

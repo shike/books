@@ -119,7 +119,7 @@
 | 学员手册 | `workbuddy/培训物料/学员手册/` |
 | 培训卡片 | `workbuddy/培训物料/Vol1/2/3/module-cards/` |
 | PPT 大纲 | `workbuddy/培训物料/Vol1/2/3/ppt-outlines/` |
-| 认证体系 | `workbuddy/培训物料/认证体系.md` |
+| 认证体系 | `workbuddy/培训物料/认证体系/认证体系.md` |
 | 工作坊 | `workbuddy/培训物料/工作坊/` |
 | 行业方案 | `workbuddy/培训物料/行业方案/` |
 
@@ -129,10 +129,10 @@
 
 | 行业 | 位置 |
 |---|---|
-| 医疗 AI | `fde/chapters/21-医疗 AI:当错误不可接受.md`、`fde/appendix/case-studies/case-study-01.md` |
-| 金融 AI | `fde/chapters/22-金融 AI:当可解释性是硬约束.md`、`fde/appendix/case-studies/case-study-02.md` |
+| 医疗 AI | `fde/chapters/21-医疗 AI:当错误不可接受.md`、`fde/appendices/case-studies/case-study-01.md` |
+| 金融 AI | `fde/chapters/22-金融 AI:当可解释性是硬约束.md`、`fde/appendices/case-studies/case-study-02.md` |
 | 制造 AI | `fde/chapters/23-制造 AI:当物理世界不配合.md` |
-| 政务 AI | `fde/chapters/24-政务 AI:当决策链比技术链长十倍.md`、`fde/appendix/case-studies/case-study-03.md` |
+| 政务 AI | `fde/chapters/24-政务 AI:当决策链比技术链长十倍.md`、`fde/appendices/case-studies/case-study-03.md` |
 | 教育 AI | `fde/chapters/25-教育 AI:当使用者和决策者是两群人.md` |
 | 法律 AI | `fde/chapters/26-法律 AI:当精确的定义完全不同.md` |
 
@@ -151,4 +151,17 @@
 
 ---
 
-> 最后更新:2026-08-17
+> 最后更新:2026-08-19
+
+---
+
+## 六、2026-08-19 重构进度(布局)
+
+- ✅ Step 1.1 (ai-coding 删 57 个顶层冗余) + 1.2 (fde 删 5 顶层 + html 目录) + 1.3 (workbuddy 第一卷删旧 appendices/)
+- ✅ Step 1.4 (3 本书统一 `appendix/` → `appendices/`)
+- ✅ Step 1.5 (workbuddy 培训物料散落文件归位:`认证体系.md` → `认证体系/`,`题库.md` → `exam-bank/`)
+- ✅ Step 1.6 (删 ai-coding/fde 4 个旧 .py 内部脚本, 统一用顶层 `scripts/build_book_pdf.py`)
+- ✅ Step 1.7 (建顶层 `_style-guides/` `_audit/` `_integration/`, 归档 workbuddy 出版前 audit 报告)
+- 📋 待做: Step 2 图片 / Step 3 写作风格 / Step 4 标准件 / Step 5 重出最终 PDF
+
+详细方案:`_integration/PLAN-3IN1-v2.md` + `_integration/PLAN-FOLDER-LAYOUT.md`

@@ -113,13 +113,11 @@ ai-coding/
 
 ### 重新构建 dist/
 ```bash
-# 合并 + 转换
-python3 scripts/_merge_final_v2.py     # chapters/ → dist/main.md
-python3 scripts/_md2docx.py            # dist/main.md → dist/main.docx
-
 # 重新生成 PDF(从 chapters/*.md 拼 HTML → Chrome headless)
 python3 ../../scripts/build_book_pdf.py ai-coding
 ```
+
+> 老的 `_merge_final_v2.py` + `_md2docx.py` 内部脚本已废弃(2026-08 重构), 现统一用 `build_book_pdf.py` 出 PDF。
 
 ---
 
