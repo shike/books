@@ -114,8 +114,7 @@ def chinese_chars_only(s):
 
 
 def split_paragraphs(text):
-    """按空行分段,过滤掉代码块/标题/引用"""
-    # 简单实现:按 \n\n 分段,排除 # 开头的标题和 ``` 代码块
+    """按空行分段,过滤掉代码块/标题/引用/列表项/表格/图片说明"""
     paragraphs = []
     in_code = False
     for line in text.split('\n'):
@@ -126,6 +125,17 @@ def split_paragraphs(text):
             continue
         if line.startswith('#') or line.startswith('>'):
             continue
+        # 表格行
+        if line.startswith('|') or line.startswith('---'):
+            continue
+        # 列表项 (- 1. 2. 3. 等开头)
+        if line.lstrip().startswith(('-', '*')):
+            continue
+        if re.match(r'^\s*\d+\.\s+', line):
+            continue
+        # 图片说明
+        if line.lstrip().startswith('!['):
+            continue
         if not line.strip():
             paragraphs.append(None)  # 段落分隔
         else:
@@ -133,7 +143,7 @@ def split_paragraphs(text):
                 paragraphs[-1] += line
             else:
                 paragraphs.append(line)
-    return [p for p in paragraphs if p and len(p.strip()) > 10]
+    return [p for p in paragraphs if p and len(p.strip()) > 20]
 
 
 def para_median_len(paragraphs):
@@ -194,7 +204,9 @@ def check_chapter(text, style):
     if 'paragraph_median_range' in rules:
         lo, hi = rules['paragraph_median_range']
         paragraphs = split_paragraphs(text)
-        med = para_median_len(paragraphs)
+        # 过滤掉 < 30 字的"引导句"(通常后接列表/表格,非真正内容段)
+        real_paragraphs = [p for p in paragraphs if len(re.sub(r'\s', '', p)) >= 30]
+        med = para_median_len(real_paragraphs)
         if med < lo:
             score -= 10
             violations.append(f'段落中位数 {med:.0f} < {lo} (偏短)')
