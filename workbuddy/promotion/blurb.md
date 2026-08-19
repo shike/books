@@ -1,27 +1,29 @@
-# 简介
+# 简介(四版)
 
-> 排版位置:封底 / 媒体推荐 / 自媒体推文
+## 长版(封底用,约 400 字)
 
-## 长版(封底用)
+多数 AI 书讲"AI 是什么",而 WorkBuddy 三部曲讲"怎么让 AI 替你干活"——三卷一套,覆盖个人、团队、组织三个层级。
 
-WorkBuddy 是一款国产桌面 AI 客户端(具体版本与功能以你购买本书时 WorkBuddy 官方公告为准,撰写时为 2026 年 8 月)。把它装上不难,难的是**让它真的改变一个团队的工作方式**。
+WorkBuddy · 从个人到组织(管理者用好桌面 AI 的三步进阶)填补这一空白。本套书的核心主张是:AI 时代的核心竞争力,不是"会用 AI",而是"会派活"。WorkBuddy 桌面 AI 客户端 + 多模型路由 + 团队 Skill 库 + 组织级自动化,构成了"派活"的完整工具栈。
 
-本系列是写给管理者的桌面 AI 实战书。从个人到团队到组织,三步进阶:
+全书 24 章按"个人 → 团队 → 组织"三卷展开:第一卷(8 章)讲"个人如何用好 WorkBuddy",第二卷(8 章)讲"团队如何落地",第三卷(8 章)讲"组织级治理与未来 12-24 个月"。
 
-- **第一卷 · 上手**(个人):管理者先自己用明白。从安装、提示词、Skill 到 积分,8 章讲清楚"我先成为合格使用者"。
-- **第二卷 · 协作**(团队):从一个人到一个团队。企业微信集成、团队工作目录、技能市场、专家中心、自动化、30 天培训手册、积分 团队分配——8 章讲清楚"团队怎么用起来"。
-- **第三卷 · 重塑**(组织):从团队到重塑工作方式。自定义 Skill、APIKey 多模型策略、企业系统对接、组织 ROI、变革管理、数据安全合规、未来 12-24 个月——8 章讲清楚"组织怎么被 AI 重塑"。
+预设读者:WorkBuddy 实际使用者(中层管理者、团队负责人、IT 推进者、企业培训讲师)。
 
-**目标读者**:工作中需要高强度处理信息、做决策、带团队的中层及以上管理者;已有云端 AI(DeepSeek/Kimi/智谱等)使用经验,希望把 AI 装进本机、嵌入工作流;不限于技术背景,但愿意为提升组织效率投入学习时间。
+## 中版(京东/当当/微信读书详情页,约 250 字)
 
-**配套交付**:除了三卷主书,还提供完整的企业培训交付件——培训卡(每卷)、PPT 大纲、学员手册、讲师手册、培训题库、认证体系、工作坊模板、行业方案。
+管理者不必成为 AI 专家,但要学会"派活"。WorkBuddy 三部曲从个人 → 团队 → 组织,讲清怎么让 AI 真正替你干活。
 
-## 短版(媒体推文用,约 120 字)
+WorkBuddy · 从个人到组织不写空泛的"AI 概念",而写"管理者不必成为 AI 专家,但要学会"派活""。三卷 24 章 + 18 附录 + 6 序/目录,覆盖个人 → 团队 → 组织三个层级。
 
-WorkBuddy 是一款国产桌面 AI 客户端(具体版本与功能以你购买本书时 WorkBuddy 官方公告为准,撰写时为 2026 年 8 月)。把它装上不难,难的是让它真的改变一个团队的工作方式。这是一套写给管理者的三卷实战书:上手(个人)→ 协作(团队)→ 重塑(组织),24 章 + 18 附录 + 完整培训交付件。
+24 章 60+ 操作模板 + 18 附录 6 个工具箱 + 1 套培训认证体系
 
----
+## 短版(微博/抖音,60 字)
 
-**作者**:施可(Shi Ke) — 水滴跃动 Dropleap 创始人
-**数据截止**:2026-08-17
-**联系**:shike@dropleap.cn
+60+ 真实操作场景 + 1 套方法论。一本不讲"AI 是什么"、只讲"怎么让 AI 替你干活"的方法论书。学会派活,比学会 AI 更重要。
+
+## 英文版(海外版,约 150 字)
+
+Most AI books talk about which model is best. *WorkBuddy: From Individual to Organization* starts there. It does not teach AI concepts; it teaches the practitioner how to make AI work on real projects, real customers, real outcomes.
+
+Across 24 live case post-mortems, the book argues that the true unit of AI work is the manager who can dispatch work, not the model, not the model. The book ships 60+ operation templates, 6 toolboxes, and 1 training certification system.

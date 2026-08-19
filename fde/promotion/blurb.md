@@ -1,32 +1,29 @@
-# 简介
+# 简介(四版)
 
-> 排版位置:封底 / 媒体推荐 / 自媒体推文
+## 长版(封底用,约 400 字)
 
-## 长版(封底用)
+多数 AI 项目书止步于"模型选型",但 AI 项目的胜负从来不在选哪个模型,而在部署环节。
 
-AI 项目的胜负,不在选哪个模型,而在**部署**这个环节。
+FDE:AI 竞赛不在于模型(一本写给 AI 项目一线人员的书)填补这一空白。本书的核心主张是:FDE 不是部署工程师,AI 项目的部署环节需要 5 类能力(场景理解 / 模型适配 / 系统集成 / 团队培训 / 长期运维),这 5 类能力构成了 FDE 的核心方法论。
 
-模型能力会趋同。GPT-4、Claude、Gemini、Qwen、DeepSeek——半年后都能做对方能做的事。PoC 谁都能做,差距产生在:
+全书 26 章按"故事 + 抽象"组织:每章从一个真实项目故事开场(医疗 AI / 金融 AI / 制造 AI / 政务 AI / 教育 AI / 法律 AI 7 大行业),再抽象出可复用的判断框架。
 
-- 能不能蹲到客户现场看到真问题,而不是听需求会上说的
-- 能不能把 PoC 推进到产品化,而不是停在 demo 视频
-- 上线后能不能扛住真实流量、沉默故障、组织漂移
-- 能不能让业务方真的用起来、离不开
+预设读者:AI 项目一线工程师(FDE)、AI 工程师、解决方案架构师、技术负责人。
 
-本书围绕这条主线展开。所有内容来自一线项目里的真实场景,不是咨询报告里的"最佳实践"。
+## 中版(京东/当当/微信读书详情页,约 250 字)
 
-26 章正文,4 篇递进:**认知 → 侦察 → 推进 → 反挫**。从"为什么 PoC 阶段必死"开始,到"医疗/金融/制造/政务/教育/法律"7 个垂直行业的反挫案例,构成一个完整的 FDE(Forward Deployed Engineer)能力图谱。
+AI 项目的胜负,不在选哪个模型,而在部署环节。
 
-适合 CTO / 技术负责人 / 产品经理 / 想转 FDE 的工程师 / 正在做 AI 项目的工程师。
+FDE:AI 竞赛不在于模型不写空泛的"AI 概念",而写"AI 项目的胜负,不在选哪个模型,而在部署环节"。全书 26 章,26 个真实项目故事 + 7 个行业反挫案例 + 1 套 FDE 能力清单。
 
-不适合:想找"用 X 框架 3 步搞定 AI 应用"教程的人。这本书不教怎么用框架。
+26 个独立判断框架 + 7 个行业反挫案例 + 1 套 FDE 能力清单
 
-## 短版(媒体推文用,约 100 字)
+## 短版(微博/抖音,60 字)
 
-AI 项目为什么在 PoC 阶段死?为什么"够好就行"反而是工程气概?为什么 7 个行业的 AI 落地有不同的"对的答案"?26 章 + 3 案例 + 1 附录,写给所有在 AI 项目一线做交付的人。
+26 个真实项目故事 + 1 套方法论。一本不讲"AI 是什么"、只讲"怎么让 AI 替你干活"的方法论书。多数 AI 项目的死法,都是同一类。
 
----
+## 英文版(海外版,约 150 字)
 
-**作者**:施可(Shi Ke) — 水滴跃动 Dropleap 创始人
-**数据截止**:2026-07-28
-**联系**:shike@dropleap.cn
+Most AI books talk about which model is best. *FDE: AI Projects Win on Deployment, Not Models* starts there. It does not teach AI concepts; it teaches the practitioner how to make AI work on real projects, real customers, real outcomes.
+
+Across 26 live case post-mortems, the book argues that the true unit of AI work is the deployment engineer and the judgment frameworks they apply, not the model. The book ships 26 judgment frameworks, 7 industry counter-attack cases, and one FDE capability checklist.
