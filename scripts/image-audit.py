@@ -91,10 +91,23 @@ def find_chapter_files(book_dir, layout):
     return chapters
 
 def is_referenced(fig_path, chapter_files):
-    """检查 fig_path 是否被任何 .md 引用"""
+    """检查 fig_path 是否被任何 .md 严格引用 (只算 ![]() 格式)"""
+    import re
+    fig_name = fig_path.name
+    pattern = re.compile(r'!\[[^\]]*\]\((?:[^)]*/)?' + re.escape(fig_name) + r'\)')
+    for cf in chapter_files:
+        try:
+            content = cf.read_text(encoding='utf-8', errors='ignore')
+        except Exception:
+            continue
+        if pattern.search(content):
+            return True
+    return False
+
+def is_referenced_loose(fig_path, chapter_files):
+    """宽松判断:fig_name 或 fig_stem 出现在 .md 中(包括 _archive 旧版)"""
     fig_name = fig_path.name
     fig_stem = fig_path.stem
-    fig_rel = str(fig_path)
     for cf in chapter_files:
         try:
             content = cf.read_text(encoding='utf-8', errors='ignore')
