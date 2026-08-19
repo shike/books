@@ -215,10 +215,6 @@ c6a723d feat(publication): Step 4 出版物标准件补齐
 - `_integration/REFACTORING-REPORT.md` — Step 1-5 重构总报告
 - `_integration/PUBLICATION-READINESS.md` — 出版前 Checklist
 - `_integration/ONE-PAGE-SUMMARIES.md` — 3 本书 1 页精华单 (出版社对接用)
-- `_integration/STEP-2-IMAGE-AUDIT-REPORT.md` — 图片审计详情
-- `_integration/STEP-3-STYLE-CHECKER-REPORT.md` — 风格检查详情
-- `_integration/STEP-4-PUBLICATION-READINESS-REPORT.md` — 标准件详情
-- `_integration/STEP-5-PDF-BUILD-REPORT.md` — PDF 出片详情
 
 ### 状态 (最终)
 - ✅ 内容:3 本书共 66 章 + 21 附录, ~62 万字, 119 张图
