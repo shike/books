@@ -1,61 +1,60 @@
-# 图表索引
+# ai-coding 图片索引
 
-> 本书共含 53 张配图,按章节顺序编排。图片文件存于原书同目录,本索引仅供读者按图索骥与编辑校对使用。
+> 自动生成于 2026-08-19 11:29
+> 总数: 53 张
 
-| 编号 | 名称 | 所在章节 | 用途 |
-|------|------|----------|------|
-| 图 1 | 本书阅读路线图 | 前言 | 概览 15 章内容的全局阅读路径 |
-| 图 1-1 | AI 编程生态四象限 | 第 1 章 | 区分海外/国产、闭源/开源的四象限格局 |
-| 图 1-2 | 上下文窗口:标称值/有效值/计费触发点对比 | 第 1 章 | 拆解厂商标称、实际可用、计费触发三档之间的差距 |
-| 图 1-3 | 五家垂直闭环结构对比 | 第 1 章 | 并列展示 Anthropic、OpenAI、智谱、Kimi、MiniMax 的"模型+软件+套餐"三层 |
-| 图 1-4 | 国内编程套餐选型决策树 | 第 1 章 | 引导读者按任务画像、使用画像、约束画像逐项选型 |
-| 图 2-1 | 四段式工作流全貌 | 第 2 章 | 复刻网站的侦察—设计—重建—验收四段并行关系 |
-| 图 2-2 | 复刻网站四阶段时间线 | 第 2 章 | 把四段式落到时间盒上的甘特化呈现 |
-| 图 2-3 | AI 幻觉模式图 | 第 2 章 | 展示复刻过程中"煞有介事地编造"的高发场景 |
-| 图 2-4 | 视觉差异比对示意 | 第 2 章 | 像素级对比与容差阈值的可视化 |
-| 图 3-1 | 复刻 SaaS 整体工作流 | 第 3 章 | 把登录态、核心功能、审计、验收串为一条管线 |
-| 图 3-2 | 登录态生命周期 | 第 3 章 | 登录态从获取到失效的完整时间线 |
-| 图 3-3 | 80/20 混合架构示意图 | 第 3 章 | 80% 固化代码 + 20% AI 推理的分工边界 |
-| 图 3-4 | 五件套防护示意 | 第 3 章 | 凭据保护、操作审计、权限校验等五层防护 |
-| 图 4-1 | 意图债的来源分布 | 第 4 章 | 文档式对齐失败造成的意图债累积分布 |
-| 图 4-2 | 文档式对齐 vs Demo 对齐 | 第 4 章 | 两种对齐方式的损耗率对比 |
-| 图 4-3 | Demo 介导的需求对齐流程 | 第 4 章 | 从需求入场到规格固化的端到端流程 |
-| 图 5-1 | 口径即代码:成本表 | 第 5 章 | 用代码形式固化"销售额怎么算"等业务口径 |
-| 图 5-2 | 数据管道四段式架构 | 第 5 章 | 取数—清洗—分析—呈现的松耦合文件传递 |
-| 图 5-3 | 数据脏污示例与脱敏规则 | 第 5 章 | 常见脏数据模式与对应的脱敏处理 |
-| 图 6-1 | 定时心跳与异常处理流程 | 第 6 章 | 7×24 在线 Agent 的异常自愈路径 |
-| 图 6-2 | AI 全天定时任务时间线 | 第 6 章 | 8:00 / 9:00 / 12:00 / 18:00 等关键时间节点的任务排布 |
-| 图 6-3 | 该框架 + 飞书对接架构 | 第 6 章 | Gateway–Node–Host 三层与飞书长连接的关系 |
-| 图 6-4 | 常驻会话与隔离开子 Agent 比例 | 第 6 章 | 70/30 拆分比例的实测依据 |
-| 图 7-1 | 调研三件套调用顺序 | 第 7 章 | 搜索—RAG—爬虫的调用先后关系 |
-| 图 7-2 | 数据源决策流程 | 第 7 章 | 按"数据源决策四问"逐项判断 |
-| 图 7-3 | 三类数据源的金字塔结构 | 第 7 章 | 内置知识—联网搜索—爬虫知识库的金字塔分工 |
-| 图 8-1 | 知识的三层沉淀结构 | 第 8 章 | 知识库—Skill—Prompt 模板的逐层蒸馏 |
-| 图 8-2 | 自我蒸馏全流程 | 第 8 章 | 从个人记忆到系统沉淀的端到端蒸馏步骤 |
-| 图 8-3 | 经验采集四步流程 | 第 8 章 | 抓取—清洗—结构化—入库的工程实现 |
-| 图 9-1 | 双记忆机制:显式与隐式 | 第 9 章 | 显式记忆(可被检索)与隐式记忆(行为模式) |
-| 图 9-2 | 反馈回路示意 | 第 9 章 | AI 识别—人工审核—自动入库—回流使用的闭环 |
-| 图 9-3 | 上下文成本曲线 | 第 9 章 | 上下文窗口扩大时有效信息密度的衰减曲线 |
-| 图 10-1 | MVP 垂直切片示意 | 第 10 章 | 7 天 MVP 的核心场景切面 |
-| 图 10-2 | 7 天 MVP 时间盒甘特图 | 第 10 章 | Day 1—Day 7 每日交付物的时间盒 |
-| 图 10-3 | 收款链路决策树 | 第 10 章 | 从需求确认到对账验证的收款链路 |
-| 图 10-4 | 冷启动渠道选择 | 第 10 章 | MVP 阶段的低成本获客渠道 |
-| 图 11-1 | 沙盒测试与回滚机制 | 第 11 章 | 沙盒验证后回滚的 5 分钟切换路径 |
-| 图 11-2 | 三阶段时间线 | 第 11 章 | 理解—改造—稳定化三阶段的时间分配 |
-| 图 11-3 | 遗留系统 strangler 模式 | 第 11 章 | 绞杀者模式:绕老树建新系统、渐进替换 |
-| 图 11-4 | 考古学式探索漏斗 | 第 11 章 | 从全量代码到关键路径的逐层收敛 |
-| 图 12-1 | 三层管道架构 | 第 12 章 | 采集—理解—投递的解耦设计 |
-| 图 12-2 | 30 → 5 → 4 漏斗 | 第 12 章 | 原始变化到 MAJOR 通知的逐级筛选 |
-| 图 12-3 | 三种买法成本对比 | 第 12 章 | 托管/自建/无代码三种形态的月度成本 |
-| 图 13-1 | 上下文失效三类型判别 | 第 13 章 | 溢出—漂移—腐烂三类型的对照 |
-| 图 13-2 | 三重债务模型 | 第 13 章 | 技术债—认知债—意图债的累积效应 |
-| 图 13-3 | 治理组合分阶段实施阶梯 | 第 13 章 | 治理工具按阶段引入的阶梯路径 |
-| 图 13-4 | 四类问题全景对照 | 第 13 章 | 代码质量—上下文—文档—架构四类问题对照 |
-| 图 14-1 | 三类数据源决策树 | 第 14 章 | 内置知识—联网搜索—自有数据的四问决策 |
-| 图 14-2 | 抓取前实操自检流程 | 第 14 章 | 合规自检、频率控制、脱敏、留存日志五步 |
-| 图 14-3 | 抓取环境围墙化十年 | 第 14 章 | 2016—2026 抓取环境从开放到围墙化的演变 |
-| 图 15-1 | SDD 规范层与执行习惯框架的分层 | 第 15 章 | 规范层(OpenSpec)与执行层(superpowers)的关系 |
-| 图 15-2 | 子 Agent Token 流 | 第 15 章 | 子 Agent 在独立窗口消耗 Token 的流向 |
-| 图 15-3 | 四杠杆框架 | 第 15 章 | 检索—上下文—工具—子 Agent 四根杠杆 |
-
-> 索引编排规则:同一章内按正文出现顺序排列;跨章编号沿用"章号-序号"格式,便于交叉引用。如需按图名检索,使用浏览器或编辑器的"查找"功能定位"图 X-Y"。
+| 序号 | 文件 | 大小 | 路径 |
+|---|---|---|---|
+| 1 | `ai_coding_book_sec00_roadmap.png` | 127.7 KB | `figures/ai_coding_book_sec00_roadmap.png` |
+| 2 | `ai_coding_book_sec01_fig01.png` | 62.5 KB | `figures/ai_coding_book_sec01_fig01.png` |
+| 3 | `ai_coding_book_sec01_fig02.png` | 82.9 KB | `figures/ai_coding_book_sec01_fig02.png` |
+| 4 | `ai_coding_book_sec01_fig03.png` | 134.8 KB | `figures/ai_coding_book_sec01_fig03.png` |
+| 5 | `ai_coding_book_sec01_fig04.png` | 68.8 KB | `figures/ai_coding_book_sec01_fig04.png` |
+| 6 | `ai_coding_book_sec02_diff.png` | 18.9 KB | `figures/ai_coding_book_sec02_diff.png` |
+| 7 | `ai_coding_book_sec02_four_stage.png` | 130.9 KB | `figures/ai_coding_book_sec02_four_stage.png` |
+| 8 | `ai_coding_book_sec02_hallucination.png` | 62.9 KB | `figures/ai_coding_book_sec02_hallucination.png` |
+| 9 | `ai_coding_book_sec02_timeline.png` | 42.4 KB | `figures/ai_coding_book_sec02_timeline.png` |
+| 10 | `ai_coding_book_sec04_demo_flow.png` | 75.0 KB | `figures/ai_coding_book_sec04_demo_flow.png` |
+| 11 | `ai_coding_book_sec04_doc_vs_demo.png` | 48.2 KB | `figures/ai_coding_book_sec04_doc_vs_demo.png` |
+| 12 | `ai_coding_book_sec04_intent_debt_funnel.png` | 57.8 KB | `figures/ai_coding_book_sec04_intent_debt_funnel.png` |
+| 13 | `ai_coding_book_sec05_cost.png` | 42.0 KB | `figures/ai_coding_book_sec05_cost.png` |
+| 14 | `ai_coding_book_sec05_dirty.png` | 98.6 KB | `figures/ai_coding_book_sec05_dirty.png` |
+| 15 | `ai_coding_book_sec05_pipeline.png` | 110.1 KB | `figures/ai_coding_book_sec05_pipeline.png` |
+| 16 | `ai_coding_book_sec08_distill_flow.png` | 55.7 KB | `figures/ai_coding_book_sec08_distill_flow.png` |
+| 17 | `ai_coding_book_sec08_four_steps.png` | 140.2 KB | `figures/ai_coding_book_sec08_four_steps.png` |
+| 18 | `ai_coding_book_sec08_three_layers.png` | 133.1 KB | `figures/ai_coding_book_sec08_three_layers.png` |
+| 19 | `sec03_8020_architecture.png` | 151.2 KB | `figures/sec03_8020_architecture.png` |
+| 20 | `sec03_five_shields.png` | 82.5 KB | `figures/sec03_five_shields.png` |
+| 21 | `sec03_session_lifecycle.png` | 126.5 KB | `figures/sec03_session_lifecycle.png` |
+| 22 | `sec03_workflow.png` | 51.5 KB | `figures/sec03_workflow.png` |
+| 23 | `sec06_70_30_split.png` | 75.8 KB | `figures/sec06_70_30_split.png` |
+| 24 | `sec06_cron_heartbeat.png` | 67.3 KB | `figures/sec06_cron_heartbeat.png` |
+| 25 | `sec06_gateway_arch.png` | 121.1 KB | `figures/sec06_gateway_arch.png` |
+| 26 | `sec06_unattended_day.png` | 57.5 KB | `figures/sec06_unattended_day.png` |
+| 27 | `sec07_afternoon_pipeline.png` | 115.0 KB | `figures/sec07_afternoon_pipeline.png` |
+| 28 | `sec07_data_source_decision.png` | 144.6 KB | `figures/sec07_data_source_decision.png` |
+| 29 | `sec07_source_pyramid.png` | 124.8 KB | `figures/sec07_source_pyramid.png` |
+| 30 | `sec09_context_cost.png` | 45.1 KB | `figures/sec09_context_cost.png` |
+| 31 | `sec09_dual_memory.png` | 82.8 KB | `figures/sec09_dual_memory.png` |
+| 32 | `sec09_feedback_loop.png` | 87.1 KB | `figures/sec09_feedback_loop.png` |
+| 33 | `sec10_coldstart_channels.png` | 142.4 KB | `figures/sec10_coldstart_channels.png` |
+| 34 | `sec10_gantt.png` | 90.8 KB | `figures/sec10_gantt.png` |
+| 35 | `sec10_payment_decision.png` | 183.2 KB | `figures/sec10_payment_decision.png` |
+| 36 | `sec10_vertical_slice.png` | 65.4 KB | `figures/sec10_vertical_slice.png` |
+| 37 | `sec11_archaeology_funnel.png` | 61.0 KB | `figures/sec11_archaeology_funnel.png` |
+| 38 | `sec11_safety_net.png` | 58.5 KB | `figures/sec11_safety_net.png` |
+| 39 | `sec11_strangler_fig.png` | 48.5 KB | `figures/sec11_strangler_fig.png` |
+| 40 | `sec11_three_phases.png` | 59.2 KB | `figures/sec11_three_phases.png` |
+| 41 | `sec12_cost.png` | 106.4 KB | `figures/sec12_cost.png` |
+| 42 | `sec12_funnel.png` | 145.1 KB | `figures/sec12_funnel.png` |
+| 43 | `sec12_pipeline.png` | 124.3 KB | `figures/sec12_pipeline.png` |
+| 44 | `sec13_context_triage.png` | 115.5 KB | `figures/sec13_context_triage.png` |
+| 45 | `sec13_four_diseases.png` | 208.1 KB | `figures/sec13_four_diseases.png` |
+| 46 | `sec13_ladder.png` | 131.5 KB | `figures/sec13_ladder.png` |
+| 47 | `sec13_triple_debt.png` | 130.0 KB | `figures/sec13_triple_debt.png` |
+| 48 | `sec14_compliance_check.png` | 123.0 KB | `figures/sec14_compliance_check.png` |
+| 49 | `sec14_decision_tree.png` | 151.2 KB | `figures/sec14_decision_tree.png` |
+| 50 | `sec14_walled_garden.png` | 115.8 KB | `figures/sec14_walled_garden.png` |
+| 51 | `sec15_four_levers.png` | 107.2 KB | `figures/sec15_four_levers.png` |
+| 52 | `sec15_sdd_vs_superpowers.png` | 126.9 KB | `figures/sec15_sdd_vs_superpowers.png` |
+| 53 | `sec15_subagent_token_flow.png` | 113.5 KB | `figures/sec15_subagent_token_flow.png` |

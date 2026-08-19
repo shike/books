@@ -1,0 +1,464 @@
+[
+  {
+    "title": "从个人到团队:差距不止\"多几个人\"",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.1.1-from-individual-to-team.png"
+  },
+  {
+    "title": "三阶段框架:目标、动作、产出、风险、退出标准五要素",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.1.2-three-stages-framework.png"
+  },
+  {
+    "title": "远程协作的整体架构:本机 + 移动端 + IM 平台",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.2.1-remote-architecture.png"
+  },
+  {
+    "title": "企业微信自建应用配置流程:5 步",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.2.2-wecom-self-built-app.png"
+  },
+  {
+    "title": "三层目录结构:公共区 / 个人区 / 项目区",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.3.1-three-tier-folders.png"
+  },
+  {
+    "title": "WorkBuddy 技能市场:从个人收藏到团队共享",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.4.1-skill-marketplace.png"
+  },
+  {
+    "title": "专家中心:从\"老师傅经验\"到\"团队可复用资产\"",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.5.1-expert-center.png"
+  },
+  {
+    "title": "自动化:从\"记得用\"到\"自动跑\"",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.6.1-automation-intro.png"
+  },
+  {
+    "title": "三类触发器的关系:手动 / 定时 / 事件",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.6.2-three-triggers.png"
+  },
+  {
+    "title": "三类风险 × 三类自动化策略对照",
+    "subtitle": "",
+    "type": "bar",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.6.3-risk-vs-automation.png"
+  },
+  {
+    "title": "自动化 5 条纪律速查",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.6.4-five-rules.png"
+  },
+  {
+    "title": "30 天培训:从 0 到全员的能力曲线",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.7.1-training-curve.png"
+  },
+  {
+    "title": "内部布道师:角色与协同",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.7.2-evangelist-role.png"
+  },
+  {
+    "title": "成本与权限:从\"账算不清\"到\"治理框架\"",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第二卷/figures/2.8.1-cost-governance.png"
+  },
+  {
+    "title": "1-capability-boundary",
+    "subtitle": "",
+    "type": "grid",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.1-capability-boundary.png"
+  },
+  {
+    "title": "2-five-tasks",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.2-five-tasks.png"
+  },
+  {
+    "title": "3-failure-cases",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.3-failure-cases.png"
+  },
+  {
+    "title": "4-evaluation-table",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.4-evaluation-table.png"
+  },
+  {
+    "title": "5-decision-tree",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.5-decision-tree.png"
+  },
+  {
+    "title": "6-vs-general-ai",
+    "subtitle": "",
+    "type": "bar",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.1.6-vs-general-ai.png"
+  },
+  {
+    "title": "1-skill-structure",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.1-skill-structure.png"
+  },
+  {
+    "title": "2-dev-flow",
+    "subtitle": "",
+    "type": "flow",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.2-dev-flow.png"
+  },
+  {
+    "title": "3-contract-skill",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.3-contract-skill.png"
+  },
+  {
+    "title": "4-customer-skill",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.4-customer-skill.png"
+  },
+  {
+    "title": "5-debug-flow",
+    "subtitle": "",
+    "type": "flow",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.5-debug-flow.png"
+  },
+  {
+    "title": "6-version-control",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.6-version-control.png"
+  },
+  {
+    "title": "7-publish",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.2.7-publish.png"
+  },
+  {
+    "title": "1-api-flow",
+    "subtitle": "",
+    "type": "flow",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.1-api-flow.png"
+  },
+  {
+    "title": "2-cost-comparison",
+    "subtitle": "",
+    "type": "bar",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.2-cost-comparison.png"
+  },
+  {
+    "title": "3-multi-model",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.3-multi-model.png"
+  },
+  {
+    "title": "4-model-config",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.4-model-config.png"
+  },
+  {
+    "title": "5-vendor-agnostic",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.5-vendor-agnostic.png"
+  },
+  {
+    "title": "6-cost-perf-balance",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.3.6-cost-perf-balance.png"
+  },
+  {
+    "title": "1-integration-landscape",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.1-integration-landscape.png"
+  },
+  {
+    "title": "2-api-vs-webhook",
+    "subtitle": "",
+    "type": "bar",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.2-api-vs-webhook.png"
+  },
+  {
+    "title": "3-integration-patterns",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.3-integration-patterns.png"
+  },
+  {
+    "title": "4-feishu-case",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.4-feishu-case.png"
+  },
+  {
+    "title": "5-knowledge-base",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.5-knowledge-base.png"
+  },
+  {
+    "title": "6-integration-architecture-overview",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.6-integration-architecture-overview.png"
+  },
+  {
+    "title": "7-architecture",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.4.7-architecture.png"
+  },
+  {
+    "title": "1-roi-five-dim",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.1-roi-five-dim.png"
+  },
+  {
+    "title": "2-time-saving",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.2-time-saving.png"
+  },
+  {
+    "title": "3-data-collection",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.3-data-collection.png"
+  },
+  {
+    "title": "4-midcase",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.4-midcase.png"
+  },
+  {
+    "title": "5-bigcase",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.5-bigcase.png"
+  },
+  {
+    "title": "6-cfo-pitch",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.6-cfo-pitch.png"
+  },
+  {
+    "title": "7-report-template",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.5.7-report-template.png"
+  },
+  {
+    "title": "1-three-resistances",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.1-three-resistances.png"
+  },
+  {
+    "title": "2-early-signals",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.2-early-signals.png"
+  },
+  {
+    "title": "3-people-strategies",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.3-people-strategies.png"
+  },
+  {
+    "title": "4-culture",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.4-culture.png"
+  },
+  {
+    "title": "5-champion-system",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.5-champion-system.png"
+  },
+  {
+    "title": "6-kotter",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.6.6-kotter.png"
+  },
+  {
+    "title": "1-security-arch",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.1-security-arch.png"
+  },
+  {
+    "title": "2-data-types",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.2-data-types.png"
+  },
+  {
+    "title": "3-compliance",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.3-compliance.png"
+  },
+  {
+    "title": "4-audit-log",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.4-audit-log.png"
+  },
+  {
+    "title": "5-incident",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.5-incident.png"
+  },
+  {
+    "title": "6-legal-phrases",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.6-legal-phrases.png"
+  },
+  {
+    "title": "7-local-vs-cloud",
+    "subtitle": "",
+    "type": "bar",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.7.7-local-vs-cloud.png"
+  },
+  {
+    "title": "1-five-trends",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.1-five-trends.png"
+  },
+  {
+    "title": "2-roadmap",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.2-roadmap.png"
+  },
+  {
+    "title": "3-manager-layout",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.3-manager-layout.png"
+  },
+  {
+    "title": "4-ai-employment",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.4-ai-employment.png"
+  },
+  {
+    "title": "5-90-day-plan",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.5-90-day-plan.png"
+  },
+  {
+    "title": "6-three-volume-map",
+    "subtitle": "",
+    "type": "blank",
+    "items": [],
+    "output": "/Users/shike/Desktop/code/books/workbuddy/第三卷/figures/3.8.6-three-volume-map.png"
+  }
+]
