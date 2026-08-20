@@ -1,0 +1,41 @@
+# Summary
+
+
+* [介绍](../README.md)
+* [第 1 章｜FDE 不是部署工程师](chapters/01-FDE 不是部署工程师.md)
+* [第 2 章｜PoC 地狱](chapters/02-PoC 地狱.md)
+* [第 3 章｜够好就行](chapters/03-够好就行.md)
+* [第 4 章｜能不用 AI 就不用 AI](chapters/04-能不用 AI 就不用 AI.md)
+* [第 5 章｜用户说的不是需求](chapters/05-用户说的不是需求.md)
+* [第 6 章｜把问题翻译成 AI 问题](chapters/06-把问题翻译成 AI 问题.md)
+* [第 7 章｜三轴验证](chapters/07-三轴验证.md)
+* [第 8 章｜期望管理](chapters/08-期望管理.md)
+* [第 9 章｜模型只是零件](chapters/09-模型只是零件.md)
+* [第 10 章｜Prompt 是需求规格书](chapters/10-Prompt 是需求规格书.md)
+* [第 11 章｜RAG：信息的组织比检索更重要](chapters/11-RAG：信息的组织比检索更重要.md)
+* [第 12 章｜Agent：让 AI 可靠，不是让 AI 炫](chapters/12-Agent：让 AI 可靠，不是让 AI.md)
+* [第 13 章｜评估集就是产品规格书](chapters/13-评估集就是产品规格书.md)
+* [第 14 章｜成本、延迟、质量：只能挑两个](chapters/14-成本、延迟、质量：只能挑两个.md)
+* [第 15 章｜上线是开始，不是结束](chapters/15-上线是开始，不是结束.md)
+* [第 16 章｜活的系统需要养](chapters/16-活的系统需要养.md)
+* [第 17 章｜AI 系统的故障是沉默的](chapters/17-AI 系统的故障是沉默的.md)
+* [第 18 章｜复盘：别再写"下次注意"](chapters/18-复盘：别再写下次注意.md)
+* [第 19 章｜FDE 是打出来的](chapters/19-FDE 是打出来的.md)
+* [第 20 章｜FDE 不是终点](chapters/20-FDE 不是终点.md)
+* [第 21 章｜医疗 AI：当错误不可接受](chapters/21-医疗 AI：当错误不可接受.md)
+* [第 22 章｜金融 AI：当可解释性是硬约束](chapters/22-金融 AI：当可解释性是硬约束.md)
+* [第 23 章｜制造 AI：当物理世界不配合](chapters/23-制造 AI：当物理世界不配合.md)
+* [第 24 章｜政务 AI：当决策链比技术链长十倍](chapters/24-政务 AI：当决策链比技术链长十倍.md)
+* [第 25 章｜教育 AI：当使用者和决策者是两群人](chapters/25-教育 AI：当使用者和决策者是两群人.md)
+* [第 26 章｜法律 AI：当"精确"的定义完全不同](chapters/26-法律 AI：当精确的定义完全不同.md)
+
+## 附录
+* [附录汇总](appendices/00-main.md)
+
+## 资源
+* [关于作者](promotion/about_author.md)
+* [简介(四版)](promotion/blurb.md)
+* [版权页](promotion/copyright.md)
+* [致谢](promotion/acknowledgment.md)
+* [AI 生成内容声明](promotion/ai_disclosure.md)
+* [术语表](promotion/glossary.md)
