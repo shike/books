@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>四维评分机制:任务路由</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="100.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>任务类型</text>
+<text x="116.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 写作 / 阅读 / 逻辑 / 结构化</text>
+<rect x="610.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>上下文长度</text>
+<text x="626.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• &lt; 10K / 10K-100K / &gt; 100K</text>
+<rect x="100.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>质量要求</text>
+<text x="116.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 日常 / 正式 / 关键</text>
+<rect x="610.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>成本预算</text>
+<text x="626.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 免费档 / 标准 / 重度</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>macOS 安装 5 步</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="480.0" y="160.0" width="240" height="84.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="190.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>双击 .dmg</text>
+<line x1="600.0" y1="239.0" x2="600.0" y2="259.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,259.0 606.0,249.0 594.0,249.0" fill="#8B8680"/>
+<rect x="480.0" y="264.0" width="240" height="84.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="294.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>拖到 Applications</text>
+<line x1="600.0" y1="343.0" x2="600.0" y2="363.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,363.0 606.0,353.0 594.0,353.0" fill="#8B8680"/>
+<rect x="480.0" y="368.0" width="240" height="84.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="398.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>首次启动授权</text>
+<line x1="600.0" y1="447.0" x2="600.0" y2="467.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,467.0 606.0,457.0 594.0,457.0" fill="#8B8680"/>
+<rect x="480.0" y="472.0" width="240" height="84.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="502.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>同意 Gatekeeper</text>
+<line x1="600.0" y1="551.0" x2="600.0" y2="571.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,571.0 606.0,561.0 594.0,561.0" fill="#8B8680"/>
+<rect x="480.0" y="576.0" width="240" height="84.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="606.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>完成</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

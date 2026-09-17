@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>三重债务模型:技术债 / 意图债 / 上下文债</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="100.0" y="160.0" width="320.0" height="570.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>技术债</text>
+<text x="116.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 代码质量 / 架构</text>
+<text x="116.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• —— 长期不治会拖垮</text>
+<rect x="440.0" y="160.0" width="320.0" height="570.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="440.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="440.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="456.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>意图债</text>
+<text x="456.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 客户原始诉求 vs 实现</text>
+<text x="456.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• —— 改版无底洞</text>
+<rect x="780.0" y="160.0" width="320.0" height="570.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="780.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="780.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="796.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>上下文债</text>
+<text x="796.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• AI 错过关键信息</text>
+<text x="796.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• —— 决策失准</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

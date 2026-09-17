@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>PPT 大纲生成:7 步</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="120.0" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="171.42857142857144" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>准备素材</text>
+<text x="171.42857142857144" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>报告 / 数据</text>
+<line x1="227.85714285714286" y1="400.0" x2="257.8571428571429" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="257.9,400.0 247.9,394.0 247.9,406.0" fill="#8B8680"/>
+<rect x="262.8571428571429" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="314.28571428571433" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>新建任务</text>
+<text x="314.28571428571433" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>PPT 大纲模板</text>
+<line x1="370.7142857142858" y1="400.0" x2="400.7142857142858" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="400.7,400.0 390.7,394.0 390.7,406.0" fill="#8B8680"/>
+<rect x="405.7142857142857" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="457.14285714285717" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>指定页数</text>
+<text x="457.14285714285717" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>15 页</text>
+<line x1="513.5714285714286" y1="400.0" x2="543.5714285714286" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="543.6,400.0 533.6,394.0 533.6,406.0" fill="#8B8680"/>
+<rect x="548.5714285714286" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>AI 出大纲</text>
+<text x="600.0" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>每页标题 + 要点</text>
+<line x1="656.4285714285714" y1="400.0" x2="686.4285714285714" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="686.4,400.0 676.4,394.0 676.4,406.0" fill="#8B8680"/>
+<rect x="691.4285714285714" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="742.8571428571429" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>审阅调整</text>
+<text x="742.8571428571429" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>结构是否合理</text>
+<line x1="799.2857142857143" y1="400.0" x2="829.2857142857143" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="829.3,400.0 819.3,394.0 819.3,406.0" fill="#8B8680"/>
+<rect x="834.2857142857143" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="885.7142857142858" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>导出大纲</text>
+<text x="885.7142857142858" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Markdown / Word</text>
+<line x1="942.1428571428572" y1="400.0" x2="972.1428571428572" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="972.1,400.0 962.1,394.0 962.1,406.0" fill="#8B8680"/>
+<rect x="977.1428571428571" y="350.0" width="102.85714285714286" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="1028.5714285714284" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>填入 PPT 工具</text>
+<text x="1028.5714285714284" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>二次加工</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

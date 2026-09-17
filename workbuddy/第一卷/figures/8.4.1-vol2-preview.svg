@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>第二卷预告(团队到组织)</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="100.0" y="160.0" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>团队落地三阶段</text>
+<text x="116.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 试点 · 推广 · 沉淀</text>
+<rect x="440.0" y="160.0" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="440.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="440.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="456.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>企业微信集成</text>
+<text x="456.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 飞书 · 钉钉 · 协作</text>
+<rect x="780.0" y="160.0" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="780.0" y="160.0" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="780.0" y="190.0" width="320.0" height="10" fill="#0F4C81"/>
+<text x="796.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>团队工作目录</text>
+<text x="796.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 公共区 · 个人区 · 项目区</text>
+<rect x="100.0" y="356.66666666666663" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="356.66666666666663" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="386.66666666666663" width="320.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="382.66666666666663" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>技能市场</text>
+<text x="116.0" y="416.66666666666663" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 选现成的 Skill</text>
+<rect x="440.0" y="356.66666666666663" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="440.0" y="356.66666666666663" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="440.0" y="386.66666666666663" width="320.0" height="10" fill="#0F4C81"/>
+<text x="456.0" y="382.66666666666663" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>专家中心</text>
+<text x="456.0" y="416.66666666666663" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 沉淀团队最佳实践</text>
+<rect x="780.0" y="356.66666666666663" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="780.0" y="356.66666666666663" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="780.0" y="386.66666666666663" width="320.0" height="10" fill="#0F4C81"/>
+<text x="796.0" y="382.66666666666663" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>30 天培训</text>
+<text x="796.0" y="416.66666666666663" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 从 0 到全员</text>
+<rect x="100.0" y="553.3333333333333" width="320.0" height="176.66666666666666" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="553.3333333333333" width="320.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="583.3333333333333" width="320.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="579.3333333333333" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>成本与权限</text>
+<text x="116.0" y="613.3333333333333" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 积分 怎么分</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

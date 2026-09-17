@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>团队引入 WorkBuddy 的 4 件事</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="100.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>① 示范</text>
+<text x="116.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 领导公开使用</text>
+<text x="116.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 展示真实场景</text>
+<rect x="610.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>② 培训</text>
+<text x="626.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 8 章内容压缩为 2 天</text>
+<text x="626.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 让团队会用且用得专业</text>
+<rect x="100.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>③ 流程</text>
+<text x="116.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 把 AI 使用嵌入</text>
+<text x="116.0" y="537.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 日常工作流</text>
+<rect x="610.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>④ 文化</text>
+<text x="626.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 允许尝试 · 容忍失败</text>
+<text x="626.0" y="537.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 不是命令而是示范</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

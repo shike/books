@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>7 天 MVP 时间盒甘特图</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<line x1="120" y1="400.0" x2="1080" y2="400.0" stroke="#2D2D2D" stroke-width="3"/>
+<circle cx="120.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="120.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>1</text>
+<text x="120.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D1 骨架</text>
+<text x="120.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>页面 + 路由</text>
+<circle cx="280.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="280.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>2</text>
+<text x="280.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D2 数据库</text>
+<text x="280.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>建表 + API</text>
+<circle cx="440.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="440.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>3</text>
+<text x="440.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D3 核心功能</text>
+<text x="440.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>登录 / 主流程</text>
+<circle cx="600.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="600.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>4</text>
+<text x="600.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D4 支付</text>
+<text x="600.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>接入支付链路</text>
+<circle cx="760.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="760.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>5</text>
+<text x="760.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D5 测试</text>
+<text x="760.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Demo + Bug 修复</text>
+<circle cx="920.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="920.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>6</text>
+<text x="920.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D6 上线</text>
+<text x="920.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>部署 + 监控</text>
+<circle cx="1080.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="1080.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>7</text>
+<text x="1080.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D7 复盘</text>
+<text x="1080.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>数据 + 用户反馈</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

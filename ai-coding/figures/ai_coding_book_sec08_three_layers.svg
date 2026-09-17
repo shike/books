@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>知识的三层沉淀结构</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="475.0" y="160.0" width="250.0" height="122.5" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="4"/>
+<text x="600.0" y="215.25" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Prompt 模板</text>
+<text x="495.0" y="237.25" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 人类直接复用 </text>
+<text x="495.0" y="237.25" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>•  标准化最高</text>
+<rect x="350.0" y="292.5" width="500.0" height="122.5" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="4"/>
+<text x="600.0" y="347.75" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Skill</text>
+<text x="370.0" y="369.75" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• AI 自动调用 </text>
+<text x="370.0" y="369.75" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>•  写给 AI 的操作规程</text>
+<rect x="225.0" y="425.0" width="750.0" height="122.5" fill="#16A085" stroke="#2D2D2D" stroke-width="1.5" rx="4"/>
+<text x="600.0" y="480.25" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>知识库</text>
+<text x="245.0" y="502.25" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 可被检索 </text>
+<text x="245.0" y="502.25" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>•  五项结构 (场景/现象/原因/解法/效果)</text>
+<rect x="100.0" y="557.5" width="1000.0" height="122.5" fill="#D2691E" stroke="#2D2D2D" stroke-width="1.5" rx="4"/>
+<text x="600.0" y="612.75" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>个人记忆</text>
+<text x="120.0" y="634.75" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 散落各处 · 易流失 </text>
+<text x="120.0" y="634.75" font-size="13" fill="#FFFFFF" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>•  蒸馏起点</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

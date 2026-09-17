@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>MVP 垂直切片:核心路径完整 + 其余留空</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="100.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>核心路径</text>
+<text x="116.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 用户从进入到付费</text>
+<text x="116.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 每个环节打通 · 不闪退</text>
+<rect x="610.0" y="160.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="160.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="190.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="186.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>辅助功能</text>
+<text x="626.0" y="220.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 次要功能暂留占位</text>
+<text x="626.0" y="242.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 用 '即将上线' 标识</text>
+<rect x="100.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="100.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="100.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="116.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>管理后台</text>
+<text x="116.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 仅核心查询 + 改</text>
+<text x="116.0" y="537.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 其余用 SQL 临时操作</text>
+<rect x="610.0" y="455.0" width="490.0" height="275.0" fill="#FFFFFF" stroke="#0F4C81" stroke-width="1.5" rx="10"/>
+<rect x="610.0" y="455.0" width="490.0" height="40" fill="#0F4C81" stroke="#0F4C81" stroke-width="0" rx="10"/>
+<rect x="610.0" y="485.0" width="490.0" height="10" fill="#0F4C81"/>
+<text x="626.0" y="481.0" font-size="18" fill="#FFFFFF" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>边界条件</text>
+<text x="626.0" y="515.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 异常 / 边界用最简文案</text>
+<text x="626.0" y="537.0" font-size="14" fill="#2D2D2D" text-anchor="start" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>• 后续补全</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

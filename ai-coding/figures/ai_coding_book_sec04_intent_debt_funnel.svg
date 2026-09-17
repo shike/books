@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>意图债的来源分布:100 → 30 → 5</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<polygon points="120.0,170.0 1080.0,170.0 975.0,285.0 225.0,285.0" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5"/>
+<text x="600.0" y="228.5" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>客户原始表达</text>
+<text x="600.0" y="250.5" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>模糊 1 句话</text>
+<polygon points="225.0,295.0 975.0,295.0 870.0,410.0 330.0,410.0" fill="#16A085" stroke="#2D2D2D" stroke-width="1.5"/>
+<text x="600.0" y="353.5" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>AI 解读</text>
+<text x="600.0" y="375.5" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>3-5 个候选解读</text>
+<polygon points="330.0,420.0 870.0,420.0 765.0,535.0 435.0,535.0" fill="#16A085" stroke="#2D2D2D" stroke-width="1.5"/>
+<text x="600.0" y="478.5" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Demo 介导对齐</text>
+<text x="600.0" y="500.5" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>明确 1 个目标</text>
+<polygon points="435.0,545.0 765.0,545.0 660.0,660.0 540.0,660.0" fill="#D2691E" stroke="#2D2D2D" stroke-width="1.5"/>
+<text x="600.0" y="603.5" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>可执行需求</text>
+<text x="600.0" y="625.5" font-size="14" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>验收标准清晰</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

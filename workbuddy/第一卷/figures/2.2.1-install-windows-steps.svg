@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>Windows 安装 6 步</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="480.0" y="160.0" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="190.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>双击 .exe</text>
+<line x1="600.0" y1="221.66666666666669" x2="600.0" y2="241.66666666666669" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,241.7 606.0,231.7 594.0,231.7" fill="#8B8680"/>
+<rect x="480.0" y="246.66666666666669" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="276.6666666666667" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>同意许可</text>
+<line x1="600.0" y1="308.33333333333337" x2="600.0" y2="328.33333333333337" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,328.3 606.0,318.3 594.0,318.3" fill="#8B8680"/>
+<rect x="480.0" y="333.33333333333337" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="363.33333333333337" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>选择安装目录</text>
+<line x1="600.0" y1="395.00000000000006" x2="600.0" y2="415.00000000000006" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,415.0 606.0,405.0 594.0,405.0" fill="#8B8680"/>
+<rect x="480.0" y="420.0" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="450.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>等待复制文件</text>
+<line x1="600.0" y1="481.6666666666667" x2="600.0" y2="501.6666666666667" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,501.7 606.0,491.7 594.0,491.7" fill="#8B8680"/>
+<rect x="480.0" y="506.6666666666667" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="536.6666666666667" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>桌面生成快捷方式</text>
+<line x1="600.0" y1="568.3333333333334" x2="600.0" y2="588.3333333333334" stroke="#8B8680" stroke-width="2"/>
+<polygon points="600.0,588.3 606.0,578.3 594.0,578.3" fill="#8B8680"/>
+<rect x="480.0" y="593.3333333333334" width="240" height="66.66666666666667" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="600.0" y="623.3333333333334" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>首次启动</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

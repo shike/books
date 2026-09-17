@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>读第二卷前的准备清单</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<line x1="120" y1="400.0" x2="1080" y2="400.0" stroke="#2D2D2D" stroke-width="3"/>
+<circle cx="120.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="120.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>1</text>
+<text x="120.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D1</text>
+<text x="120.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>个人用满 2 周</text>
+<circle cx="360.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="360.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>2</text>
+<text x="360.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D2</text>
+<text x="360.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>整理 5 个真实场景</text>
+<circle cx="600.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="600.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>3</text>
+<text x="600.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D3</text>
+<text x="600.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>识别 3 个阻力点</text>
+<circle cx="840.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="840.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>4</text>
+<text x="840.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D4</text>
+<text x="840.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>准备团队预算</text>
+<circle cx="1080.0" cy="400.0" r="16" fill="#0F4C81" stroke="#0F4C81" stroke-width="1.5"/>
+<text x="1080.0" y="405.0" font-size="16" fill="#FFFFFF" text-anchor="middle" font-weight="700" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>5</text>
+<text x="1080.0" y="360.0" font-size="18" fill="#2D2D2D" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>D5</text>
+<text x="1080.0" y="450.0" font-size="14" fill="#8B8680" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>开始第二卷</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>

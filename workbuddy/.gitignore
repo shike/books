@@ -1,0 +1,10 @@
+# 系统文件
+.DS_Store
+# 空目录占位(根 figures/ 没有内容)
+/figures/
+# 备份
+README.original.md.bak
+# 三卷各自的 _archive(写作中间稿,不算交付件)
+/第一卷/chapters/_archive/
+/第二卷/chapters/_archive/
+/第三卷/chapters/_archive/

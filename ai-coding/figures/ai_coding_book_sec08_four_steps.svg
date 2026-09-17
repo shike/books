@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>
+<rect width="1200" height="800" fill="#FAF7F0"/>
+<text x="80" y="70" font-size="32" fill="#0F4C81" text-anchor="start" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>经验采集四步流程</text>
+<line x1="80" y1="130" x2="1120" y2="130" stroke="#D8D2C5" stroke-width="1"/>
+<rect x="120.0" y="350.0" width="210.0" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="225.0" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>① 全量抓取</text>
+<text x="225.0" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>3 年发言 + 文档</text>
+<line x1="335.0" y1="400.0" x2="365.0" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="365.0,400.0 355.0,394.0 355.0,406.0" fill="#8B8680"/>
+<rect x="370.0" y="350.0" width="210.0" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="475.0" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>② AI 识别</text>
+<text x="475.0" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>可结构化的经验段</text>
+<line x1="585.0" y1="400.0" x2="615.0" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="615.0,400.0 605.0,394.0 605.0,406.0" fill="#8B8680"/>
+<rect x="620.0" y="350.0" width="210.0" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="725.0" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>③ 当事人确认</text>
+<text x="725.0" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>是否记错 / 漏掉</text>
+<line x1="835.0" y1="400.0" x2="865.0" y2="400.0" stroke="#8B8680" stroke-width="2"/>
+<polygon points="865.0,400.0 855.0,394.0 855.0,406.0" fill="#8B8680"/>
+<rect x="870.0" y="350.0" width="210.0" height="100" fill="#0F4C81" stroke="#2D2D2D" stroke-width="1.5" rx="10"/>
+<text x="975.0" y="385.0" font-size="18" fill="#FFFFFF" text-anchor="middle" font-weight="600" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>④ 标签入库</text>
+<text x="975.0" y="415.0" font-size="13" fill="#FFFFFF" text-anchor="middle" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>主题 + 上下文</text>
+<line x1="80" y1="730" x2="1120" y2="730" stroke="#D8D2C5" stroke-width="1"/>
+<text x="1120" y="755" font-size="12" fill="#8B8680" text-anchor="end" font-family='system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif'>施可 · 三本书</text>
+</svg>
