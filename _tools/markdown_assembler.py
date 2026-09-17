@@ -778,9 +778,14 @@ def build_docx(book_key: str, md_text: str):
 # ==================== 主入口 ====================
 
 def build_book(book_key: str, formats: List[str] = None):
-    """构建一本书的全部产物"""
+    """构建一本书的全部产物
+
+    默认只生成 PDF(最终交付物,放书根)
+    md 是中间产物(合并所有章),放 dist
+    epub / docx 不再生成(已从交付物列表移除)
+    """
     if formats is None:
-        formats = ["md", "epub", "pdf", "docx"]
+        formats = ["md", "pdf"]
 
     cfg = BOOKS[book_key]
     print(f"\n📖 构建 {cfg['title']}...")
@@ -801,27 +806,16 @@ def build_book(book_key: str, formats: List[str] = None):
         results["md"] = path
         print(f"  ✓ main.md → {path}")
 
-    if "epub" in formats:
-        path = build_epub(book_key, md_text, None)
-        results["epub"] = path
-        print(f"  ✓ EPUB → {path} ({os.path.getsize(path)/1024:.1f} KB)")
-
     if "pdf" in formats:
         path = build_pdf(book_key, md_text)
         results["pdf"] = path
         print(f"  ✓ PDF → {path} ({os.path.getsize(path)/1024:.1f} KB)")
 
-    if "docx" in formats:
-        path = build_docx(book_key, md_text)
-        if path:
-            results["docx"] = path
-            print(f"  ✓ DOCX → {path} ({os.path.getsize(path)/1024:.1f} KB)")
-
     return results, stats
 
 
 def build_workbuddy_volumes(formats: List[str]):
-    """workbuddy 是三卷结构:分别生成每卷的产物 + 合订"""
+    """workbuddy 是三卷结构:分别生成每卷的产物"""
     cfg = BOOKS["workbuddy"]
     all_results = {}
     all_stats = {"chapters": 0, "appendices": 0, "intro_pages": 0, "outro_pages": 0,
@@ -878,21 +872,10 @@ def build_workbuddy_volumes(formats: List[str]):
             print(f"    ✓ {slug}.md → {path}")
             all_results[f"{slug}.md"] = path
 
-        if "epub" in formats:
-            path = build_epub_for_vol(vol_key, md_text, slug)
-            print(f"    ✓ {slug}.epub → {path} ({os.path.getsize(path)/1024:.1f} KB)")
-            all_results[f"{slug}.epub"] = path
-
         if "pdf" in formats:
             path = build_pdf_for_vol(vol_key, md_text, slug)
             print(f"    ✓ {slug}.pdf → {path} ({os.path.getsize(path)/1024:.1f} KB)")
             all_results[f"{slug}.pdf"] = path
-
-        if "docx" in formats:
-            path = build_docx_for_vol(vol_key, md_text, slug)
-            if path:
-                print(f"    ✓ {slug}.docx → {path} ({os.path.getsize(path)/1024:.1f} KB)")
-                all_results[f"{slug}.docx"] = path
 
         all_stats["chapters"] += stats["chapters"]
         all_stats["appendices"] += stats["appendices"]

@@ -44,9 +44,10 @@ node_modules/
 **/README.original.md.bak
 
 # ===== 电子书 dist/ 产物策略 =====
-# 最终交付物(EPUB / PDF)放在书根目录,不入 dist/
-# dist/ 只放中间产物(DOCX + 主书合并 md)
+# 最终交付物只有 PDF,放在书根目录
+# dist/ 是临时构建目录,所有产物都不入库
 **/dist/*.pdf
+**/dist/*.epub
 **/dist/*.docx
 # 大型主书合并 md (ai-coding 700KB / fde 320KB / workbuddy 900KB)不进,分章节源够用
 **/dist/main.md
