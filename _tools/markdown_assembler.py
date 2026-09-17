@@ -226,8 +226,11 @@ def build_epub(book_key: str, md_text: str, md_parts: List[Tuple[str, str]]):
         # content.opf
         z.writestr("OEBPS/content.opf", _opf(book_key))
 
-        # toc.ncx
+        # toc.ncx (EPUB2 兼容)
         z.writestr("OEBPS/toc.ncx", _ncx(book_key))
+
+        # nav.xhtml (EPUB3 标准导航)
+        z.writestr("OEBPS/nav.xhtml", _nav_xhtml(book_key))
 
     return out_path
 
@@ -252,6 +255,7 @@ def _xhtml_cover(book_key: str) -> str:
 def _opf(book_key: str) -> str:
     cfg = BOOKS[book_key]
     m = cfg["metadata"]
+    now = __import__('datetime').datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookId">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -263,7 +267,10 @@ def _opf(book_key: str) -> str:
 <dc:rights>{m["rights"]}</dc:rights>
 <dc:description>{m["description"]}</dc:description>
 <dc:subject>{m["subject"]}</dc:subject>
-<meta property="dcterms:modified">2026-09-17T00:00:00Z</meta>
+<dc:date>{cfg["year"]}-{cfg.get("release_month", "01")}-{cfg.get("release_day", "01")}</dc:date>
+<meta property="dcterms:created">{cfg["year"]}-{cfg.get("release_month", "01")}-{cfg.get("release_day", "01")}T00:00:00Z</meta>
+<meta property="dcterms:modified">{now}</meta>
+<meta property="schema:version">v1.0.0</meta>
 </metadata>
 <manifest>
 <item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
@@ -271,12 +278,42 @@ def _opf(book_key: str) -> str:
 <item id="css" href="styles/main.css" media-type="text/css"/>
 <item id="cover-img" href="images/cover.png" media-type="image/png" properties="cover-image"/>
 <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
 </manifest>
 <spine toc="ncx">
 <itemref idref="cover" linear="yes"/>
 <itemref idref="main" linear="yes"/>
 </spine>
 </package>"""
+
+
+def _nav_xhtml(book_key: str) -> str:
+    """EPUB 3 nav 文档(EPUB3 现代阅读器优先用这个)"""
+    cfg = BOOKS[book_key]
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="{cfg["language"]}">
+<head>
+<meta charset="utf-8"/>
+<title>目录</title>
+<link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+<body>
+<nav epub:type="toc" id="toc">
+<h1>目录</h1>
+<ol>
+<li><a href="cover.xhtml">封面</a></li>
+<li><a href="main.xhtml">正文</a></li>
+</ol>
+</nav>
+<nav epub:type="landmarks" hidden="yes">
+<h2>导航地标</h2>
+<ol>
+<li><a epub:type="cover" href="cover.xhtml">封面</a></li>
+<li><a epub:type="bodymatter" href="main.xhtml">正文</a></li>
+</ol>
+</nav>
+</body></html>"""
 
 
 def _ncx(book_key: str) -> str:
@@ -815,7 +852,11 @@ def build_workbuddy_volumes(formats: List[str]):
                 "description": vol["subtitle"],
                 "publisher": cfg["publisher"],
                 "rights": cfg["metadata"]["rights"],
-                "identifier": f"books://workbuddy/{vol['name']}",
+                "identifier": {
+                    "第一卷": "urn:uuid:027c99d0-b11c-5b19-a363-d5a39e9a2f39",
+                    "第二卷": "urn:uuid:f6967cab-2430-5908-a0a4-a0e3570c13f0",
+                    "第三卷": "urn:uuid:10998eb2-cb9f-503c-b8c7-90fc13dd9bdf",
+                }.get(vol["name"], f"books://workbuddy/{vol['name']}"),
             }
         }
         # 临时注册单卷
@@ -900,6 +941,7 @@ def build_epub_for_vol(vol_key: str, md_text: str, slug: str):
             z.write(cfg["cover"], "OEBPS/images/cover.png")
         z.writestr("OEBPS/content.opf", _opf(vol_key))
         z.writestr("OEBPS/toc.ncx", _ncx(vol_key))
+        z.writestr("OEBPS/nav.xhtml", _nav_xhtml(vol_key))
 
     return out_path
 
@@ -1046,6 +1088,40 @@ def main():
         print(f"\n{key}:")
         for fmt, path in results.items():
             print(f"  {fmt}: {path}")
+
+    # 自动调 epub_validate 做一遍校验
+    print("\n" + "=" * 60)
+    print("🔍 自动 EPUB 结构校验")
+    print("=" * 60)
+    try:
+        from epub_validate import check as epub_check
+        epubs = []
+        for key, (results, _) in all_results.items():
+            if "epub" in results:
+                epubs.append(results["epub"])
+            else:
+                # workbuddy 多卷:每卷一个 EPUB
+                for vol in BOOKS["workbuddy"]["volumes"]:
+                    slug = vol.get("out_slug", vol["name"])
+                    p = os.path.join(BOOKS["workbuddy"]["dist_dir"], f"{slug}.epub")
+                    if os.path.exists(p):
+                        epubs.append(p)
+        from pathlib import Path
+        fatal_total = 0
+        for p in epubs:
+            issues, info = epub_check(Path(p))
+            score_v = max(0, 100 - sum(20 if i.level == "FATAL" else 5 if i.level == "WARN" else 0 for i in issues))
+            status = "✅" if not [i for i in issues if i.level == "FATAL"] else "❌"
+            print(f"  {status} {os.path.basename(p):<30} 评分 {score_v}/100  "
+                  f"nav={info['has_nav']} ncx={info['has_ncx']} "
+                  f"id={info['identifier'][:40]}")
+            fatal_total += len([i for i in issues if i.level == "FATAL"])
+        if fatal_total == 0:
+            print("\n  ✅ 全部 EPUB 通过")
+        else:
+            print(f"\n  ⚠️ {fatal_total} 个 FATAL 错误")
+    except Exception as e:
+        print(f"  ⚠️ 校验调用失败: {e}")
 
 
 if __name__ == "__main__":

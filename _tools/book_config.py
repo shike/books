@@ -54,7 +54,7 @@ BOOKS = {
             "description": "一本面向创业者、产品经理、设计师、独立顾问的实战书。教非程序员用 AI 做出可交付的产品。",
             "publisher": "施可 · 三本书统一仓库",
             "rights": "CC BY-NC-SA 4.0",
-            "identifier": "books://ai-coding",
+            "identifier": "urn:uuid:a6cb8625-3e0c-591c-8497-f3fa81afa5c6",
         }
     },
     "fde": {
@@ -103,7 +103,7 @@ BOOKS = {
             "description": "一本面向 CTO、技术负责人、产品经理、想转 FDE 的人的实战书。从 PoC 到生产,把 AI 项目做稳做久。",
             "publisher": "施可 · 三本书统一仓库",
             "rights": "CC BY-NC-SA 4.0",
-            "identifier": "books://fde",
+            "identifier": "urn:uuid:f6726c14-5cd9-55df-97e2-9570f9995580",
         }
     },
     "workbuddy": {
@@ -201,7 +201,7 @@ BOOKS = {
             "description": "面向中层及以上管理者的三部曲。个人篇(用起来) → 团队篇(用起来) → 组织篇(变革管理)。配套培训交付件。",
             "publisher": "施可 · 三本书统一仓库",
             "rights": "CC BY-NC-SA 4.0",
-            "identifier": "books://workbuddy",
+            "identifier": "urn:uuid:027c99d0-b11c-5b19-a363-d5a39e9a2f39",
         }
     }
 }

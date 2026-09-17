@@ -44,7 +44,7 @@
 
 读完,你会有一个"评估 Skill + 选 Skill + 用 Skill"的标准流程,直接套用。
 
-![WorkBuddy 技能市场:从个人收藏到团队共享](figures/2.4.1-skill-marketplace.png)
+![WorkBuddy 技能市场:从个人收藏到团队共享](../figures/2.4.1-skill-marketplace.png)
 
 ---
 

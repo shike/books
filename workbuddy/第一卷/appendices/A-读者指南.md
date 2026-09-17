@@ -63,5 +63,5 @@
 
 ## 配套资源
 
-- 配套网站(建设中):[shike.github.io/workbuddy-books](https://shike.github.io)
+- 配套仓库:[github.com/shike/books](https://github.com/shike/books)(顶层仓,`workbuddy/` 子目录)
 - 勘误与版本说明:见 [README.md](../../README.md)

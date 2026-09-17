@@ -1,8 +1,9 @@
 # 勘误表
 
-> 出版后任何错误将在此公开记录,每条勘误包含:章节、问题、修正、发现日期、报告人。
+> 电子书发布后任何错误将在此公开记录,每条勘误包含:章节、问题、修正、发现日期、报告人。
+> 配合 [`feedback.md`](feedback.md) 使用 — 反馈入口与处理流程见那里。
 
-## 当前勘误
+## 当前待修复勘误
 
 (暂无)
 
@@ -50,7 +51,7 @@
 
 ## 报告勘误
 
-读者可通过以下方式报告:
-- 邮件:shike@dropleap.cn
-- GitHub:https://github.com/shike/books/issues
+读者可通过以下方式报告(详见 [feedback.md](feedback.md)):
+- GitHub Issues:`https://github.com/shike/books/issues`(首选,带 `vol1` / `vol2` / `vol3` / `training` 标签)
+- 邮件:`shike@dropleap.cn`(紧急 / 私密)
 - 公众号:施可(留言)
