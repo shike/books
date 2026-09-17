@@ -44,9 +44,8 @@ node_modules/
 **/README.original.md.bak
 
 # ===== 电子书 dist/ 产物策略 =====
-# 电子书的 md 源文件 + HTML 渲染版 + EPUB 镜像 都进 git(轻量)
-# 大型 PDF / DOCX 二进制不进 git(可从源文件再生)
-**/dist/*.pdf
+# 电子书最终交付物(EPUB / PDF)进 git,KDP / 微信读书 / 豆瓣等平台直接拉
+# DOCX 二进制不进(中间产物,可从 md 源再生)
 **/dist/*.docx
 # 大型主书合并 md (ai-coding 700KB / fde 320KB / workbuddy 900KB)不进,分章节源够用
 **/dist/main.md
