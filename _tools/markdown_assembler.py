@@ -332,7 +332,7 @@ def _ncx(book_key: str) -> str:
 # ==================== PDF 构建 ====================
 
 def build_pdf(book_key: str, md_text: str):
-    """生成 PDF(基于 reportlab + svglib)"""
+    """生成 PDF(基于 reportlab + svglib) — 输出到书根目录"""
     from reportlab.lib.pagesizes import A4
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib.units import cm
@@ -343,7 +343,7 @@ def build_pdf(book_key: str, md_text: str):
     from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 
     cfg = BOOKS[book_key]
-    out_dir = cfg["dist_dir"]
+    out_dir = cfg["root_dir"]
     os.makedirs(out_dir, exist_ok=True)
 
     # 注册中文字体(reportlab 内置 STSong-Light)
@@ -947,9 +947,9 @@ def build_epub_for_vol(vol_key: str, md_text: str, slug: str):
 
 
 def build_pdf_for_vol(vol_key: str, md_text: str, slug: str):
-    """单卷 PDF"""
+    """单卷 PDF — 输出到书根目录"""
     cfg = BOOKS[vol_key]
-    out_dir = cfg["dist_dir"]
+    out_dir = cfg["root_dir"]
     os.makedirs(out_dir, exist_ok=True)
 
     from reportlab.lib.pagesizes import A4
