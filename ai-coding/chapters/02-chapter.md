@@ -71,10 +71,10 @@
 **教训**:诊断报告的"风险点"一栏是项目过程中最被低估的部分。多数团队只把已知信息写得详细,风险点写得很空(例如"待评估")。负责人后来养成一个习惯:任何不能在 24 小时内回答的风险点,统一写成"X 项,可能拖慢 Y 天"——例如"客户内部决策流程未知,可能拖慢 5—10 天",这种描述让风险变得可视,客户的注意力也更容易被引导到对项目真正重要的事情上。
 
 
-![四段式工作流全貌](../figures/ai_coding_book_sec02_four_stage.png)
+![四段式工作流全貌](../figures/ai_coding_book_sec02_four_stage.svg)
 
 
-![复刻网站四阶段时间线](../figures/ai_coding_book_sec02_timeline.png)
+![复刻网站四阶段时间线](../figures/ai_coding_book_sec02_timeline.svg)
 
 
 ## 2.2 需求难点分析
@@ -150,7 +150,7 @@
 ## 2.4 第一阶段:站点侦察与技术诊断
 
 
-![AI 幻觉模式图](../figures/ai_coding_book_sec02_hallucination.png)
+![AI 幻觉模式图](../figures/ai_coding_book_sec02_hallucination.svg)
 
 
 ### 2.4.1 侦察的目标与边界
@@ -398,7 +398,7 @@
 ## 2.7 第四阶段:量化验收
 
 
-![视觉差异比对示意](../figures/ai_coding_book_sec02_diff.png)
+![视觉差异比对示意](../figures/ai_coding_book_sec02_diff.svg)
 
 
 ### 2.7.1 验收标准的三种形态

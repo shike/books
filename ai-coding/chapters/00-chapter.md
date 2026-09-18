@@ -64,7 +64,7 @@
 
 
 
-![本书阅读路线图](../figures/ai_coding_book_sec00_roadmap.png)
+![本书阅读路线图](../figures/ai_coding_book_sec00_roadmap.svg)
 
 ## 数据截止与版本说明
 

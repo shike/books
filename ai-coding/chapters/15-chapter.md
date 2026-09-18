@@ -26,7 +26,7 @@
 
 **现场细节**:某次大型遗留系统的接入项目,工程师团队按论文里的"加一个检索子 Agent"思路试了三周。前两次试用的子 Agent 都配成了"全权限"——它们读完代码后顺手把发现的几个 bug 修了,改完直接 commit。结果是:主会话收到一份 8,000 字的"探索摘要",里面夹杂 4 个未被评审的代码改动。第三次,团队把子 Agent 改成只读权限,只准看不准动,返回内容也限定在 1,500 字以内。这次主会话的上下文保持干净,工程师的评审压力从 4 个意外 commit 降到 0,周报里的"返工工时"也直接归零。**教训**:子 Agent 不是"小型主 Agent",它是一份权限合同——不写清楚,代价由主会话和工程师一起付。
 
-![SDD 规范层与执行习惯框架的分层](../figures/sec15_sdd_vs_superpowers.png)
+![SDD 规范层与执行习惯框架的分层](../figures/sec15_sdd_vs_superpowers.svg)
 
 ## 15.2 规范层与执行习惯
 
@@ -56,7 +56,7 @@ superpowers 的自动触发机制措辞设计得相当强硬——"只要认为�
 
 
 
-![子 Agent Token 流](../figures/sec15_subagent_token_flow.png)
+![子 Agent Token 流](../figures/sec15_subagent_token_flow.svg)
 
 ### 15.2.4 两者的互补关系
 
@@ -76,7 +76,7 @@ superpowers 一侧的反噬更为具体:2026 年年中,中文社区出现一波�
 
 
 
-![四杠杆框架](../figures/sec15_four_levers.png)
+![四杠杆框架](../figures/sec15_four_levers.svg)
 
 ## 15.3 子 Agent 设计模式
 

@@ -169,7 +169,7 @@ ai_coding_book_assets/
 <img src="wechat_qr.png" alt="施可个人微信二维码" width="180" />
 
 - **勘误**:见主书 `promotion/corrections.md`;新发现的错误可直接发 [Issue](https://github.com/shike/books/issues)
-- **配套主书上架物料**:见主书目录 `promotion/`(21 个文件:CHANGELOG / feedback / back_cover / blurb / copyright / metadata / corrections / about_author / acknowledgment / ai_disclosure / trademark / glossary / image_index / recommend / tools / epilogue / video_scripts / wechat_try / wechat_qr / cover / zhihu_answer)
+- **主书资源**:关于作者 / 工具清单 / 术语表 / 后记 / 勘误 / 反馈,见主书 `promotion/` 目录
 
 ---
 

@@ -51,7 +51,7 @@ AI 写代码倾向于吞掉异常,原因可以从它的优化目标理解:"让�
 
 
 
-![上下文失效三类型判别](../figures/sec13_context_triage.png)
+![上下文失效三类型判别](../figures/sec13_context_triage.svg)
 
 ### 13.2.4 解法:质量左移
 
@@ -77,7 +77,7 @@ AI 写代码倾向于吞掉异常,原因可以从它的优化目标理解:"让�
 
 
 
-![三重债务模型](../figures/sec13_triple_debt.png)
+![三重债务模型](../figures/sec13_triple_debt.svg)
 
 ## 13.3 问题二:上下文失效
 
@@ -247,11 +247,11 @@ AI 写代码倾向于吞掉异常,原因可以从它的优化目标理解:"让�
 
 
 
-![治理组合分阶段实施阶梯](../figures/sec13_ladder.png)
+![治理组合分阶段实施阶梯](../figures/sec13_ladder.svg)
 
 
 
-![四类问题全景对照](../figures/sec13_four_diseases.png)
+![四类问题全景对照](../figures/sec13_four_diseases.svg)
 
 ### 13.7.1 四类问题总表
 

@@ -28,8 +28,6 @@
 - GitHub:https://github.com/shike
 - 公众号:施可
 
-![施可个人微信二维码](wechat_qr.png)
-
 ---
 
 ## 长版(~500 字)
@@ -47,13 +45,9 @@ WorkBuddy 三部曲就是补这一能力:
 
 **核心主张**:"管理者不必成为 AI 专家,但要学会派活。"WorkBuddy + 多模型路由 + 团队 Skill 库 + 组织级自动化,构成了"派活"的完整工具栈。
 
-**配套培训物料**:11 子目录(讲师手册、学员手册、工作坊、行业方案、认证体系、exam-bank 等),可直接作为企业内训的标准化交付件。
-
 联系方式:
 - 邮箱:shike@dropleap.cn
 - 主页:https://shike.github.io/
 - GitHub:https://github.com/shike
 - 公众号:施可
-- 微信:扫下方二维码
 
-![施可个人微信二维码](wechat_qr.png)

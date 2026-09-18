@@ -10,7 +10,6 @@
 |---|---|---|---|
 | **给谁读** | 创业者/产品/设计/独立顾问 | 工程师/技术负责人/产品 | 管理者/带团队的人 |
 | **核心动作** | 用 AI 做出可交付产品 | 把 AI 项目从 PoC 推到生产 | 用桌面 AI 提升个人/团队/组织效率 |
-| **成熟度阶段** | 已发布(docs) | 出版前(HTML) | 第一卷 review,二三卷写中 |
 | **典型工具** | Claude / GPT / Cursor | Python / RAG 框架 / 评估集 | WorkBuddy / Skills / Credits |
 | **典型输出** | 可收款的产品 | 稳定运行的 AI 系统 | 团队工作流重塑 |
 
@@ -110,19 +109,6 @@
 | 变革管理:会用不等于愿用 | `workbuddy/第三卷/chapters/06-变革管理会用不等于愿用.md` |
 | 组织级 ROI 怎么算怎么讲 | `workbuddy/第三卷/chapters/05-组织级ROI怎么算怎么讲.md` |
 
-### 培训交付(企业培训)
-
-| 主题 | 位置 |
-|---|---|
-| 题库 | `workbuddy/培训物料/题库.md` |
-| 讲师手册 | `workbuddy/培训物料/讲师手册/` |
-| 学员手册 | `workbuddy/培训物料/学员手册/` |
-| 培训卡片 | `workbuddy/培训物料/Vol1/2/3/module-cards/` |
-| PPT 大纲 | `workbuddy/培训物料/Vol1/2/3/ppt-outlines/` |
-| 认证体系 | `workbuddy/培训物料/认证体系/认证体系.md` |
-| 工作坊 | `workbuddy/培训物料/工作坊/` |
-| 行业方案 | `workbuddy/培训物料/行业方案/` |
-
 ---
 
 ## 四、垂直行业案例
@@ -147,80 +133,7 @@
 | PoC 做完了,推不动到生产 | ② FDE 全文 |
 | 个人用 AI 没问题,带团队用不起来 | ③ WorkBuddy 第二卷 |
 | 团队用起来了,但 ROI 讲不清 | ③ WorkBuddy 第三卷 第五章 |
-| 想出付费课 / 内训 | ③ WorkBuddy 培训物料全目录 |
 
 ---
 
-> 最后更新:2026-08-19
-
----
-
-## 六、2026-08-19 重构总进度 (5 步 + 5 优化全部完成 ✅)
-
-### Step 1.4-1.7:目录布局统一
-- ✅ 3 本书 `appendix/` → `appendices/` 统一
-- ✅ workbuddy 培训物料归位 (Vol1/2/3, exam-bank, 认证体系/)
-- ✅ 删 ai-coding/fde 4 个旧 .py 脚本
-- ✅ 建顶层 `_style-guides/` `_audit/` `_integration/`
-
-### Step 2:图片审计
-- ✅ 3 本书 0 缺图 (ai-coding 53 / fde 0 纯文字 / workbuddy 66)
-- ✅ 删 ~220 张冗余图 (fde 31 svg + workbuddy _archive/_raw/_search 残图)
-- ✅ 工具:`scripts/image-audit.py`
-
-### Step 3:5 套写作风格
-- ✅ style-1 行业战略派 (ai-coding) / style-2 故事叙事派 (fde) / style-3 实用操作派 (workbuddy)
-- ✅ style-4 学术综合派 / style-5 极简口语派 (备用)
-- ✅ 工具:`scripts/style-checker.py`
-
-### Step 4:出版物 8 件标准件
-- ✅ 3 本书 promotion 目录全齐 (ai-coding 19 / fde 18 / workbuddy 18)
-- ✅ 14 个核心件 + 5 个附加件
-- ✅ 工具:`scripts/gen_promotion.py`
-
-### Step 5:重出 5 份 PDF
-- ✅ ai-coding 11.56 MB / 262 页
-- ✅ fde 2.20 MB / 147 页
-- ✅ workbuddy 第一卷 3.02 MB / 119 页
-- ✅ workbuddy 第二卷 6.72 MB / 214 页
-- ✅ workbuddy 第三卷 21.62 MB / 230 页
-- ✅ workbuddy 三卷合订 27.27 MB / 495 页
-- **合计 72.39 MB / 1467 页**
-
-### Step 6:总报告 (3 份)
-- ✅ REFACTORING-REPORT.md / PUBLICATION-READINESS.md / INDEX.md v2
-
-### Step 7:精修 (5 项)
-- ✅ 修违例项 (fde 23 章加金句 + 4 章模型名模糊化 + workbuddy 5 章删主观第一人称) — 风格分均 ≥ 90
-- ✅ 补 cover.png (3 本书独立风格: 深蓝专业 / 暗红叙事 / 蓝白实用)
-- ✅ 修 ai-coding 4 章段落偏短 (ch02/05/06/07 中位数提升)
-- ✅ 优化 promotion 件表达 (blurb 中版重写 + "这套书"→"这本书")
-- ✅ 工具:`scripts/fix_violations.py` / `scripts/merge_short_paragraphs.py` / `scripts/gen_cover.py`
-
-### 公开 Commit (9 个,全部推到 origin)
-```
-3fe07ae docs(promotion): 优化 32 个生成件中的生硬表达
-5151a21 feat(style): 修 ai-coding 段落偏短 + style-checker 规则改进
-a147f05 feat(cover): 补 fde + workbuddy cover.png
-659468d feat(style): 修违例项 - 3 本书风格分均 ≥ 90
-ba58da1 docs: Step 6 总报告 + INDEX v2
-4451041 feat(pdf): Step 5 重出 5 份 PDF
-c6a723d feat(publication): Step 4 出版物标准件补齐
-0bb298a docs: Step 3 写作风格报告
-4d33478 restructure(image): Step 2 图片审计完成
-4b90add restructure(layout): Step 1.4+1.5+1.6+1.7 完成
-```
-
-### 报告位置
-- `_integration/REFACTORING-REPORT.md` — Step 1-5 重构总报告
-- `_integration/PUBLICATION-READINESS.md` — 出版前 Checklist
-- `_integration/ONE-PAGE-SUMMARIES.md` — 3 本书 1 页精华单 (出版社对接用)
-
-### 状态 (最终)
-- ✅ 内容:3 本书共 66 章 + 21 附录, ~62 万字, 119 张图
-- ✅ 风格:3 本书均 ≥ 90 (ai-coding 96 / fde 95 / workbuddy 90)
-- ✅ Promotion: 3 本书 18-19 件齐
-- ✅ Cover: 3 本书各有独立风格 (深蓝 / 暗红 / 蓝白)
-- ✅ PDF: 6 份 (5 独立 + 1 合订, 72 MB / 1467 页)
-- ✅ 工具: 4 个自动化脚本 (image-audit / style-checker / gen_promotion / gen_cover)
-- 🟡 出版前 97% (差出版社对接 + 实际联系)
+> 最后更新:2026-09-18

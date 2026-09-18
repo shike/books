@@ -12,7 +12,7 @@
 
 
 
-![AI 编程生态四象限](../figures/ai_coding_book_sec01_fig01.png)
+![AI 编程生态四象限](../figures/ai_coding_book_sec01_fig01.svg)
 
 ### 1.1.1 一次停服事件及其方法论遗产
 
@@ -72,7 +72,7 @@ Codex 的一个关键设计值得留意:它给 AI 划定了"文件围栏"——�
 
 
 
-![五家垂直闭环结构对比](../figures/ai_coding_book_sec01_fig03.png)
+![五家垂直闭环结构对比](../figures/ai_coding_book_sec01_fig03.svg)
 
 ### 1.3.1 智谱:迁移成本最低的兼容派
 
@@ -236,7 +236,7 @@ DeepSeek 单独成节,因其角色明确:不构建闭环,而是作为**被集成
 
 
 
-![上下文窗口:标称值/有效值/计费触发点对比](../figures/ai_coding_book_sec01_fig02.png)
+![上下文窗口:标称值/有效值/计费触发点对比](../figures/ai_coding_book_sec01_fig02.svg)
 
 ### 1.5.1 三道折扣
 
@@ -325,7 +325,7 @@ Opus 5 发布时,Anthropic 官方迁移指南中有一条反直觉的建议:删�
 
 
 
-![国内编程套餐选型决策树](../figures/ai_coding_book_sec01_fig04.png)
+![国内编程套餐选型决策树](../figures/ai_coding_book_sec01_fig04.svg)
 
 ## 1.8 本章方法论:格局差不等于产出差
 

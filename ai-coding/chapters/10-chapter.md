@@ -39,9 +39,9 @@
 
 不满足这四个标准中的任何一项,都称不上"7 天 MVP"——它要么范围过大(超过了 7 天的承载力),要么不够真实(不能真正交付给用户)。开发者后来在内部分享里,把四个标准简化为一句话:**"一个核心场景,一个最小功能集,真实可用,可收款——四件事缺一不可"**。
 
-![MVP 垂直切片示意](../figures/sec10_vertical_slice.png)
+![MVP 垂直切片示意](../figures/sec10_vertical_slice.svg)
 
-![7 天 MVP 时间盒甘特图](../figures/sec10_gantt.png)
+![7 天 MVP 时间盒甘特图](../figures/sec10_gantt.svg)
 
 ### 10.1.3 7 天不能完成什么
 
@@ -167,7 +167,7 @@ AI 在 7 天 MVP 中替代的工作:
 
 ## 10.4 收款链路的设计
 
-![收款链路决策树](../figures/sec10_payment_decision.png)
+![收款链路决策树](../figures/sec10_payment_decision.svg)
 
 ### 10.4.1 收款链路的最小实现
 
@@ -212,7 +212,7 @@ PM 的话让开发者把收款链路从"Day 7 之后再说"提到了"Day 5—6 �
 
 ## 10.5 验收与复盘
 
-![冷启动渠道选择](../figures/sec10_coldstart_channels.png)
+![冷启动渠道选择](../figures/sec10_coldstart_channels.svg)
 
 ### 10.5.1 上线验收
 

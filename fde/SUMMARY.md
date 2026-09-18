@@ -34,8 +34,11 @@
 
 ## 资源
 * [关于作者](promotion/about_author.md)
-* [简介(四版)](promotion/blurb.md)
+* [后记](promotion/epilogue.md)
+* [工具清单](promotion/tools.md)
+* [术语表](promotion/glossary.md)
 * [版权页](promotion/copyright.md)
 * [致谢](promotion/acknowledgment.md)
 * [AI 生成内容声明](promotion/ai_disclosure.md)
-* [术语表](promotion/glossary.md)
+* [勘误表](promotion/corrections.md)
+* [反馈入口](promotion/feedback.md)

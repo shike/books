@@ -1,4 +1,4 @@
-# FDE · AI 竞赛不在于模型
+# FDE：AI的胜负不在模型
 
 > 一本写给 AI 项目一线人员的书。不是关于"用哪个模型"——是关于"模型之外的那些事"。
 
@@ -38,37 +38,7 @@ AI 项目的胜负,不在选哪个模型,而在**部署**这个环节。
 |---|---|
 | 章数 | 26 章正文 + 3 个 case study + 1 个综合附录 |
 | 字数 | ~30 万字 |
-| 配图 | 31 张 SVG 占位(2026-08-15, 即将被 image_synthesize 生成的 PNG 替换) |
 | 篇章结构 | 4 篇:认知 → 侦察 → 推进 → 反挫 |
-
----
-
-## 🗂 目录结构
-
-```
-fde/
-├── README.md                  ← 本文件
-├── AGENTS.md                  ← 写作规范(给 AI 协作者)
-├── chapters/                  ← 26 章正文(带中文标题命名)
-│   ├── 01-FDE 不是部署工程师.md
-│   ├── 02-PoC 地狱.md
-│   └── ... ~ 26-法律 AI:当精确的定义完全不同.md
-├── figures/                   ← 31 张 SVG 封面图
-│   ├── chapter-01.svg
-│   ├── chapter-02.svg
-│   └── ... ~ case-study-03.svg
-├── appendix/                  ← 附录(4 件)
-│   ├── 00-main.md             ← 综合附录
-│   └── case-studies/
-│       ├── case-study-01.md   ← 医疗 AI
-│       ├── case-study-02.md   ← 金融 AI
-│       └── case-study-03.md   ← 政务 AI
-├── promotion/                 ← 营销/上架文案(21 件)
-├── assets/                    ← 配套资源(暂无,根据需要补)
-├── scripts/                   ← 工具脚本(已清理,统一用顶层 scripts/build_book_pdf.py)
-└── dist/                      ← 已构建的发布件
-    └── main.pdf               ← 唯一 PDF(157 页, 2026-08 重构)
-```
 
 ---
 
@@ -84,49 +54,22 @@ FDE 是什么、不是什么;项目为什么在 PoC 阶段死;"够好"为什么�
 模型与提示词、RAG、Agent、评估、成本、上线、运维、故障、复盘——把 PoC 推到产品的全过程。
 
 ### 第四篇 | 反挫(第 19-26 章)
-FDE 的能力建设 + 7 个垂直行业(医疗/金融/制造/政务/教育/法律)的反挫案例。
+FDE 的能力建设 + 6 个垂直行业(医疗/金融/制造/政务/教育/法律)的反挫案例。
 
 ---
 
-## ✅ 当前已就绪的发布件
+## 📑 如何阅读
 
-| 件 | 状态 | 位置 | 用途 |
-|---|---|---|---|
-| 主书 PDF | ✅ | `dist/main.pdf` | 阅读、屏幕阅读、上架前 review |
-| 主书 EPUB | ✅ | `dist/fde.epub` | KDP/Apple/微信读书/豆瓣 上架 |
-| HTML 版本(32 个) | ✅ | `dist/html/` | 在线阅读(打开 chapter-XX.html) |
-| 章节源(26 章) | ✅ | `chapters/NN-标题.md` | 维护、修改 |
-| 案例研究(3 个) | ✅ | `appendix/case-studies/` | 配套深度阅读 |
-| 附录 | ✅ | `appendix/00-main.md` | 综合工具/清单 |
-| 封面 SVG(31 张) | ✅ | `figures/` | HTML 渲染、PPT 使用 |
-| 工具脚本 | ✅ | `scripts/`、`../../scripts/build_book_pdf.py` | 重新构建 HTML / 重新生成封面 / 重新生成 PDF |
+- **在线阅读**:[目录 SUMMARY](./SUMMARY.md),从第 1 章开始按章阅读
+- **整本下载**:[fde.pdf](./fde.pdf)
+- **深度配套**:[附录汇总](./appendices/00-main.md) 与 3 个行业[案例研究](./appendices/case-studies/case-study-01.md)
 
-## 🟡 已知缺口(可后续补齐)
+书末资源:[关于作者](./promotion/about_author.md) · [工具清单](./promotion/tools.md) · [术语表](./promotion/glossary.md) · [后记](./promotion/epilogue.md)
 
-- **主书合并版(markdown)**:目前只有 26 个分章节,无合并版 md(类似 ai-coding 的 `dist/main.md`)
-- **DOCX / EPUB / PDF**:均未生成
-- **推广营销文案**(`promotion/` 已就绪):上架/自荐需要
-- **配套案例音频/视频**:可选
-- **勘误区**:暂未建立(可建 `errata/` 目录)
-
----
-
-## 🚀 快速使用
-
-### 在线阅读
-- PDF:打开 `dist/main.pdf`
-- HTML:打开 `dist/html/chapter-01.html`,按章节顺序阅读
-
-### 重新生成 PDF
-```bash
-python3 ../../scripts/build_book_pdf.py fde
-```
-
-> 老的 `scripts/build_html.py` + `scripts/generate_covers.py` 内部脚本已废弃(2026-08 重构),
-> 现统一用 `build_book_pdf.py` 出 PDF。`dist/html/` 临时目录也已清理。
+发现内容错误?请通过[勘误表与反馈入口](./promotion/corrections.md)告诉我们。
 
 ---
 
 ## 📜 许可证
 
-与 ai-coding 对齐:**CC BY-NC-SA 4.0**。
+本书内容采用 **CC BY-NC-SA 4.0** 许可证 — 署名-非商业-相同方式共享,详见顶层 [LICENSE](../LICENSE)。

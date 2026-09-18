@@ -38,11 +38,11 @@
 
 AI 在遗留系统改造中的核心价值是"加速理解"——AI 替团队读懂存量代码、识别改造点、评估风险,把"赌博"变成"基于充分信息的决策"。项目负责人后来在内部分享里说:**"AI 替团队读代码,不是替团队做决策;AI 把'我猜这里会出问题'变成'我读了 800 行代码,这里大概率会出问题'"**。
 
-![沙盒测试与回滚机制](../figures/sec11_safety_net.png)
+![沙盒测试与回滚机制](../figures/sec11_safety_net.svg)
 
-![三阶段时间线](../figures/sec11_three_phases.png)
+![三阶段时间线](../figures/sec11_three_phases.svg)
 
-![遗留系统 strangler 模式](../figures/sec11_strangler_fig.png)
+![遗留系统 strangler 模式](../figures/sec11_strangler_fig.svg)
 
 ### 11.1.3 改造的目标
 
@@ -60,7 +60,7 @@ AI 在遗留系统改造中的核心价值是"加速理解"——AI 替团队读
 
 三个目标达成后,系统从"遗产"变成"资产"。**改造的成果不是"代码变漂亮了",是"团队对系统有信心了"**。
 
-![考古学式探索漏斗](../figures/sec11_archaeology_funnel.png)
+![考古学式探索漏斗](../figures/sec11_archaeology_funnel.svg)
 
 ## 11.2 三阶段改造方法
 

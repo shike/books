@@ -35,7 +35,7 @@
 
 
 
-![三类数据源决策树](../figures/sec14_decision_tree.png)
+![三类数据源决策树](../figures/sec14_decision_tree.svg)
 
 ## 14.2 三类数据源的决策框架
 
@@ -144,11 +144,11 @@
 
 
 
-![抓取前实操自检流程](../figures/sec14_compliance_check.png)
+![抓取前实操自检流程](../figures/sec14_compliance_check.svg)
 
 
 
-![抓取环境围墙化十年](../figures/sec14_walled_garden.png)
+![抓取环境围墙化十年](../figures/sec14_walled_garden.svg)
 
 ### 14.3.6 无代码市场型:以 Apify 为代表
 

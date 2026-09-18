@@ -6,9 +6,9 @@
 
 ## 4.1 需求对齐的真正难题
 
-![意图债的来源分布](../figures/ai_coding_book_sec04_intent_debt_funnel.png)
+![意图债的来源分布](../figures/ai_coding_book_sec04_intent_debt_funnel.svg)
 
-![文档式对齐 vs Demo 对齐](../figures/ai_coding_book_sec04_doc_vs_demo.png)
+![文档式对齐 vs Demo 对齐](../figures/ai_coding_book_sec04_doc_vs_demo.svg)
 
 ### 4.1.1 文档式对齐的失败模式
 
@@ -42,7 +42,7 @@ Demo 对齐适用于"客户知道大致想要什么、但不知道具体怎么�
 
 ## 4.2 24 小时可交互 Demo 工作流
 
-![Demo 介导的需求对齐流程](../figures/ai_coding_book_sec04_demo_flow.png)
+![Demo 介导的需求对齐流程](../figures/ai_coding_book_sec04_demo_flow.svg)
 
 ### 4.2.1 时间盒的设置
 

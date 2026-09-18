@@ -7,7 +7,7 @@
 
 ## 短版(~100 字)
 
-**施可**,水滴跃动(Dropleap)创始人。16 年穿梭于代码、产品、商业一线的连续操盘手,前邻汇吧 COO,中科大软工硕士。这本《FDE · AI 竞赛不在于模型》是过去 3 年与 50+ AI 项目团队协作后的方法论总结。
+**施可**,水滴跃动(Dropleap)创始人。16 年穿梭于代码、产品、商业一线的连续操盘手,前邻汇吧 COO,中科大软工硕士。这本《FDE：AI的胜负不在模型》是过去 3 年与 50+ AI 项目团队协作后的方法论总结。
 
 ---
 
@@ -24,8 +24,6 @@
 - 主页:https://shike.github.io/
 - GitHub:https://github.com/shike
 - 公众号:施可
-
-![施可个人微信二维码](wechat_qr.png)
 
 ---
 
@@ -50,6 +48,4 @@
 - 主页:https://shike.github.io/
 - GitHub:https://github.com/shike
 - 公众号:施可
-- 微信:扫下方二维码
 
-![施可个人微信二维码](wechat_qr.png)
