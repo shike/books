@@ -3,6 +3,8 @@
 > 三本书从不同视角回答同一个问题:**AI 时代怎么做事**。
 >
 > 作者:[施可 (Shi Ke)](https://shike.github.io/) — shike@dropleap.cn
+>
+> 作者运营:[水滴跃动 Dropleap — 苏州企业 AI 落地服务商 · WorkBuddy 官方代理](https://dropleap.cn/)
 
 | # | 书 | 一句话介绍 | 适合谁 |
 |---|---|---|---|
